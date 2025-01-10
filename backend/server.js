@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import User from "./models/user";
 
 dotenv.config(); // Load environment variables
 
@@ -15,7 +16,7 @@ mongoose.connect(mongoUrl)
   .catch((err) => {
     console.log("Error connecting to MongoAtlas:", err);
   });
-  
+
 mongoose.Promise = Promise;
 
 const port = process.env.PORT || 8080;
