@@ -1,9 +1,21 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config(); // Load environment variables
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/final-project";
-mongoose.connect(mongoUrl);
+
+// Connect to MongoDB Atlas
+mongoose.connect(mongoUrl)
+  .then(() => {
+    console.log("Connected to MongoDB Atlas!");
+  })
+  .catch((err) => {
+    console.log("Error connecting to MongoAtlas:", err);
+  });
+  
 mongoose.Promise = Promise;
 
 const port = process.env.PORT || 8080;
