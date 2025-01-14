@@ -14,12 +14,10 @@ const userSchema = new mongoose.Schema({
     },
     accessToken:{
       type: String,
-      default: () => crypto.randomBytes(2).toString( "hex" )
+      default: () => crypto.randomBytes(16).toString( "hex" )
     }
   });
 
+  // Create and export the User model
   const User = mongoose.model( "User", userSchema);
   export default User;
-
-  // Remove after testing
-  console.log(crypto.randomBytes(2).toString("Hex"));
