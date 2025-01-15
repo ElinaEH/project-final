@@ -1,4 +1,4 @@
-import User from "../models/user.jsx";
+import User from "../models/userModel.js";
 import crypto from "crypto";
 import bcrypt from "bcrypt";
 
@@ -27,7 +27,7 @@ export const signup = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10)
 
     // Generate an access token
-    const accessToken = crypto.randomBytes(16).toString("hex");
+    const accessToken = crypto.randomBytes(32).toString("hex");
     
     // Create a new user
     const user = new User({
@@ -55,7 +55,7 @@ export const signin = async (req, res) => {
   try {
     const { name, password } = req.body;
 
-    //Find user by name
+    // Find user by name
     const user = await User.findOne({ name });
     if (!user) {
       return res.status(401).json({
@@ -72,7 +72,7 @@ export const signin = async (req, res) => {
     }
 
     // Generate new access token
-    user.accessToken = crypto.randomBytes(16).toString("hex");
+    user.accessToken = crypto.randomBytes(32).toString("hex");
     await user.save();
 
     res.json({

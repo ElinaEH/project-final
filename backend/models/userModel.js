@@ -1,3 +1,5 @@
+// Database schemas
+
 import mongoose from "mongoose";
 import crypto from "crypto";
 
@@ -14,10 +16,14 @@ const userSchema = new mongoose.Schema({
     },
     accessToken:{
       type: String,
-      default: () => crypto.randomBytes(16).toString( "hex" )
+      default: () => crypto.randomBytes(32).toString( "hex" )
     }
   });
 
+  // Add timestamps for createdAt and updatedAt
+  userSchema.set("timestamps", true)
+
   // Create and export the User model
   const User = mongoose.model( "User", userSchema);
+ 
   export default User;
