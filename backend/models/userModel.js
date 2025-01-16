@@ -5,7 +5,7 @@ import crypto from "crypto";
 
 // Define the schema for User model
 const userSchema = new mongoose.Schema({
-    name: {
+    username: {
       type: String,
       unique: true,
       required: true
