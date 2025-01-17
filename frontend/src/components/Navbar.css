@@ -1,0 +1,14 @@
+.navbar-wrapper {
+  display: flex;
+  justify-content: center;  
+  width: 100%;
+  min-height: 50px;
+  background-color: rgb(184, 215, 237);
+  justify-content: right;
+  align-items: center;
+}
+
+.auth-text {
+  padding: 24px;
+  color: black;
+}

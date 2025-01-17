@@ -17,7 +17,19 @@ const userSchema = new mongoose.Schema({
     accessToken:{
       type: String,
       default: () => crypto.randomBytes(32).toString( "hex" )
-    }
+    },
+
+    // Profile fields for User Profile
+    email: {
+      type: String,
+      unique: true,
+      sparse: true,
+      lowercase: true,
+      trim: true,
+    },
+    profileImage: {
+      type: String, // URL for profile image?
+    },
   });
 
   // Add timestamps for createdAt and updatedAt

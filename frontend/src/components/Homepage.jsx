@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import Navbar from "./Navbar.jsx";
 
 const Homepage = () => {
   return (
     <div>
-      <Link to="/auth/signin">Sign In / Sign Up </Link>
+      <Navbar />
+      <h1>Creativity Booster</h1>
     </div>
   );
 };

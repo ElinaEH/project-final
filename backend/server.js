@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import { authenticateUser } from "./middleware/authMiddleware.js"; 
+import profileRoutes from "./routes/profileRoutes.js";
 
 dotenv.config(); // Load environment variables
 
@@ -30,13 +31,17 @@ mongoose
     process.exit(1);
   });
 
+// Routes
 // Use the authenticateUser middleware for protected routes (if any)
 app.use("/protectedRoute", authenticateUser, (req, res) => {
   res.send("This route is protected!");
 });
 
-// Routes
+// Autnetication Route
 app.use("/auth", authRoutes); // Assuming this doesn't need authentication
+
+// User Profile Route
+app.use("/profile", profileRoutes);
 
 // Default route, remove later?
 app.get("/", (req, res) => res.send("Welcome to the Elinas API"));
