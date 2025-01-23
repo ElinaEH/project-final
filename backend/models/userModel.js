@@ -1,5 +1,4 @@
 // Database schemas
-
 import mongoose from "mongoose";
 import crypto from "crypto";
 
@@ -10,6 +9,14 @@ const userSchema = new mongoose.Schema({
       unique: true,
       required: true
     },
+    email: {
+      type: String,
+      unique: true,
+      required: true,
+      sparse: true, // Look this up what it means?
+      lowercase: true,
+      trim: true,
+    },
     password: {
       type: String,
       required: true
@@ -17,18 +24,6 @@ const userSchema = new mongoose.Schema({
     accessToken:{
       type: String,
       default: () => crypto.randomBytes(32).toString( "hex" )
-    },
-
-    // Profile fields for User Profile
-    email: {
-      type: String,
-      unique: true,
-      sparse: true,
-      lowercase: true,
-      trim: true,
-    },
-    profileImage: {
-      type: String, // URL for profile image?
     },
   });
 

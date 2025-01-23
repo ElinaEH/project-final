@@ -1,10 +1,11 @@
 import Navbar from "./Navbar.jsx";
+import RandomWord from "./RandomWord.jsx";
 
 const Homepage = () => {
   return (
     <div>
       <Navbar />
-      <h1>Creativity Booster</h1>
+      <RandomWord />
     </div>
   );
 };

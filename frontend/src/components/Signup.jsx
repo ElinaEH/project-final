@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar.jsx";
 
 const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
     const username = e.target.username.value;
+    const email = e.target.email.value;
     const password = e.target.password.value;
 
     console.log("Sign Up submitted:", { username });
@@ -13,7 +15,7 @@ const Signup = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, email, password }),
     })
       .then((response) => {
         if (!response.ok) {
@@ -38,17 +40,21 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignup}>
-        <input type="text" name="username" placeholder="Username" required />
-        <input type="password" name="password" placeholder="Password" required />
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>
-        Already have an account? <Link to="/auth/signin">Sign in here</Link>
-      </p>
-    </div>
+    <>
+      <Navbar />
+        <div>
+          <h2>Sign Up</h2>
+          <form onSubmit={handleSignup}>
+            <input type="text" name="username" placeholder="Username" required />
+            <input type="text" name="email" placeholder="Email" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <button type="submit">Sign Up</button>
+          </form>
+          <p>
+            Already have an account? <Link to="/auth/signin">Sign in here</Link>
+          </p>
+        </div>
+    </>
   );
 };
 

@@ -1,15 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthContext.jsx";
+import Navbar from "./Navbar.jsx";
+import "./Signin.css";
 
 const Signin = () => {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
   const handleSignin = (e) => {
     e.preventDefault();
     const username = e.target.username.value;
     const password = e.target.password.value;
-
-    // Handle the sign-in logic here, sending data to backend
+  
     console.log("Sign In submitted:", { username });
-
-    // Sending a POST request to the backend API for signin
+  
     fetch("http://localhost:5000/auth/signin", {
       method: "POST",
       headers: {
@@ -17,35 +21,61 @@ const Signin = () => {
       },
       body: JSON.stringify({ username, password }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        console.log("Response status:", response.status);
+        return response.json();
+      })
       .then((data) => {
         console.log("Sign In Response:", data);
-        if (data.accessToken) {
-          // Successfully signed in, store the token (for example in localStorage or sessionStorage)
-          localStorage.setItem("authToken", data.Token);
-          // Redirect or take action on successful signin (e.g., go to homepage or dashboard)
+      
+        if (data.message === "Login successful") {
+          // Make sure we're storing the token with the exact same key consistently
+          if (data.accessToken) {
+            localStorage.setItem("accessToken", data.accessToken);
+            console.log("Stored token in localStorage:", data.accessToken);
+          }
+      
+          if (data.user) {
+            localStorage.setItem("user", JSON.stringify(data.user));
+            console.log("Stored user in localStorage:", data.user);
+      
+            // Pass the token correctly to login function
+            login(data.user.username, data.accessToken);
+          }
+      
+          navigate("/");
         } else {
-          // Handle any error responses from the backend
-          console.error("Error signing in:", data.message);
+          console.error("Login failed:", data.message);
         }
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error("Network or parsing error:", error);
       });
   };
 
   return (
-    <div>
-      <h2>Sign In</h2>
-      <form onSubmit={handleSignin}>
-        <input type="text" name="username" placeholder="Username" required />
-        <input type="password" name="password" placeholder="Password" required />
-        <button type="submit">Sign In</button>
-      </form>
-      <p>
-        New user? <Link to="/auth/signup">Sign up here</Link>
-      </p>
-    </div>
+    <>
+      <Navbar />
+        <div className="signin-container">
+          <div className="signin-box">
+            <h2 className="signin-title">Sign In</h2>
+            <form onSubmit={handleSignin} className="signin-form">
+              <div className="input-group">
+                <label htmlFor="username">Username</label>
+                <input type="text" name="username" placeholder="Username" required />
+              </div>
+              <div className="input-group">
+                <label htmlFor="password">Password</label>
+                <input type="password" name="password" placeholder="Password" required />
+              </div>  
+              <button type="submit" className="signin-button">Sign In</button>
+            </form>
+            <p className="create-account">
+              New user? <Link to="/auth/signup">Sign up here</Link>
+            </p>
+          </div>
+        </div>
+    </>
   );
 };
 

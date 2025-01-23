@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import { authenticateUser } from "./middleware/authMiddleware.js"; 
 import profileRoutes from "./routes/profileRoutes.js";
+import wordRoutes from "./routes/wordRoutes.js";
 
 dotenv.config(); // Load environment variables
 
@@ -14,8 +15,8 @@ const port = process.env.PORT || 5000;
 // CORS Middleware
 app.use(cors({
   origin: "http://localhost:5173", // Frontend URL
-  methods: "GET, POST,PUT,DELETE",
-  allowedHeaders: "Content-Type",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
 
@@ -45,6 +46,9 @@ app.use("/profile", profileRoutes);
 
 // Default route, remove later?
 app.get("/", (req, res) => res.send("Welcome to the Elinas API"));
+
+// Words route
+app.use("/words", wordRoutes);
 
 // Error handling middleware (optional)
 app.use((err, req, res, next) => {

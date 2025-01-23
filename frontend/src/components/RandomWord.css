@@ -1,0 +1,52 @@
+/* RandomWord.css */
+.random-word-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .exercise-description {
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  .word-display {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .word-display h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+  }
+  
+  .generate-button {
+    background-color: rgb(184, 215, 237);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: opacity 0.2s;
+  }
+  
+  .generate-button:hover {
+    opacity: 0.9;
+  }
+  
+  .generate-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .prompt-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
