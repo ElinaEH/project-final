@@ -6,6 +6,7 @@ import authRoutes from "./routes/authRoutes.js";
 import { authenticateUser } from "./middleware/authMiddleware.js"; 
 import profileRoutes from "./routes/profileRoutes.js";
 import wordRoutes from "./routes/wordRoutes.js";
+import chordRoutes from "./routes/chordRoutes.js";
 
 dotenv.config(); // Load environment variables
 
@@ -49,6 +50,9 @@ app.get("/", (req, res) => res.send("Welcome to the Elinas API"));
 
 // Words route
 app.use("/words", wordRoutes);
+
+// Chords route
+app.use("/chords", chordRoutes);
 
 // Error handling middleware (optional)
 app.use((err, req, res, next) => {
