@@ -25,6 +25,17 @@ const userSchema = new mongoose.Schema({
       type: String,
       default: () => crypto.randomBytes(32).toString( "hex" )
     },
+    savedExercises: [{
+      type: {
+        type: String,
+        enum: ["word", "chord"]
+      },
+      content: Object,
+      savedAt: {
+        type: Date,
+        default: Date.now
+      }
+    }]
   });
 
   // Add timestamps for createdAt and updatedAt

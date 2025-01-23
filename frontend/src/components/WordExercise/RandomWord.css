@@ -7,10 +7,20 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+  .exercise-headline {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
   
   .exercise-description {
     color: #666;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
   
   .word-display {
@@ -24,20 +34,31 @@
   .word-display h3 {
     font-size: 2rem;
     color: #2c3e50;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
   }
   
   .generate-button {
+    min-width: 120px;
     background-color: rgb(184, 215, 237);
     border: none;
-    padding: 1rem 2rem;
-    border-radius: 4px;
+    padding: 1rem;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1em;
     transition: opacity 0.2s;
   }
   
   .generate-button:hover {
     opacity: 0.9;
+    background-color: blue;
+    color: white;
   }
   
   .generate-button:disabled {

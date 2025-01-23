@@ -101,3 +101,27 @@
   .edit-button:hover, .save-button:hover, .cancel-button:hover {
     opacity: 0.9;
   }
+
+  .saved-exercises {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .exercises-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .exercise-item {
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+  }
+  
+  .saved-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }

@@ -9,10 +9,12 @@ const Profile = () => {
     username: "",
     email: "",
     profileImage: "",
+    savedExercises: []
   });
   const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
+    console.log("Current profile state:", profile);
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("accessToken");
@@ -26,7 +28,8 @@ const Profile = () => {
           setProfile({
             username: storedUser.username,
             email: storedUser.email,
-            profileImage: storedUser.profileImage || ""
+            profileImage: storedUser.profileImage || "",
+            savedExercises: storedUser.savedExercises || []
           });
         }
   
@@ -166,6 +169,34 @@ const Profile = () => {
               <p><strong>Username:</strong> {profile.username || 'Not set'}</p>
               <p><strong>Email:</strong> {profile.email || 'Not set'}</p>
             </div>
+      
+            <div className="saved-exercises">
+              <h2>Saved Exercises</h2>
+              {profile.savedExercises?.length > 0 ? (
+                <div className="exercises-list">
+                  {profile.savedExercises.map((exercise, index) => (
+                    <div key={index} className="exercise-item">
+                      <h3>{exercise.type === 'chord' ? 'Chord Exercise' : 'Word Exercise'}</h3>
+                      {exercise.type === 'chord' && (
+                        <>
+                          <p>Mood: {exercise.content.mood}</p>
+                          <p>Chords: {exercise.content.chords.join(' - ')}</p>
+                        </>
+                      )}
+                      {exercise.type === 'word' && (
+                        <p>Word: {exercise.content.word}</p>
+                      )}
+                      <p className="saved-date">
+                        {new Date(exercise.savedAt).toLocaleDateString()}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p>No saved exercises yet</p>
+              )}
+            </div>
+            
             <button 
               onClick={() => setIsEditing(true)} 
               className="edit-button"

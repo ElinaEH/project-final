@@ -1,6 +1,7 @@
 import express from "express";
 import User from "../models/userModel.js";
 import { authenticateUser } from "../middleware/authMiddleware.js";
+import { saveExercise } from "../controllers/profileController.js";
 
 const router = express.Router();
 
@@ -48,5 +49,7 @@ router.put("/", authenticateUser, async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 });
+
+router.post("/save-exercise", authenticateUser, saveExercise);
 
 export default router;
