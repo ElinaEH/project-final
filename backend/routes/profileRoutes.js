@@ -9,11 +9,11 @@ const router = express.Router();
 router.get("/", authenticateUser, async (req, res) => {
   try {
     console.log("Received profile request");
-    console.log("User from auth middleware:", req.user); // Debug the user object
-    console.log("User ID:", req.user._id); // Debug the user ID
+    console.log("User from auth middleware:", req.user);
+    console.log("User ID:", req.user._id);
 
     const user = await User.findById(req.user._id).select("-password");
-    console.log("Found user:", user); // Debug the found user
+    console.log("Found user:", user);
 
     if (!user) {
       return res.status(400).json({ message: "User not found" });
@@ -50,6 +50,44 @@ router.put("/", authenticateUser, async (req, res) => {
   }
 });
 
+// Save exercise
 router.post("/save-exercise", authenticateUser, saveExercise);
+
+// Delete exercise - Add this new route
+router.delete("/delete-exercise/:exerciseId", authenticateUser, async (req, res) => {
+  try {
+    console.log("Received delete exercise request");
+    console.log("Exercise ID:", req.params.exerciseId);
+    
+    const { exerciseId } = req.params;
+    const user = await User.findById(req.user._id);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Find the exercise index
+    const exerciseIndex = user.savedExercises.findIndex(
+      exercise => exercise._id.toString() === exerciseId
+    );
+
+    if (exerciseIndex === -1) {
+      return res.status(404).json({ message: "Exercise not found" });
+    }
+
+    // Remove the exercise
+    user.savedExercises.splice(exerciseIndex, 1);
+    await user.save();
+
+    console.log("Exercise deleted successfully");
+    res.json({ 
+      message: "Exercise deleted successfully",
+      updatedExercises: user.savedExercises 
+    });
+  } catch (error) {
+    console.error("Delete exercise error:", error);
+    res.status(500).json({ message: "Error deleting exercise", error: error.message });
+  }
+});
 
 export default router;

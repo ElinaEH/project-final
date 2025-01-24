@@ -91,6 +91,33 @@ const Profile = () => {
     }
   };
 
+    // Add the deleteExercise function here
+    const deleteExercise = async (exerciseId) => {
+      try {
+        const token = localStorage.getItem("accessToken");
+        const response = await fetch(`http://localhost:5000/profile/delete-exercise/${exerciseId}`, {
+          method: "DELETE",
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        if (!response.ok) {
+          throw new Error("Failed to delete exercise");
+        }
+  
+        // Update the profile state to remove the deleted exercise
+        setProfile(prevProfile => ({
+          ...prevProfile,
+          savedExercises: prevProfile.savedExercises.filter((exercise) => exercise._id !== exerciseId)
+        }));
+  
+      } catch (error) {
+        console.error("Error deleting exercise:", error);
+      }
+    };
+
   if (!user) {
     return <div>Please log in to view your profile.</div>;
   }
@@ -176,19 +203,27 @@ const Profile = () => {
                 <div className="exercises-list">
                   {profile.savedExercises.map((exercise, index) => (
                     <div key={index} className="exercise-item">
-                      <h3>{exercise.type === 'chord' ? 'Chord Exercise' : 'Word Exercise'}</h3>
-                      {exercise.type === 'chord' && (
-                        <>
-                          <p>Mood: {exercise.content.mood}</p>
-                          <p>Chords: {exercise.content.chords.join(' - ')}</p>
-                        </>
-                      )}
-                      {exercise.type === 'word' && (
-                        <p>Word: {exercise.content.word}</p>
-                      )}
-                      <p className="saved-date">
-                        {new Date(exercise.savedAt).toLocaleDateString()}
-                      </p>
+                      <div className="exercise-content">
+                        <h3>{exercise.type === 'chord' ? 'Chord Exercise' : 'Word Exercise'}</h3>
+                        {exercise.type === 'chord' && (
+                          <>
+                            <p>Mood: {exercise.content.mood}</p>
+                            <p>Chords: {exercise.content.chords.join(' - ')}</p>
+                          </>
+                        )}
+                        {exercise.type === 'word' && (
+                          <p>Word: {exercise.content.word}</p>
+                        )}
+                        <p className="saved-date">
+                          {new Date(exercise.savedAt).toLocaleDateString()}
+                        </p>
+                      </div>
+                      <button 
+                        onClick={() => deleteExercise(exercise._id)}
+                        className="delete-button"
+                      >
+                        Delete
+                      </button>
                     </div>
                   ))}
                 </div>

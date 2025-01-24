@@ -111,7 +111,7 @@ const ChordProgression = () => {
 
      {chords && (
        <div className="chord-prompt">
-         <p>Try writing a song using these chords!</p>
+         <p>Create a melody using this chord progression!</p>
        </div>
      )}
    </div>

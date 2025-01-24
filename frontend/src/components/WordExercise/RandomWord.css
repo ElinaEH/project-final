@@ -1,73 +1,108 @@
 /* RandomWord.css */
 .random-word-container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  .exercise-headline {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  
-  .exercise-description {
-    color: #666;
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .word-display {
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem 0;
-  }
-  
-  .word-display h3 {
-    font-size: 2rem;
-    color: #2c3e50;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
-  }
-  
-  .generate-button {
-    min-width: 120px;
-    background-color: rgb(184, 215, 237);
-    border: none;
-    padding: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: opacity 0.2s;
-  }
-  
-  .generate-button:hover {
-    opacity: 0.9;
-    background-color: blue;
-    color: white;
-  }
-  
-  .generate-button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-  
-  .prompt-section {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
-  }
+.exercise-headline {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.exercise-description {
+  color: #666;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.word-display {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.word-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.word-display h3 {
+  font-size: 2rem;
+  color: #2c3e50;
+  justify-content: center;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.generate-button {
+  min-width: 120px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(184, 215, 237);
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.generate-button:hover {
+  background-color: blue;
+  color: white;
+}
+
+.generate-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.save-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.star-icon {
+  font-size: 24px;
+  color: #FFD700;
+}
+
+.prompt-section {
+  margin-top: 30px;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+}
+
+/* Matched hover effects for save button */
+.save-button:hover .star-icon {
+  opacity: 0.8;
+}
+
+/* If the star is filled (saved state) */
+.save-button .fa-star {
+  color: #FFD700;
+}

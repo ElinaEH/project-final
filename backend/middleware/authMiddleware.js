@@ -1,3 +1,7 @@
+/**
+ * This middleware validates the user's token and protects routes from unauthorized access.
+ * Used on routes that require user authentication.
+ */
 import User from "../models/userModel.js";
 
 export const authenticateUser = async (req, res, next) => {

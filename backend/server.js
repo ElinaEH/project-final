@@ -2,65 +2,79 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import listEndpoints from "express-list-endpoints";
 import authRoutes from "./routes/authRoutes.js";
 import { authenticateUser } from "./middleware/authMiddleware.js"; 
 import profileRoutes from "./routes/profileRoutes.js";
 import wordRoutes from "./routes/wordRoutes.js";
 import chordRoutes from "./routes/chordRoutes.js";
 
-dotenv.config(); // Load environment variables
+// Load environment variables from .env file
+dotenv.config();
 
+// Initialize Express app and port
 const app = express();
 const port = process.env.PORT || 5000;
 
-// CORS Middleware
+// Configure CORS middleware to allow requests from frontend
 app.use(cors({
-  origin: "http://localhost:5173", // Frontend URL
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
+ origin: "http://localhost:5173", // Frontend development server URL
+ methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+ allowedHeaders: ["Content-Type", "Authorization"],
+ credentials: true
 }));
 
+// Parse JSON request bodies
 app.use(express.json());
 
-// Database connection
+// Connect to MongoDB database
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/final-project";
 mongoose
-  .connect(mongoUrl)
-  .then(() => console.log("Connected to MongoDB!"))
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error.message);
-    process.exit(1);
-  });
+ .connect(mongoUrl)
+ .then(() => console.log("Successfully connected to MongoDB!"))
+ .catch((error) => {
+   console.error("MongoDB connection error:", error.message);
+   process.exit(1); // Exit if database connection fails
+ });
 
-// Routes
-// Use the authenticateUser middleware for protected routes (if any)
+// Route Definitions
+// Test protected route (requires authentication)
 app.use("/protectedRoute", authenticateUser, (req, res) => {
-  res.send("This route is protected!");
+ res.send("This route is protected!");
 });
 
-// Autnetication Route
-app.use("/auth", authRoutes); // Assuming this doesn't need authentication
+// Authentication routes (signup, signin)
+app.use("/auth", authRoutes);
 
-// User Profile Route
+// User profile routes (protected by authentication)
 app.use("/profile", profileRoutes);
 
-// Default route, remove later?
-app.get("/", (req, res) => res.send("Welcome to the Elinas API"));
+// Exercise routes for words and chords
+app.use("/words", wordRoutes);    // Random word generator endpoints
+app.use("/chords", chordRoutes);  // Chord progression endpoints
 
-// Words route
-app.use("/words", wordRoutes);
+// API welcome message
+app.get("/", (req, res) => res.send("Welcome to the Creativity Booster API"));
 
-// Chords route
-app.use("/chords", chordRoutes);
-
-// Error handling middleware (optional)
+// Global error handling middleware
 app.use((err, req, res, next) => {
-  console.error('Error:', err.stack);
-  res.status(500).json({ message: 'Something went wrong!', error: err.message });
+ console.error('Server Error:', err.stack);
+ res.status(500).json({ 
+   message: 'Internal server error occurred', 
+   error: err.message 
+ });
 });
 
-// Start server
+// Endpoint to view all available API routes (helpful for development)
+app.get('/endpoints', (req, res) => {
+ res.json(listEndpoints(app));
+});
+
+// Log available endpoints when server starts
+console.log("Available API Endpoints:", listEndpoints(app));
+
+// Start the server
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+ console.log(`Server is running on http://localhost:${port}`);
+ console.log(`View API endpoints at http://localhost:${port}/endpoints`);
 });
