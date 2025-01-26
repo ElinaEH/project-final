@@ -11,7 +11,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage.jsx";
 import Signin from "./components/Signin.jsx";  
 import Signup from "./components/Signup.jsx"; 
-import Profile from "./components/Profile.jsx";
+import Profile from "./components/profile/Profile.jsx";
+import ExercisePage from "./components/ExercisePage.jsx";
 import "./App.css";
 
 export const App = () => {
@@ -23,6 +24,7 @@ export const App = () => {
           <Route path="/auth/signin" element={<Signin />} /> {/* Sign In */}
           <Route path="/auth/signup" element={<Signup />} /> {/* Sign Up */}
           <Route path="/profile" element={<Profile />} /> {/* Profile Page */}
+          <Route path="/exercises" element={<ExercisePage />} />
         </Routes>
       </Router>
     </AuthProvider>

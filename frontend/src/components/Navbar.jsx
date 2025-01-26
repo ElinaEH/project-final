@@ -21,16 +21,12 @@ const Navbar = () => {
 
   return (
     <div className="navbar-wrapper">
-      <Link 
-        to="/" className="navbar-title">
-          CREATIVITY BOOSTER
+      <Link to="/" className="navbar-title">
+        CREATIVITY BOOSTER
       </Link>
       {user ? (
         <div className="user-menu">
-          <span 
-            className="username" 
-            onClick={toggleDropdown}
-          >
+          <span className="username" onClick={toggleDropdown}>
             {user.username}
           </span>
           {isDropdownOpen && (
@@ -40,19 +36,23 @@ const Navbar = () => {
                 className="dropdown-item"
                 onClick={() => setIsDropdownOpen(false)}
               >
-                Home  
+                Home
               </Link>
-              <Link 
-                to="/profile" 
+              <Link
+                to="/exercises"
                 className="dropdown-item"
-                onClick={() => setIsDropdownOpen(false)} // Close dropdown after clicking
+                onClick={() => setIsDropdownOpen(false)}
+              >
+                Exercises
+              </Link>
+              <Link
+                to="/profile"
+                className="dropdown-item"
+                onClick={() => setIsDropdownOpen(false)}
               >
                 Profile
               </Link>
-              <div 
-                className="dropdown-item" 
-                onClick={handleLogout}
-              >
+              <div className="dropdown-item" onClick={handleLogout}>
                 Logout
               </div>
             </div>

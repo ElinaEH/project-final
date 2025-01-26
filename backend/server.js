@@ -3,11 +3,13 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import listEndpoints from "express-list-endpoints";
+import path from "path";
 import authRoutes from "./routes/authRoutes.js";
 import { authenticateUser } from "./middleware/authMiddleware.js"; 
 import profileRoutes from "./routes/profileRoutes.js";
 import wordRoutes from "./routes/wordRoutes.js";
 import chordRoutes from "./routes/chordRoutes.js";
+import audioRoutes from "./routes/audioRoutes.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -26,6 +28,9 @@ app.use(cors({
 
 // Parse JSON request bodies
 app.use(express.json());
+
+// Serve static files for uploaded audio
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
 // Connect to MongoDB database
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/final-project";
@@ -52,6 +57,9 @@ app.use("/profile", profileRoutes);
 // Exercise routes for words and chords
 app.use("/words", wordRoutes);    // Random word generator endpoints
 app.use("/chords", chordRoutes);  // Chord progression endpoints
+
+// Audio route
+app.use("/audio", audioRoutes);
 
 // API welcome message
 app.get("/", (req, res) => res.send("Welcome to the Creativity Booster API"));

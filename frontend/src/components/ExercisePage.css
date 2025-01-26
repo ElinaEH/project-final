@@ -1,0 +1,10 @@
+.exercise-container {
+    padding: 2rem;
+  }
+  
+  .exercise-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }

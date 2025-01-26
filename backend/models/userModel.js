@@ -35,6 +35,12 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
       }
+    }],
+    savedAudioFiles: [{
+      filename: String,
+      path: String,
+      uploadDate: Date,
+      description: String
     }]
   });
 

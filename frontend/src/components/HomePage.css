@@ -1,0 +1,24 @@
+.homepage-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+  
+  .homepage-text {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .homepage-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+  
+  .homepage-description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
