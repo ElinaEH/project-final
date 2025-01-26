@@ -1,7 +1,7 @@
-import Navbar from './Navbar';
-import ExerciseList from './exercises/ExerciseList';
-import ChordProgression from './exercises/ChordProgression';
-import RandomWord from './exercises/RandomWord';
+import ChordProgression from "../exercises/ChordProgression.jsx";
+import ExerciseList from "../exercises/ExerciseList.jsx";
+import RandomWord from "../exercises/RandomWord.jsx";
+import Navbar from "../shared/Navbar.jsx";
 import './ExercisePage.css';
 
 const ExercisePage = () => {

@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
-import { useAuth } from "./AuthContext";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../auth/AuthContext.jsx";
 import "./Navbar.css";
 
 const Navbar = () => {

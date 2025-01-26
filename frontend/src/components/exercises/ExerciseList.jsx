@@ -1,6 +1,6 @@
-import RandomWord from "./RandomWord.jsx";
 import ChordProgression from "./ChordProgression.jsx";
 import "./ExerciseList.css";
+import RandomWord from "./RandomWord.jsx";
 
 const ExerciseList = () => {
   return (

@@ -1,7 +1,7 @@
-import Navbar from "./Navbar.jsx";
+import Navbar from "../shared/Navbar.jsx";
 import "./HomePage.css";
 
-const Homepage = () => {
+const HomePage = () => {
   const navigateToExercises = () => {
     window.location.href = '/exercises';
   };
@@ -34,4 +34,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;

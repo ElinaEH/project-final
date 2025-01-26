@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from "react";
 import { Play, Pause, Trash2, Volume2 } from "lucide-react";
 
 const AudioPlayer = ({ audio, onDelete }) => {

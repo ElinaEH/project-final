@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar.jsx";
+import Navbar from "../shared/Navbar";
 
 const Signup = () => {
   const handleSignup = (e) => {

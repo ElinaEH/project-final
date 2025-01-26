@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { FaRegStar, FaStar } from "react-icons/fa"; // Import star icons
 import "./RandomWord.css";
-import { FaStar, FaRegStar } from "react-icons/fa"; // Import star icons
 
 const RandomWord = () => {
   const [word, setWord] = useState("");

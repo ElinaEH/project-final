@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { useAuth } from "../AuthContext.jsx";
-import "../profile/Profile.css";
-import Navbar from "../Navbar.jsx";
-import ProfileEdit from "./ProfileEdit.jsx";
-import SavedExercises from "./SavedExercises.jsx";
-import AudioFiles from "./AudioFiles.jsx";
+import { useEffect, useState } from "react";
+import { useAuth } from "../auth/AuthContext.jsx";
+import ProfileEdit from "../profile/ProfileEdit.jsx";
+import SavedExercises from "../profile/SavedExercises.jsx";
+import AudioFiles from "../profile/audio/AudioFiles.jsx";
+import Navbar from "../shared/Navbar.jsx";
+import "./ProfilePage.css";
 
-const Profile = () => {
+const ProfilePage = () => {
   const { user } = useAuth();
   const [profile, setProfile] = useState({
     username: "",
@@ -95,4 +95,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfilePage;

@@ -1,8 +1,7 @@
 // Component for chord progression exercise - chord exercise
-
 import { useState } from "react";
+import { FaRegStar, FaStar } from "react-icons/fa";
 import "./ChordProgression.css";
-import { FaStar, FaRegStar } from "react-icons/fa";
 
 const ChordProgression = () => {
  const [chords, setChords] = useState(null);

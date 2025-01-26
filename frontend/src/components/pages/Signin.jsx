@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "./AuthContext.jsx";
-import Navbar from "./Navbar.jsx";
+import Navbar from "../shared/Navbar.jsx";
+import { useAuth } from "../auth/AuthContext.jsx";
 import "./Signin.css";
 
 const Signin = () => {
