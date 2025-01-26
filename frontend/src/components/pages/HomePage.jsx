@@ -3,7 +3,7 @@ import "./HomePage.css";
 
 const HomePage = () => {
   const navigateToExercises = () => {
-    window.location.href = '/exercises';
+    window.location.href = "/exercises";
   };
 
   return (

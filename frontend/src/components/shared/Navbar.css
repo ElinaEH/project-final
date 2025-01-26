@@ -8,15 +8,15 @@
   align-items: center;
 }
 
-.navbar-title {
-  padding: 24px;
+.navbar-title, .auth-text {
   color: black;
   text-decoration: none;
+  padding: 24px;
 }
 
 .auth-text {
-  padding: 24px;
-  color: black;
+  display: flex;
+  flex-direction: row;
 }
 
 /* New styles for the dropdown */
@@ -57,4 +57,11 @@
 
 .dropdown-item:hover {
   background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white for hover */
+}
+
+@media (max-width: 768px) {
+  .auth-text {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

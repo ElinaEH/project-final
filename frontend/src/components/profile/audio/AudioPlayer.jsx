@@ -26,7 +26,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
   if (!audio.path) return null;
 
   // Extract just the filename without the ID
-  const filename = audio.path.split('/').pop().split('-').slice(1).join('-');
+  const filename = audio.path.split("/").pop().split("-").slice(1).join("-");
 
   return (
     <div className="bg-gray-50 rounded-lg p-4 shadow-sm hover:shadow transition-shadow">
@@ -35,7 +35,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
           <button 
             onClick={togglePlay}
             className="w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center text-white transition-colors"
-            aria-label={isPlaying ? 'Pause' : 'Play'}
+            aria-label={isPlaying ? "Pause" : "Play"}
           >
             {isPlaying ? <Pause size={20} /> : <Play size={20} />}
           </button>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "../shared/Navbar";
+import "./Signup.css";
 
 const Signup = () => {
   const handleSignup = (e) => {
@@ -42,17 +43,27 @@ const Signup = () => {
   return (
     <>
       <Navbar />
-        <div>
-          <h2>Sign Up</h2>
-          <form onSubmit={handleSignup}>
+        <div className="signup-container">
+          <div className="signup-box">
+          <h2 className="signup-title">Sign Up</h2>
+          <form onSubmit={handleSignup}
+          className="signup-form">
+            <div className="input-group">
             <input type="text" name="username" placeholder="Username" required />
+            </div>
+            <div className="input-group">
             <input type="text" name="email" placeholder="Email" required />
+            </div>
+            <div className="input-group">
             <input type="password" name="password" placeholder="Password" required />
-            <button type="submit">Sign Up</button>
+            </div>
+            <button type="submit"
+            className="signup-button">Sign Up</button>
           </form>
-          <p>
+          <p className="create-account">
             Already have an account? <Link to="/auth/signin">Sign in here</Link>
           </p>
+          </div>
         </div>
     </>
   );
