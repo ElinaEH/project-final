@@ -35,31 +35,31 @@ const Navbar = () => {
                 className="dropdown-item"
                 onClick={() => setIsDropdownOpen(false)}
               >
-                Home
+                HOME
               </Link>
               <Link
                 to="/exercises"
                 className="dropdown-item"
                 onClick={() => setIsDropdownOpen(false)}
               >
-                Exercises
+                EXERCISES
               </Link>
               <Link
                 to="/profile"
                 className="dropdown-item"
                 onClick={() => setIsDropdownOpen(false)}
               >
-                Profile
+                PROFILE
               </Link>
               <div className="dropdown-item" onClick={handleLogout}>
-                Logout
+                LOG OUT
               </div>
             </div>
           )}
         </div>
       ) : (
         <Link to="/auth/signin">
-          <span className="auth-text">Sign In / Sign Up</span>
+          <span className="auth-text">SIGN IN / SIGN UP</span>
         </Link>
       )}
     </div>

@@ -1,0 +1,11 @@
+.delete-button {
+  background-color: #F26749;
+} 
+
+.instructions {
+  text-align: center;
+  font-family: "elanor";
+  font-size: 24px;
+  color: #334ED8;
+  font-weight: 700;
+}

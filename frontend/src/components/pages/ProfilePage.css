@@ -1,16 +1,20 @@
 .profile-container {
   max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .profile-title {
   text-align: center;
   margin-bottom: 2rem;
-  color: #333;
+  padding-top: 32px;
+  color: #334ED8;
+  font-family: "elanor";
 }
 
 .profile-details {
@@ -18,6 +22,10 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  background-color: white;
+  border-radius: 50px;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .profile-image-container {
@@ -37,7 +45,7 @@
 .profile-image-placeholder {
   width: 100%;
   height: 100%;
-  background-color: rgb(184, 215, 237);
+  background-color: #D63636;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,6 +55,7 @@
 
 .profile-info {
   text-align: center;
+  padding: 16px;
 }
 
 .profile-info p {
@@ -80,15 +89,17 @@
   cursor: pointer;
   font-size: 1rem;
   margin-top: 1rem;
+  font-family: "elanor";
 }
 
 .edit-button {
-  background-color: rgb(184, 215, 237);
-  color: black;
+  background-color: #334ED8;
+  border-radius: 50px;
+  color: white;
 }
 
 .save-button {
-  background-color: blue;
+  background-color: none;
   color: white;
 }
 
@@ -103,9 +114,9 @@
 }
 
 .saved-exercises {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   padding-top: 1rem;
-  border-top: 1px solid #eee;
+  /* border-top: 1px solid #eee; */
   width: 100%; /* Added to ensure full width */
 }
 
@@ -117,16 +128,21 @@
 }
 
 .exercise-item {
-  display: flex; /* Added for layout */
-  justify-content: space-between; /* Added to position delete button */
-  align-items: center; /* Added for vertical alignment */
+  display: flex;
+  flex-direction: column; /* Changed to column layout */
+  align-items: center; /* Centers content horizontally */
   padding: 1rem;
-  background: #f5f5f5;
-  border-radius: 8px;
+  background: white;
+  /* border-radius: 8px; */
+  text-align: center; /* Centers text */
+  border: 1px solid #D8E6FF;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
 }
 
 .exercise-content {
-  flex-grow: 1; /* Added to allow content to take available space */
+  width: 100%;
+  margin-bottom: 1rem; /* Adds space between content and button */
 }
 
 .saved-date {
@@ -135,17 +151,18 @@
   margin-top: 0.5rem;
 }
 
-/* New styles for delete functionality */
 .delete-button {
   padding: 0.5rem 1rem;
-  background-color: red;
+  background-color: #F26749;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 50px;
   cursor: pointer;
-  margin-left: 1rem;
   font-size: 0.9rem;
+  font-family: "elanor";
   transition: background-color 0.2s;
+  margin-top: 1rem; /* Adds space above button */
+  margin-left: 0; /* Removed left margin */
 }
 
 .delete-button:hover {

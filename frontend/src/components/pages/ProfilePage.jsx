@@ -4,6 +4,7 @@ import ProfileEdit from "../profile/ProfileEdit.jsx";
 import SavedExercises from "../profile/SavedExercises.jsx";
 import AudioFiles from "../profile/audio/AudioFiles.jsx";
 import Navbar from "../shared/Navbar.jsx";
+import Footer from "../shared/Footer.jsx";
 import "./ProfilePage.css";
 
 const ProfilePage = () => {
@@ -11,7 +12,6 @@ const ProfilePage = () => {
   const [profile, setProfile] = useState({
     username: "",
     email: "",
-    profileImage: "",
     savedExercises: [],
     audioFiles: []
   });
@@ -52,46 +52,40 @@ const ProfilePage = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="profile-container">
-        <h1 className="profile-title">User Profile</h1>
-        {isEditing ? (
-          <ProfileEdit 
-            profile={profile}
-            setProfile={setProfile}
-            setIsEditing={setIsEditing}
-            onProfileUpdate={fetchProfile}
-          />
-        ) : (
-          <div className="profile-details">
-            <div className="profile-image-container">
-              {profile.profileImage ? (
-                <img src={profile.profileImage} alt="Profile" className="profile-image" />
-              ) : (
-                <div className="profile-image-placeholder">
-                  {profile.username?.charAt(0)?.toUpperCase()}
-                </div>
-              )}
-            </div>
-            <div className="profile-info">
-              <p><strong>Username:</strong> {profile.username || "Not set"}</p>
-              <p><strong>Email:</strong> {profile.email || "Not set"}</p>
-            </div>
-
-            <SavedExercises 
-              exercises={profile.savedExercises}
-              onDelete={fetchProfile}
+      <div>
+        <Navbar />
+        <div className="profile-container">
+          <h1 className="profile-title">User Profile</h1>
+          {isEditing ? (
+            <ProfileEdit 
+              profile={profile}
+              setProfile={setProfile}
+              setIsEditing={setIsEditing}
+              onProfileUpdate={fetchProfile}
             />
+          ) : (
+            <div className="profile-details">
+              <div className="profile-info">
+                <p><strong>Username:</strong> {profile.username || "Not set"}</p>
+                <p><strong>Email:</strong> {profile.email || "Not set"}</p>
+              </div>
 
-            <AudioFiles />
+              <SavedExercises 
+                exercises={profile.savedExercises}
+                onDelete={fetchProfile}
+              />
 
-            <button onClick={() => setIsEditing(true)} className="edit-button">
-              Edit Profile
-            </button>
-          </div>
-        )}
+              <AudioFiles />
+
+              <button onClick={() => setIsEditing(true)} className="edit-button">
+                EDIT PROFILE
+              </button>
+            </div>
+          )}
+        </div>
       </div>
-    </>
+      <Footer />
+      </>
   );
 };
 

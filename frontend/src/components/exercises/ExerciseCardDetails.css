@@ -1,0 +1,101 @@
+.exercise-card {
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  width: 100%;
+  max-width: none; /* Remove max-width constraint */
+  min-height: 400px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.exercise-headline {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #334ED8;
+  text-align: center;
+  font-family: "elanor";
+}
+
+.exercise-description {
+  color: #666;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.exercise-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center; /* Center content horizontally */
+}
+
+.display-area {
+  background-color: #D8E6FF;
+  border-radius: 24px;
+  padding: 20px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.button-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%; /* Ensure buttons take full width */
+}
+
+.button-area.multiple-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.prompt-section {
+  background-color: #D8E6FF;
+  border-radius: 24px;
+  padding: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.prompt-section p {
+  color: #2c5282;
+  text-align: center;
+}
+
+.save-button {
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.star-icon {
+  font-size: 24px;
+  color: #F26749;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .exercise-card {
+    padding: 28px;
+  }
+  
+  .button-area.multiple-buttons {
+    grid-template-columns: 1fr;
+  }
+}

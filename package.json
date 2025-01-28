@@ -5,6 +5,7 @@
     "postinstall": "npm install --prefix backend"
   },
   "dependencies": {
-    "react-dropzone": "^14.3.5"
+    "react-dropzone": "^14.3.5",
+    "wavesurfer.js": "^7.9.0"
   }
 }

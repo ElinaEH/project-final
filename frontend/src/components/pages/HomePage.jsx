@@ -1,5 +1,6 @@
 import Navbar from "../shared/Navbar.jsx";
 import "./HomePage.css";
+import Footer from "../shared/Footer.jsx";
 
 const HomePage = () => {
   const navigateToExercises = () => {
@@ -7,30 +8,38 @@ const HomePage = () => {
   };
 
   return (
+    <>
     <div>
       <Navbar />
       <div className="homepage-content">
-        <div className="homepage-text">
+        {/* <div className="hero-image">
+          <img src={heroImage} alt="Hero background" />
+        </div> */}
+        <div className="homepage-text content-wrapper">
           <h1 className="homepage-title">
-            Unlock your creativity & get inspired
+            <span>Unlock your creativity </span> 
+             <span>&</span> 
+             <span> get inspired</span>
           </h1>
           
           <p className="homepage-description"> 
-            The ultimate platform for songwriters to boost their creativity
-            <br /><br />
-            Improve your skills with practical songwriting exercises
+            Create before you can overthink
           </p>
 
-          <button
-            onClick={navigateToExercises}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 
-                       rounded-lg text-lg font-semibold transition-colors"
-          >
-            Start Practicing
-          </button>
-        </div>
+
+            <div className="button-container">
+              <button
+                onClick={navigateToExercises}
+                className="start-button"
+              >
+                START PRACTISING
+              </button>
+            </div>
+          </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

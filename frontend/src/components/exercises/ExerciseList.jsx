@@ -1,17 +1,16 @@
 import ChordProgression from "./ChordProgression.jsx";
-import "./ExerciseList.css";
 import RandomWord from "./RandomWord.jsx";
+import "./ExerciseList.css";
 
 const ExerciseList = () => {
   return (
-    <div>
-      {/* <h1 className="exercise-title">
-        EXERCISES
-      </h1> */}
-      <RandomWord />
-      <ChordProgression />
+    <div className="exercise-container">
+      <div className="exercise-grid">
+        <RandomWord />
+        <ChordProgression />
+      </div>
     </div>
-  )
+  );
 };
 
 export default ExerciseList;

@@ -1,15 +1,23 @@
 * {
 	margin: 0;    
 	padding: 0;
+  box-sizing: border-box;
 }
 
 html {
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
   letter-spacing: 1px;
-  text-transform: uppercase;
   color: black;
   font-size: 1rem;
   line-height: 1;
   margin: 0;
-    }
+  overflow-x: hidden; /* Add this */
+  width: 100%; /* Add this */
+  background-color: #D8E6FF;
+  }
+
+#root {
+    width: 100%;
+    overflow-x: hidden;
+}

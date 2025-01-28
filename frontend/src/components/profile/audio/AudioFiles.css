@@ -1,0 +1,117 @@
+.audio-files {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); */
+  }
+  
+  .audio-files__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+  
+  .audio-files__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #3b82f6;
+  }
+  
+  .audio-files__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #334ED8;
+    font-family: "elanor";
+  }
+  
+  .audio-files__upload-container {
+    margin-bottom: 2rem;
+  }
+  
+  .audio-files__upload-wrapper {
+    position: relative;
+  }
+  
+  .audio-files__upload-button {
+    width: 100%;
+    border: 2px dashed #D8E6FF;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    background: none;
+  }
+  
+  .audio-files__upload-button:hover {
+    border-color: #3b82f6;
+  }
+  
+  .audio-files__upload-icon {
+    width: 3rem;
+    height: 3rem;
+    color: #D8E6FF;
+  }
+  
+  .audio-files__upload-text {
+    color: #4b5563;
+    font-weight: 500;
+  }
+  
+  .audio-files__upload-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  .audio-files__input {
+    display: none;
+  }
+  
+  .audio-files__error {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: #fef2f2;
+    color: #dc2626;
+    border-radius: 0.375rem;
+  }
+  
+  .audio-files__loading {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .audio-files__spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid #e5e7eb;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  .audio-files__empty {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+  }
+  
+  .audio-files__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

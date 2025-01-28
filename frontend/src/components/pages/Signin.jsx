@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../shared/Navbar.jsx";
 import { useAuth } from "../auth/AuthContext.jsx";
+import Footer from "../shared/Footer.jsx";
 import "./Signin.css";
 
 const Signin = () => {
@@ -58,23 +59,24 @@ const Signin = () => {
       <Navbar />
         <div className="signin-container">
           <div className="signin-box">
-            <h2 className="signin-title">Sign In</h2>
+            <h2 className="signin-title">SIGN IN</h2>
             <form onSubmit={handleSignin} className="signin-form">
               <div className="input-group">
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">USERNAME</label>
                 <input type="text" name="username" placeholder="Username" required />
               </div>
               <div className="input-group">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">PASSWORD</label>
                 <input type="password" name="password" placeholder="Password" required />
               </div>  
-              <button type="submit" className="signin-button">Sign In</button>
+              <button type="submit" className="signin-button">SIGN IN</button>
             </form>
             <p className="create-account">
               New user? <Link to="/auth/signup">Sign up here</Link>
             </p>
           </div>
         </div>
+        <Footer />
     </>
   );
 };

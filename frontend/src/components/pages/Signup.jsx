@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "../shared/Navbar";
+import Footer from "../shared/Footer.jsx";
 import "./Signup.css";
 
 const Signup = () => {
@@ -43,28 +44,30 @@ const Signup = () => {
   return (
     <>
       <Navbar />
-        <div className="signup-container">
-          <div className="signup-box">
+      <div className="signup-container">
+        <div className="signup-box">
           <h2 className="signup-title">Sign Up</h2>
-          <form onSubmit={handleSignup}
-          className="signup-form">
+          <form onSubmit={handleSignup} className="signup-form">
             <div className="input-group">
-            <input type="text" name="username" placeholder="Username" required />
+              <label>USERNAME</label>
+              <input type="text" name="username" placeholder="Username" required />
             </div>
             <div className="input-group">
-            <input type="text" name="email" placeholder="Email" required />
+              <label>EMAIL</label>
+              <input type="text" name="email" placeholder="Email" required />
             </div>
             <div className="input-group">
-            <input type="password" name="password" placeholder="Password" required />
+              <label>PASSWORD</label>
+              <input type="password" name="password" placeholder="Password" required />
             </div>
-            <button type="submit"
-            className="signup-button">Sign Up</button>
+            <button type="submit" className="signup-button">SIGN UP</button>
           </form>
           <p className="create-account">
             Already have an account? <Link to="/auth/signin">Sign in here</Link>
           </p>
-          </div>
         </div>
+      </div>
+      <Footer />
     </>
   );
 };

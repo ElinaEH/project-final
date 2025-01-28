@@ -1,3 +1,5 @@
+import "./ProfileEdit.css";
+
 const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => {
     const handleChange = (e) => {
       setProfile(prev => ({ ...prev, [e.target.name]: e.target.value }));

@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import AudioPlayer from "./AudioPlayer.jsx";
 import { UploadCloud, Music2 } from "lucide-react";
+import './AudioFiles.css';
 
 const AudioFiles = () => {
   const [audioFiles, setAudioFiles] = useState([]);
@@ -95,49 +96,48 @@ const AudioFiles = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <div className="flex items-center gap-2 mb-6">
-        <Music2 className="w-6 h-6 text-blue-500" />
-        <h2 className="text-2xl font-bold text-gray-800">My Audio Files</h2>
+    <div className="audio-files">
+      <div className="audio-files__header">
+        <h2 className="audio-files__title">Audio Files</h2>
       </div>
       
-      <div className="mb-8">
-        <div className="relative">
+      <div className="audio-files__upload-container">
+        <div className="audio-files__upload-wrapper">
           <button 
             onClick={() => fileInputRef.current.click()}
-            className="w-full border-2 border-dashed border-blue-300 rounded-lg p-8 flex flex-col items-center justify-center gap-3 hover:border-blue-500 transition-colors"
+            className="audio-files__upload-button"
           >
-            <UploadCloud className="w-12 h-12 text-blue-500" />
-            <span className="text-gray-600 font-medium">Click to upload audio file</span>
-            <span className="text-sm text-gray-500">WAV, MP3, or AAC</span>
+            <UploadCloud className="audio-files__upload-icon" />
+            <span className="audio-files__upload-text">Click to upload audio file</span>
+            <span className="audio-files__upload-subtitle">WAV, MP3, or AAC</span>
           </button>
           <input 
             type="file" 
             ref={fileInputRef}
             onChange={handleFileChange}
             accept="audio/*"
-            className="hidden"
+            className="audio-files__input"
             id="audioFileInput"
           />
         </div>
       </div>
 
       {error && (
-        <div className="mb-4 p-3 bg-red-50 text-red-600 rounded-md">
+        <div className="audio-files__error">
           {error}
         </div>
       )}
       
       {isLoading ? (
-        <div className="flex justify-center p-8">
-          <div className="animate-spin rounded-full h-8 w-8 border-2 border-blue-500 border-t-transparent"></div>
+        <div className="audio-files__loading">
+          <div className="audio-files__spinner"></div>
         </div>
       ) : audioFiles.length === 0 ? (
-        <div className="text-center py-8 text-gray-500">
+        <div className="audio-files__empty">
           No audio files uploaded yet.
         </div>
       ) : (
-        <div className="space-y-3">
+        <div className="audio-files__list">
           {audioFiles.map((audio, index) => (
             <AudioPlayer 
               key={audio._id || index}

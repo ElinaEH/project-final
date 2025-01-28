@@ -14,6 +14,7 @@ import HomePage from "./components/pages/Homepage.jsx";
 import ProfilePage from "./components/pages/ProfilePage.jsx";
 import Signin from "./components/pages/Signin.jsx";
 import Signup from "./components/pages/Signup.jsx";
+import Footer from "./components/shared/Footer.jsx";
 
 export const App = () => {
   return (

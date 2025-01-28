@@ -1,0 +1,198 @@
+.audio-player {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
+}
+  
+.audio-player:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+  
+.audio-player__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+  
+.audio-player__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.audio-player__controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+  
+.audio-player__play-button {
+    min-width: 3rem;          /* Add min-width */
+    min-height: 3rem;         /* Add min-height */
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #F26749;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;          /* Prevent button from shrinking */
+    padding: 0;              /* Remove padding that might affect shape */
+    transform-origin: center; /* Ensure transforms are centered */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+  
+.audio-player__play-button:hover {
+    background-color: #c7553b;
+    transform: scale(1.05);
+}
+  
+.audio-player__play-icon {
+    margin-left: 2px;
+}
+  
+.audio-player__info {
+    display: flex;
+    flex-direction: column;
+}
+  
+.audio-player__filename {
+    font-weight: 500;
+    color: black;
+}
+  
+.audio-player__time {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+  
+.audio-player__delete {
+    padding: 0.5rem;
+    color: #334ED8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+  
+.audio-player__delete:hover {
+    color: #D63636;
+}
+
+/* New Wavesurfer styles */
+.audio-player__waveform {
+    margin: 0.75rem 0;
+    /* background: rgba(25, 72, 95, 0.05);  */
+    border-radius: 8px;
+    padding: 0.75rem;
+    min-height: 60px; /* Ensures consistent height while loading */
+}
+
+.audio-player__waveform > wave {
+    width: 100% !important;
+    overflow: hidden !important;
+}
+
+/* Style for the loading state */
+.audio-player__waveform.loading {
+    background: linear-gradient(90deg, 
+        rgba(25, 72, 95, 0.05) 25%, 
+        rgba(25, 72, 95, 0.08) 37%, 
+        rgba(25, 72, 95, 0.05) 63%
+    );
+    background-size: 400% 100%;
+    animation: waveform-loading 1.4s ease infinite;
+}
+
+@keyframes waveform-loading {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+  
+.audio-player__volume {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+  
+.audio-player__volume-button {
+    color: #334ED8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+  
+/* .audio-player__volume-button:hover {
+    color: #374151;
+} */
+  
+.audio-player__volume-slider {
+    width: 6rem;
+    height: 0.25rem;
+    -webkit-appearance: none;
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+  
+.audio-player__volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #334ED8; /* Changed to match your theme */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+  
+.audio-player__volume-slider::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #19485F; /* Changed to match your theme */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: none;
+}
+  
+.audio-player__volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+  
+.audio-player__volume-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 640px) {
+    .audio-player {
+        padding: 1rem;
+    }
+
+    .audio-player__waveform {
+        padding: 0.5rem;
+        min-height: 50px;
+    }
+
+    .audio-player__volume-slider {
+        width: 4rem;
+    }
+
+    .audio-player__play-button {
+        width: 3rem;          /* Keep fixed width on mobile */
+        height: 3rem;         /* Keep fixed height on mobile */
+        min-width: 3rem;      /* Ensure minimum width */
+        min-height: 3rem;     /* Ensure minimum height */
+    }
+}

@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f9f9f9;
+    background-color: #D8E6FF;
   }
   
   .signup-box {
@@ -19,6 +19,8 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
+    font-family: "elanor";
+    color: #334ED8;  
   }
   
   .signup-form {
@@ -36,6 +38,7 @@
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
+    color: #334ED8;
   }
   
   .input-group input {
@@ -56,12 +59,13 @@
   }
   
   .signup-button {
-    background-color: #333;
-    color: #fff;
+    background-color: #334ED8;
+    color: white;
+    font-family: "elanor";
     padding: 10px;
     font-size: 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px;
     cursor: pointer;
     margin-top: 10px;
   }
