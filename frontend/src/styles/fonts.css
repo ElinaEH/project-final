@@ -17,3 +17,11 @@
   font-family: "shrimp";
   src: url("../assets/fonts/SHRIMP.ttf");
 }
+
+@font-face {
+  font-family: "poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf"),
+       url("../assets/fonts/Poppins-SemiBold.ttf"),
+       url("../assets/fonts/Poppins-Bold.ttf"),
+       url("../assets/fonts/Poppins-Light.ttf")
+}

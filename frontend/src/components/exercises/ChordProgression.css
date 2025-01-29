@@ -14,7 +14,7 @@ h3 {
 }
 
 .chord-button {
-  min-width: 100px;
+  min-width: 120px;
   width: 100%; /* Default to full width for mobile */
   padding: 10px 15px;
   font-size: 1em;
@@ -25,7 +25,7 @@ h3 {
   cursor: pointer;
   transition: background-color 0.3s;
   box-sizing: border-box;
-  font-family: "elanor";
+  font-family: "poppins";
 }
 
 .chord-button:hover {
@@ -74,7 +74,7 @@ h3 {
   color: white;
   border-radius: 4px;
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins";
   white-space: nowrap;
   margin-bottom: 5px;
   z-index: 1000;

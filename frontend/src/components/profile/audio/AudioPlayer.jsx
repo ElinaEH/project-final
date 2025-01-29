@@ -9,19 +9,16 @@ const AudioPlayer = ({ audio, onDelete }) => {
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
-  const [wavesurfer, setWavesurfer] = useState(null);
   const waveformRef = useRef(null);
-  const audioRef = useRef(audio.path ? new Audio(`http://localhost:5000/${audio.path}`) : null);
-  const progressBarRef = useRef(null);
+  const wavesurferRef = useRef(null);
 
-  // Initialize WaveSurfer
   useEffect(() => {
     if (waveformRef.current && audio.path) {
-      const ws = WaveSurfer.create({
+      wavesurferRef.current = WaveSurfer.create({
         container: waveformRef.current,
-        waveColor: '#D8E6FF',      // Your dusty rose color
-        progressColor: '#F26749',   // Your navy color
-        cursorColor: '#D8E6FF',    // Your sage color
+        waveColor: '#D8E6FF',
+        progressColor: '#F26749',
+        cursorColor: '#D8E6FF',
         height: 50,
         barWidth: 2,
         barGap: 1,
@@ -31,40 +28,41 @@ const AudioPlayer = ({ audio, onDelete }) => {
         hideScrollbar: true,
         interact: true,
       });
-
-      ws.load(`http://localhost:5000/${audio.path}`);
       
-      ws.on('ready', () => {
-        setWavesurfer(ws);
-        setDuration(ws.getDuration());
+      wavesurferRef.current.load(`http://localhost:5000/${audio.path}`);
+
+      wavesurferRef.current.on('ready', () => {
+        setDuration(wavesurferRef.current.getDuration());
       });
 
-      ws.on('audioprocess', () => {
-        setProgress(ws.getCurrentTime());
+      wavesurferRef.current.on('audioprocess', () => {
+        setProgress(wavesurferRef.current.getCurrentTime());
       });
 
-      ws.on('seek', () => {
-        setProgress(ws.getCurrentTime());
+      wavesurferRef.current.on('seek', () => {
+        setProgress(wavesurferRef.current.getCurrentTime());
       });
 
-      ws.on('finish', () => {
+      wavesurferRef.current.on('finish', () => {
         setIsPlaying(false);
         setProgress(0);
       });
-
-      return () => {
-        ws.destroy();
-      };
     }
+
+    return () => {
+      if (wavesurferRef.current) {
+        wavesurferRef.current.destroy();
+      }
+    };
   }, [audio.path]);
 
   const togglePlay = () => {
-    if (!wavesurfer) return;
+    if (!wavesurferRef.current) return;
 
     if (isPlaying) {
-      wavesurfer.pause();
+      wavesurferRef.current.pause();
     } else {
-      wavesurfer.play();
+      wavesurferRef.current.play();
     }
     setIsPlaying(!isPlaying);
   };
@@ -78,20 +76,20 @@ const AudioPlayer = ({ audio, onDelete }) => {
   const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
-    if (wavesurfer) {
-      wavesurfer.setVolume(newVolume);
+    if (wavesurferRef.current) {
+      wavesurferRef.current.setVolume(newVolume);
       setIsMuted(newVolume === 0);
     }
   };
 
   const toggleMute = () => {
-    if (!wavesurfer) return;
+    if (!wavesurferRef.current) return;
     
     if (isMuted) {
-      wavesurfer.setVolume(volume);
+      wavesurferRef.current.setVolume(volume);
       setIsMuted(false);
     } else {
-      wavesurfer.setVolume(0);
+      wavesurferRef.current.setVolume(0);
       setIsMuted(true);
     }
   };

@@ -65,27 +65,39 @@ const ProfilePage = () => {
             />
           ) : (
             <div className="profile-details">
-              <div className="profile-info">
-                <p><strong>Username:</strong> {profile.username || "Not set"}</p>
-                <p><strong>Email:</strong> {profile.email || "Not set"}</p>
-              </div>
-
-              <SavedExercises 
-                exercises={profile.savedExercises}
-                onDelete={fetchProfile}
-              />
-
-              <AudioFiles />
-
-              <button onClick={() => setIsEditing(true)} className="edit-button">
+              <div className="section-container">
+                <div className="profile-info">
+                  <div className="profile-field">
+                    <span className="profile-label">Username</span>
+                    <span className="profile-value">{profile.username || "Not set"}</span>
+                  </div>
+                  <div className="profile-field">
+                    <span className="profile-label">Email</span>
+                    <span className="profile-value">{profile.email || "Not set"}</span>
+                  </div>
+                </div>
+                <button onClick={() => setIsEditing(true)} className="edit-button">
                 EDIT PROFILE
               </button>
+              </div>
+  
+              <div className="section-container">
+                <SavedExercises 
+                  exercises={profile.savedExercises}
+                  onDelete={fetchProfile}
+                />
+              </div>
+  
+              <div className="section-container">
+                <AudioFiles />
+              </div>
+              {/* button moved */}
             </div>
           )}
         </div>
       </div>
       <Footer />
-      </>
+    </>
   );
 };
 

@@ -13,6 +13,8 @@
 
 .generate-button {
   min-width: 120px;
+  max-width: 300px;
+  width: fit-content;
   padding: 10px 20px;
   font-size: 1em;
   border: none;
@@ -21,7 +23,9 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-family: "elanor";
+  font-family: "poppins";
+  align-self: center; /* Added to center the button */
+  margin: 0 auto;
 }
 
 .generate-button:hover {

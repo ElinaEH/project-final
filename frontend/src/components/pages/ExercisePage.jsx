@@ -12,7 +12,10 @@ const ExercisePage = () => {
           <h1 className="exercise-title">Exercise Hub</h1>
           <p className="exercise-intro">Welcome to the Exercise Hub! 
             <span className="exercise-intro">
-              Here are some exercises to practice the flow of songwriting without judgment. Don't overthink it - just start creating!
+              Here are some exercises to practice the flow of songwriting without judgment.
+            </span>
+            <span className="exercise-intro">
+              Don't overthink it - just start creating!
             </span>
              </p>
           <ExerciseList />

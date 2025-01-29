@@ -1,0 +1,112 @@
+/* ProfileEdit.css */
+.profile-edit-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D8E6FF;
+    padding: 2rem;
+  }
+  
+  .profile-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-title {
+    color: #334ED8;
+    font-family: "elanor";
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: #334ED8;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #D8E6FF;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #334ED8;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .save-button, .save-button-profile, .go-back-button {
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: "poppins";
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+  
+  /* .save-button {
+    background-color: #F26749;
+    color: white;
+  } */
+  
+  /* .save-button:hover {
+    background-color: #c7553b;
+  } */
+
+  .save-button-profile {
+    background-color: #c7553b;
+  }
+  
+  .go-back-button {
+    background-color: #334ED8;
+    color: white;
+  }
+  
+  .cancel-button:hover {
+    background-color: #b8ceff;
+  }
+  
+  @media (max-width: 600px) {
+    .profile-edit-container {
+      padding: 1rem;
+    }
+  
+    .profile-form {
+      padding: 1.5rem;
+    }
+  
+    .button-group {
+      flex-direction: column;
+    }
+  
+    .save-button, .cancel-button {
+      width: 100%;
+    }
+  }

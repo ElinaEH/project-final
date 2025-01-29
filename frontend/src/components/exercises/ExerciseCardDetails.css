@@ -40,7 +40,7 @@
 }
 
 .display-area {
-  background-color: #D8E6FF;
+  /* background-color: #D8E6FF; */
   border-radius: 24px;
   padding: 20px;
   min-height: 100px;
@@ -65,7 +65,7 @@
 }
 
 .prompt-section {
-  background-color: #D8E6FF;
+  /* background-color: #D8E6FF; */
   border-radius: 24px;
   padding: 15px;
   margin-top: 20px;

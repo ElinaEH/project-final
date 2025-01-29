@@ -20,7 +20,7 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    font-family: "elanor";
+    font-family: "poppins";
     color: #334ED8;
   }
   
@@ -66,7 +66,7 @@
     border-radius: 50px;
     cursor: pointer;
     margin-top: 10px;
-    font-family: "elanor";
+    font-family: "poppins";
   }
   
   .signin-button:hover {

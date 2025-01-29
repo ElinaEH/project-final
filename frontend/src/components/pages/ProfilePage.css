@@ -1,12 +1,9 @@
 .profile-container {
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  /* background-color: rgba(255, 255, 255, 0.5); */
-  /* border-radius: 8px; */
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  margin: 0 auto;
+  padding: 0 2rem;
+  font-family: "poppins";
+  width: 100%;
 }
 
 .profile-title {
@@ -22,47 +19,56 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  background-color: white;
-  border-radius: 50px;
   padding-bottom: 32px;
   margin-bottom: 32px;
-}
-
-.profile-image-container {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-.profile-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
-.profile-image-placeholder {
+/* New section container style */
+.section-container {
   width: 100%;
-  height: 100%;
-  background-color: #D63636;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: white;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #e5e7eb;
+  display: flex;           /* Added */
+  flex-direction: column;  /* Added */
+  align-items: center;     /* Added */
+}
+
+.section-container:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .profile-info {
-  text-align: center;
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 
-.profile-info p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
 }
 
+.profile-label {
+  font-weight: bold;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.profile-value {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Form styles */
 .profile-form {
   display: flex;
   flex-direction: column;
@@ -82,91 +88,71 @@
   font-size: 1rem;
 }
 
-.edit-button, .save-button, .cancel-button {
-  padding: 0.5rem 1rem;
+.edit-button, .save-button, .cancel-button, .delete-button {
+  padding: 0.5rem 2rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-family: "poppins";
   margin-top: 1rem;
-  font-family: "elanor";
+  transition: opacity 0.2s;
+  width: fit-content;
+  align-self: center;
+  justify-content: center;
 }
 
 .edit-button {
   background-color: #334ED8;
-  border-radius: 50px;
   color: white;
 }
 
-.save-button {
-  background-color: none;
+.delete-button {
+  background-color: #F26749;
   color: white;
 }
 
-.cancel-button {
-  background-color: blue;
-  color: white;
-  margin-left: 1rem;
+.delete-button:hover {
+  background-color: #d32f2f;
 }
 
-.edit-button:hover, .save-button:hover, .cancel-button:hover {
-  opacity: 0.9;
-}
-
+/* Exercise styles */
 .saved-exercises {
-  /* margin-top: 2rem; */
-  padding-top: 1rem;
-  /* border-top: 1px solid #eee; */
-  width: 100%; /* Added to ensure full width */
+  width: 100%;
 }
 
 .exercises-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
-  margin-top: 1rem;
-  width: 100%; /* Added to ensure full width */
+  width: 100%;
 }
 
 .exercise-item {
   display: flex;
-  flex-direction: column; /* Changed to column layout */
-  align-items: center; /* Centers content horizontally */
-  padding: 1rem;
-  background: white;
-  /* border-radius: 8px; */
-  text-align: center; /* Centers text */
-  border: 1px solid #D8E6FF;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.exercise-item:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .exercise-content {
-  width: 100%;
-  margin-bottom: 1rem; /* Adds space between content and button */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .saved-date {
   color: #666;
   font-size: 0.9rem;
   margin-top: 0.5rem;
-}
-
-.delete-button {
-  padding: 0.5rem 1rem;
-  background-color: #F26749;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-family: "elanor";
-  transition: background-color 0.2s;
-  margin-top: 1rem; /* Adds space above button */
-  margin-left: 0; /* Removed left margin */
-}
-
-.delete-button:hover {
-  background-color: #d32f2f;
 }
 
 .exercise-item h3 {
@@ -176,4 +162,14 @@
 
 .exercise-item p {
   margin: 0.3rem 0;
+}
+
+@media (max-width: 640px) {
+  .section-container {
+    padding: 1rem;
+  }
+  
+  .profile-container {
+    padding: 0 1rem;
+  }
 }

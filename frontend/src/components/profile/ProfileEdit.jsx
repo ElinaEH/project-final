@@ -30,23 +30,11 @@ const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => 
     };
   
     return (
-      <form onSubmit={handleSubmit} className="profile-form">
-        <div className="profile-image-container">
-          {profile.profileImage ? (
-            <img
-              src={profile.profileImage}
-              alt="Profile"
-              className="profile-image"
-            />
-          ) : (
-            <div className="profile-image-placeholder">
-              {profile.username?.charAt(0)?.toUpperCase()}
-            </div>
-          )}
-        </div>
-        <div className="form-group">
-          <label>
-            Username:
+      <div className="profile-edit-container">
+        <form onSubmit={handleSubmit} className="profile-form">
+          <h2 className="form-title">Edit Profile</h2>
+          <div className="form-group">
+            <label htmlFor="username-input">Username</label>
             <input
               id="username-input"
               type="text"
@@ -55,11 +43,9 @@ const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => 
               onChange={handleChange}
               className="form-input"
             />
-          </label>
-        </div>
-        <div className="form-group">
-          <label>
-            Email:
+          </div>
+          <div className="form-group">
+            <label htmlFor="email-input">Email</label>
             <input
               id="email-input"
               type="email"
@@ -68,17 +54,19 @@ const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => 
               onChange={handleChange}
               className="form-input"
             />
-          </label>
-        </div>
-        <button type="submit" className="save-button">Save</button>
-        <button 
-          type="button" 
-          onClick={() => setIsEditing(false)} 
-          className="cancel-button"
-        >
-          Go back
-        </button>
-      </form>
+          </div>
+          <div className="button-group">
+            <button type="submit" className="save-button-profile">Save</button>
+            <button 
+              type="button" 
+              onClick={() => setIsEditing(false)} 
+              className="go-back-button"
+            >
+              Go back
+            </button>
+          </div>
+        </form>
+      </div>
     );
   };
   

@@ -9,59 +9,34 @@
   background-color: #D8E6FF;
 }
 
-.hero-image::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .homepage-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 800px;
+  max-width: 95%;
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  padding: 2rem 1.5rem; /* Equal padding on top and bottom */
-  border-radius: 15px;
+  padding: 1rem; /* Equal padding on top and bottom */
 }
 
 .homepage-title {
-  font-size: 1.6rem;
+  font-size: 2rem;
   margin-top: 0; /* No need for negative margin */
-  margin-bottom: 1.5rem; /* Spacing between title and description */
+  margin-bottom: 4rem;
+  margin-top: 4rem; /* Spacing between title and description */
   line-height: 1.4;
   color: #334ED8;
   font-family: "elanor";
+  width: 100%;
 }
 
 .homepage-description {
   font-size: 1.4rem;
   line-height: 1.8;
   color: #334ED8;
-  font-family: "elanor";
-  margin: 0 0 1.5rem 0; /* Equal margin at the bottom of description */
+  font-family: "Poppins", sans-serif;
+  margin: 0 0 4rem 0; /* Equal margin at the bottom of description */
 }
 
 .button-container {
@@ -77,7 +52,8 @@
   min-height: 50px;
   padding: 10px 15px;
   font-size: 1em;
-  font-family: "elanor";
+  font-family: "Poppins";
+  font-weight: 400;
   border: none;
   border-radius: 50px;
   background-color: #F26749;
@@ -92,10 +68,19 @@
   color: white;
 }
 
+
+/* Small phones (320px - 500px) */
+
+@media (min-width: 320px) and (max-width: 450px) {
+  .homepage-title {
+    font-size: 1.8rem;
+  }
+}
+
 /* Tablet (768px and above) */
 @media (min-width: 768px) {
   .homepage-text {
-    max-width: 1000px;
+    max-width: 800px;
     padding: 0 2rem 2rem 2rem;
   }
 
@@ -120,7 +105,6 @@
 /* Desktop (1024px and above) */
 @media (min-width: 1024px) {
   .homepage-text {
-    max-width: 1200px;
     padding: 0 3rem 3rem 3rem;
   }
 
