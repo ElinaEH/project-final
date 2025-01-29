@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Play, Pause, Trash2, Volume2, VolumeX } from "lucide-react";
-import WaveSurfer from 'wavesurfer.js';
-import './AudioPlayer.css';
+import WaveSurfer from "wavesurfer.js";
+import "./AudioPlayer.css";
 
 const AudioPlayer = ({ audio, onDelete }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -16,34 +16,34 @@ const AudioPlayer = ({ audio, onDelete }) => {
     if (waveformRef.current && audio.path) {
       wavesurferRef.current = WaveSurfer.create({
         container: waveformRef.current,
-        waveColor: '#D8E6FF',
-        progressColor: '#F26749',
-        cursorColor: '#D8E6FF',
+        waveColor: "#D8E6FF",
+        progressColor: "#F26749",
+        cursorColor: "#D8E6FF",
         height: 50,
         barWidth: 2,
         barGap: 1,
         responsive: true,
         normalize: true,
-        backend: 'WebAudio',
+        backend: "WebAudio",
         hideScrollbar: true,
         interact: true,
       });
       
       wavesurferRef.current.load(`http://localhost:5000/${audio.path}`);
 
-      wavesurferRef.current.on('ready', () => {
+      wavesurferRef.current.on("ready", () => {
         setDuration(wavesurferRef.current.getDuration());
       });
 
-      wavesurferRef.current.on('audioprocess', () => {
+      wavesurferRef.current.on("audioprocess", () => {
         setProgress(wavesurferRef.current.getCurrentTime());
       });
 
-      wavesurferRef.current.on('seek', () => {
+      wavesurferRef.current.on("seek", () => {
         setProgress(wavesurferRef.current.getCurrentTime());
       });
 
-      wavesurferRef.current.on('finish', () => {
+      wavesurferRef.current.on("finish", () => {
         setIsPlaying(false);
         setProgress(0);
       });
@@ -70,7 +70,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
   const handleVolumeChange = (e) => {

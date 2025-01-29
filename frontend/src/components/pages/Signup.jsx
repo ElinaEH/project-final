@@ -72,4 +72,4 @@ const Signup = () => {
   );
 };
 
-export default Signup; // This is necessary to allow importing the Signup component
+export default Signup;

@@ -5,7 +5,7 @@ import User from "../models/userModel.js";
 // Generate a random token
 const generateToken = () => crypto.randomBytes(32).toString("hex");
 
-// Validate token format (length and characters) // Look this up why it's not being used?
+// Validate token format (length and characters) // Look this up why it"s not being used?
 const validateToken = (token) => {
   return typeof token === "string" && token.length === 64;
 };
@@ -71,7 +71,7 @@ export const signin = async (req, res) => {
   try {
     // Find user by username
     const user = await User.findOne({ username });
-    // If no user found or password doesn't match
+    // If no user found or password doesn"t match
     if (!user || !(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({ message: "Invalid credentials." });
     }
@@ -79,7 +79,7 @@ export const signin = async (req, res) => {
     // Generate new access token
     const newToken = generateToken();
 
-    // Update user's access token
+    // Update user"s access token
     user.accessToken = newToken; 
     await user.save({ validateBeforeSave: false });
 

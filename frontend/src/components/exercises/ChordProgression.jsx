@@ -59,23 +59,23 @@ const ChordProgression = () => {
 
   const moodButtons = [
     {
-      key: 'uplifting',
-      text: 'UPLIFTING',
+      key: "uplifting",
+      text: "UPLIFTING",
       onClick: () => getMoodChords("uplifting")
     },
     {
-      key: 'emotional',
-      text: 'EMOTIONAL',
+      key: "emotional",
+      text: "EMOTIONAL",
       onClick: () => getMoodChords("emotional")
     },
     {
-      key: 'nostalgic',
-      text: 'NOSTALGIC',
+      key: "nostalgic",
+      text: "NOSTALGIC",
       onClick: () => getMoodChords("nostalgic")
     },
     {
-      key: 'random',
-      text: 'RANDOM',
+      key: "random",
+      text: "RANDOM",
       onClick: getRandomChords
     }
   ];

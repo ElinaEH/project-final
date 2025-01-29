@@ -1,5 +1,5 @@
 /**
- * This middleware validates the user's token and protects routes from unauthorized access.
+ * This middleware validates the user"s token and protects routes from unauthorized access.
  * Used on routes that require user authentication.
  */
 import User from "../models/userModel.js";
@@ -8,12 +8,12 @@ export const authenticateUser = async (req, res, next) => {
   try {
     const authHeader = req.header("Authorization");
     
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
       return res.status(401).json({ message: "No token provided or invalid format" });
     }
 
     // Extract the token from "Bearer <token>"
-    const token = authHeader.split(' ')[1];
+    const token = authHeader.split(" ")[1];
     
     if (!token) {
       return res.status(401).json({ message: "No token provided" });

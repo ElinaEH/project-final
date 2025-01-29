@@ -1,6 +1,6 @@
 import User from "../models/userModel.js";
-import fs from 'fs/promises';
-import path from 'path';
+import fs from "fs/promises";
+import path from "path";
 
 export const uploadAudio = async (req, res) => {
     try {
@@ -25,7 +25,7 @@ export const uploadAudio = async (req, res) => {
         audioFile: savedAudioFile
       });
     } catch (error) {
-      console.error('Upload error:', error);
+      console.error("Upload error:", error);
       res.status(500).json({ message: "Error uploading file" });
     }
 };
@@ -66,10 +66,10 @@ export const deleteAudio = async (req, res) => {
     try {
       await fs.unlink(path.join(process.cwd(), audioFile.path));
     } catch (fileError) {
-      console.warn('Could not delete file from filesystem:', fileError);
+      console.warn("Could not delete file from filesystem:", fileError);
     }
 
-    // Remove from user's savedAudioFiles
+    // Remove from user"s savedAudioFiles
     user.savedAudioFiles = user.savedAudioFiles.filter(
       file => file._id.toString() !== req.params.fileId
     );

@@ -30,7 +30,7 @@ app.use(cors({
 app.use(express.json());
 
 // Serve static files for uploaded audio
-app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
 // Connect to MongoDB database
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/final-project";
@@ -66,15 +66,15 @@ app.get("/", (req, res) => res.send("Welcome to the Creativity Booster API"));
 
 // Global error handling middleware
 app.use((err, req, res, next) => {
- console.error('Server Error:', err.stack);
+ console.error("Server Error:", err.stack);
  res.status(500).json({ 
-   message: 'Internal server error occurred', 
+   message: "Internal server error occurred", 
    error: err.message 
  });
 });
 
 // Endpoint to view all available API routes (helpful for development)
-app.get('/endpoints', (req, res) => {
+app.get("/endpoints", (req, res) => {
  res.json(listEndpoints(app));
 });
 

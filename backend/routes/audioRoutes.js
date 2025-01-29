@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
 	destination: "uploads/audio/",
 	filename: (req, file, cb) => {
 		// Replace special characters that might cause file system issues
-		const sanitizedName = file.originalname.replace(/[/\\?%*:|"<>]/g, '_');
+		const sanitizedName = file.originalname.replace(/[/\\?%*:|"<>]/g, "_");
 		const uniqueName = `${Date.now()}-${sanitizedName}`;
 		cb(null, uniqueName);
 	}

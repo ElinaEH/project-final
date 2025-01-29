@@ -19,10 +19,10 @@ export const saveExercise = async (req, res) => {
       { new: true }
     );
 
-    console.log('Updated user:', user); // Add debug log
+    console.log("Updated user:", user); // Add debug log
     res.json({ success: true, savedExercises: user.savedExercises });
   } catch (error) {
-    console.error('Save error:', error);
+    console.error("Save error:", error);
     res.status(500).json({ success: false, error: error.message });
   }
 };

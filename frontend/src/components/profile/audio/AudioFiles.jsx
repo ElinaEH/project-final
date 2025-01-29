@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import AudioPlayer from "./AudioPlayer.jsx";
 import { UploadCloud, Music2 } from "lucide-react";
-import './AudioFiles.css';
+import "./AudioFiles.css";
 
 const AudioFiles = () => {
   const [audioFiles, setAudioFiles] = useState([]);
