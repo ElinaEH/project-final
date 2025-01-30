@@ -4,6 +4,7 @@ import ProfileEdit from "../profile/ProfileEdit.jsx";
 import SavedExercises from "../profile/SavedExercises.jsx";
 import AudioFiles from "../profile/audio/AudioFiles.jsx";
 import Navbar from "../shared/Navbar.jsx";
+import LightBulbIcon from "../../assets/light-bulb.png";
 import Footer from "../shared/Footer.jsx";
 import "./ProfilePage.css";
 
@@ -54,6 +55,13 @@ const ProfilePage = () => {
     <>
       <div>
         <Navbar />
+        <div className="lightbulb-image-container">
+            <img
+            src={LightBulbIcon}
+            alt="yellow-lightbulb"
+            className="lightbulb-icon"
+            />
+        </div>
         <div className="profile-container">
           <h1 className="profile-title">User Profile</h1>
           {isEditing ? (

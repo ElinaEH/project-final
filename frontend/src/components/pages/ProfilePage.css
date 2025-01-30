@@ -1,9 +1,24 @@
 .profile-container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 2rem 2rem 0 2rem; /* Added top padding */
   font-family: "poppins";
   width: 100%;
+}
+
+.lightbulb-image-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.lightbulb-icon {
+  width: 3rem; 
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto; /* Centers the icon if it's a block-level element */
+  display: block; 
 }
 
 .profile-title {
@@ -41,13 +56,13 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  width: 100%; /* This ensures the wrapper takes full width of its container */
+  width: 100%;
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
-  align-items: center; /* This centers the profile fields */
+  align-items: center;
   gap: 1rem;
 }
 
@@ -55,7 +70,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; /* This centers the label and value */
+  justify-content: center;
   gap: 0.6rem;
 }
 
@@ -180,6 +195,12 @@
   }
   
   .profile-container {
-    padding: 0 1rem;
+    padding: 5rem 1rem 0 1rem; /* Adjusted top padding for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 4.5rem 1rem 0 1rem; /* Less padding for smaller screens */
   }
 }

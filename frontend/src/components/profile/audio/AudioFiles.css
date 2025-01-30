@@ -84,6 +84,13 @@
   display: none;
 }
 
+.audio-player__filename {
+  font-size: 1rem;
+  font-family: "poppins";
+  line-height: 1.4;
+  color: #6f5d43;
+}
+
 .audio-files__error {
   margin-bottom: 1rem;
   padding: 0.75rem;
@@ -135,6 +142,10 @@
 @media (max-width: 640px) {
   .audio-files {
       width: 100%;
+  }
+
+  .audio-player__filename {
+    font-size: 14px;
   }
 
   .audio-files__list {

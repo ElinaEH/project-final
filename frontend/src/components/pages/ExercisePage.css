@@ -1,6 +1,5 @@
 .exercise-container {
-  padding: 1rem; /* Reduced padding */
-  /* background-color: black; */
+  padding: 4rem 1rem 1rem 1rem; /* Increased top padding */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,39 +12,63 @@
   text-align: center;
   font-family: "poppins";
   color: #2d531a;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: bold;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
-.flower-image-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.flower-icon {
-  width: 3rem; 
-  height: auto;
-  object-fit: contain;
-}
-
 .exercise-intro {
   color: #6f5d43;
   text-align: center;
-  min-width: 270px;
+  width: 100%;
   max-width: 700px;
-  padding-right: 16px;
-  padding-left: 16px;
-  padding-bottom: 16px;
+  min-width: 270px;
+  padding: 16px;
+  margin: 0 auto;
   font-weight: 500;
-  line-height: 1.5;
-  font-size: 1.2rem;
+  line-height: 2;
+  font-size: 1.5rem;
   font-family: "Poppins", sans-serif;
+  margin-bottom: 24px; /* Add margin to all elements */
+}
+
+/* Remove the last element's bottom margin */
+.exercise-intro:last-child {
+  margin-bottom: 0;
 }
 
 span.exercise-intro {
   display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/* Add media queries for responsive top padding */
+@media (max-width: 480px) {
+  .exercise-container {
+    padding-top: 4rem; /* Slightly less padding on mobile */
+  }
+
+  .exercise-title {
+    font-size: 2rem;
+  }
+
+  .exercise-intro {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .exercise-container {
+    padding-top: 4rem; /* Even less padding on smaller screens */
+  }
+
+  .exercise-title {
+    font-size: 2rem;
+  }
+
+  .exercise-intro {
+    font-size: 1.2rem;
+  }
 }
