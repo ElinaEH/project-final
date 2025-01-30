@@ -1,7 +1,6 @@
 .exercise-card {
   background-color: white;
-  border-radius: 24px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
   padding: 32px;
   width: 100%;
   max-width: none; /* Remove max-width constraint */
@@ -20,9 +19,9 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #334ED8;
+  color: #2d531a;
   text-align: center;
-  font-family: "elanor";
+  font-family: "poppins";
 }
 
 .exercise-description {
@@ -86,7 +85,7 @@
 
 .star-icon {
   font-size: 24px;
-  color: #F26749;
+  color: #FFE5A0;
 }
 
 /* Responsive adjustments */

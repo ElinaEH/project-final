@@ -2,15 +2,10 @@
     background-color: #ffffff;
     border-radius: 0.5rem;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: box-shadow 0.3s ease;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #efdfcc;
     width: 100%;
     max-width: 100%; /* Added to prevent overflow */
-}
-  
-.audio-player:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
   
 .audio-player__container {
@@ -40,9 +35,9 @@
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background-color: #F26749;
+    background-color: #2d531a;
     color: white;
-    display: flex;
+    display: flex; 
     align-items: center;
     justify-content: center;
     border: none;
@@ -54,7 +49,7 @@
 }
   
 .audio-player__play-button:hover {
-    background-color: #c7553b;
+    background-color: #feb7e8;
     transform: scale(1.05);
 }
   
@@ -74,12 +69,13 @@
   
 .audio-player__time {
     font-size: 0.875rem;
-    color: #6b7280;
+    padding-top: 0.5rem;
+    color: #B0A99F;
 }
   
 .audio-player__delete {
     /* padding: 0.2rem; */
-    color: #334ED8;
+    color: #2d531a;
     background: none;
     border: none;
     cursor: pointer;
@@ -87,7 +83,7 @@
 }
   
 .audio-player__delete:hover {
-    color: #D63636;
+    color: #B0A99F;
 }
 
 .audio-player__waveform {
@@ -130,7 +126,7 @@
 }
   
 .audio-player__volume-button {
-    color: #334ED8;
+    color: #2d531a;
     background: none;
     border: none;
     cursor: pointer;
@@ -151,7 +147,7 @@
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background-color: #334ED8;
+    background-color: #2d531a;
     cursor: pointer;
     transition: transform 0.2s ease;
 }

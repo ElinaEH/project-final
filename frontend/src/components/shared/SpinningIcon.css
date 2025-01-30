@@ -1,0 +1,21 @@
+.spin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .spinning-image {
+    width: 50px; /* adjust size as needed */
+    height: 50px;
+    animation: spin 15s linear infinite; /* 8s for slow rotation, adjust as needed */
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

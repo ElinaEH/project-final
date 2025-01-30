@@ -11,16 +11,29 @@
 
 .exercise-title {
   text-align: center;
-  font-family: "elanor";
-  color: #334ED8;
+  font-family: "poppins";
+  color: #2d531a;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
+.flower-image-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.flower-icon {
+  width: 3rem; 
+  height: auto;
+  object-fit: contain;
+}
+
 .exercise-intro {
-  color: #334ED8;
+  color: #6f5d43;
   text-align: center;
   min-width: 270px;
   max-width: 700px;

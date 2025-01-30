@@ -1,6 +1,7 @@
 import Navbar from "../shared/Navbar.jsx";
 import "./HomePage.css";
 import Footer from "../shared/Footer.jsx";
+import BounceIcon from "../shared/BounceIcon.jsx";
 
 const HomePage = () => {
   const navigateToExercises = () => {
@@ -12,29 +13,25 @@ const HomePage = () => {
     <div>
       <Navbar />
       <div className="homepage-content">
-        {/* <div className="hero-image">
-          <img src={heroImage} alt="Hero background" />
-        </div> */}
         <div className="homepage-text content-wrapper">
+          <BounceIcon />
           <h1 className="homepage-title">
-            <span>Unlock your creativity </span> 
+            <span>Nurture your creativity </span> 
              <span>&</span> 
-             <span> get inspired</span>
+             <span> let your music grow</span>
           </h1>
-          
-          <p className="homepage-description"> 
-            Create before you can overthink
-          </p>
-
-
-            <div className="button-container">
+          <div className="button-container">
               <button
                 onClick={navigateToExercises}
                 className="start-button"
               >
-                START PRACTISING
+                START CREATING
               </button>
             </div>
+          <p className="homepage-description"> 
+          <span>Boost your creativity with SOUNDSEED </span>
+          <span>A platform for songwriters to get inspired and make their musical ideas blossom</span>
+          </p>
           </div>
       </div>
     </div>

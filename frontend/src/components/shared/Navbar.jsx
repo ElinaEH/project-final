@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext.jsx";
+// import SpinningIcon from "./SpinningIcon.jsx";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -21,8 +22,9 @@ const Navbar = () => {
   return (
     <div className="navbar-wrapper">
       <Link to="/" className="navbar-title">
-        CREATIVITY BOOSTER
+        SOUNDSEED
       </Link>
+      {/* <SpinningIcon /> */}
       {user ? (
         <div className="user-menu">
           <span className="username" onClick={toggleDropdown}>
@@ -35,24 +37,24 @@ const Navbar = () => {
                 className="dropdown-item"
                 onClick={() => setIsDropdownOpen(false)}
               >
-                HOME
+                Home
               </Link>
               <Link
                 to="/exercises"
                 className="dropdown-item"
                 onClick={() => setIsDropdownOpen(false)}
               >
-                EXERCISES
+                Exercises
               </Link>
               <Link
                 to="/profile"
                 className="dropdown-item"
                 onClick={() => setIsDropdownOpen(false)}
               >
-                PROFILE
+                Profile
               </Link>
               <div className="dropdown-item" onClick={handleLogout}>
-                LOG OUT
+                Sign out
               </div>
             </div>
           )}

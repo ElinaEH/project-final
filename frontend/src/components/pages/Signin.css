@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #D8E6FF;
+    background-color: #faf2e8;
   }
   
   .signin-box {
@@ -13,7 +13,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     border-radius: 8px;
-    color: #334ED8;
+    color: #2d531a;
   }
   
   .signin-title {
@@ -21,7 +21,7 @@
     font-weight: bold;
     margin-bottom: 20px;
     font-family: "poppins";
-    color: #334ED8;
+    color: #2d531a;
   }
   
   .signin-form {
@@ -58,8 +58,8 @@
   }
   
   .signin-button {
-    background-color: #334ED8;
-    color: #fff;
+    background-color: #FFE5A0;
+    color: #2d531a;
     padding: 10px;
     font-size: 16px;
     border: none;
@@ -70,7 +70,7 @@
   }
   
   .signin-button:hover {
-    background-color: #555;
+    background-color: #feb7e8;
   }
   
   .create-account {

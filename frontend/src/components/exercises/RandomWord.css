@@ -19,8 +19,8 @@
   font-size: 1em;
   border: none;
   border-radius: 50px;
-  background-color: #F26749;
-  color: white;
+  background-color: #feb7e8;
+  color: #2d531a;
   cursor: pointer;
   transition: background-color 0.3s;
   font-family: "poppins";
@@ -29,8 +29,7 @@
 }
 
 .generate-button:hover {
-  background-color: #c7553b;
-  color: white;
+  background-color: #FFE5A0;
 }
 
 .generate-button:disabled {
@@ -51,7 +50,7 @@
 
 .star-icon {
   font-size: 24px;
-  color: #F26749;
+  color: #FFE5A0;
 }
 
 .save-button:hover .star-icon {

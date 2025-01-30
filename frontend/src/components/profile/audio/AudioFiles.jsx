@@ -134,7 +134,7 @@ const AudioFiles = () => {
         </div>
       ) : audioFiles.length === 0 ? (
         <div className="audio-files__empty">
-          No audio files uploaded yet.
+          No audio files uploaded yet
         </div>
       ) : (
         <div className="audio-files__list">

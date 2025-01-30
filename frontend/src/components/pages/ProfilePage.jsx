@@ -66,19 +66,21 @@ const ProfilePage = () => {
           ) : (
             <div className="profile-details">
               <div className="section-container">
-                <div className="profile-info">
-                  <div className="profile-field">
-                    <span className="profile-label">Username</span>
-                    <span className="profile-value">{profile.username || "Not set"}</span>
+                <div className="profile-wrapper">
+                  <div className="profile-info">
+                    <div className="profile-field">
+                      <span className="profile-label">Username:</span>
+                      <span className="profile-value">{profile.username || "Not set"}</span>
+                    </div>
+                    <div className="profile-field">
+                      <span className="profile-label">Email:</span>
+                      <span className="profile-value">{profile.email || "Not set"}</span>
+                    </div>
                   </div>
-                  <div className="profile-field">
-                    <span className="profile-label">Email</span>
-                    <span className="profile-value">{profile.email || "Not set"}</span>
-                  </div>
+                  <button onClick={() => setIsEditing(true)} className="edit-button">
+                    EDIT PROFILE
+                  </button>
                 </div>
-                <button onClick={() => setIsEditing(true)} className="edit-button">
-                EDIT PROFILE
-              </button>
               </div>
   
               <div className="section-container">
@@ -91,7 +93,6 @@ const ProfilePage = () => {
               <div className="section-container">
                 <AudioFiles />
               </div>
-              {/* button moved */}
             </div>
           )}
         </div>

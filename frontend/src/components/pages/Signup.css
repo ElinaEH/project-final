@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #D8E6FF;
+    background-color: #faf2e8;
   }
   
   .signup-box {
@@ -21,7 +21,7 @@
     margin-bottom: 20px;
     font-family: "poppins";
     font-weight: bold;
-    color: #334ED8;  
+    color: #2d531a;  
   }
   
   .signup-form {
@@ -39,7 +39,7 @@
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #334ED8;
+    color: #2d531a;
   }
   
   .input-group input {
@@ -51,17 +51,9 @@
     border-radius: 4px;
   }
   
-  .forgot-password {
-    font-size: 12px;
-    color: #007bff;
-    text-decoration: none;
-    margin-top: 5px;
-    display: inline-block;
-  }
-  
   .signup-button {
-    background-color: #334ED8;
-    color: white;
+    background-color: #FFE5A0;
+    color: #2d531a;
     font-family: "poppins";
     padding: 10px;
     font-size: 16px;
@@ -72,16 +64,17 @@
   }
   
   .signup-button:hover {
-    background-color: #555;
+    background-color: #feb7e8;
   }
   
   .create-account {
     margin-top: 20px;
+    color: #6f5d43;
   }
   
   .create-account a {
     text-decoration: none;
     font-weight: bold;
-    color: #007bff;
+    color: #6f5d43;
   }
   

@@ -20,8 +20,8 @@ h3 {
   font-size: 1em;
   border: none;
   border-radius: 50px;
-  background-color: #F26749;
-  color: white;
+  background-color: #feb7e8;
+  color: #2d531a;
   cursor: pointer;
   transition: background-color 0.3s;
   box-sizing: border-box;
@@ -29,8 +29,7 @@ h3 {
 }
 
 .chord-button:hover {
-  background-color: #c7553b;
-  color: white;
+  background-color: #FFE5A0;
 }
 
 .chord-button:disabled {
@@ -48,7 +47,7 @@ h3 {
 
 .star-icon {
   font-size: 24px;
-  color: #F26749;
+  color: #FFE5A0;
 }
 
 .chord-progression-content {
@@ -70,7 +69,7 @@ h3 {
   left: 50%;
   transform: translateX(-50%);
   padding: 8px;
-  background-color: #334ED8;
+  background-color: #6f5d43;
   color: white;
   border-radius: 4px;
   font-size: 16px;

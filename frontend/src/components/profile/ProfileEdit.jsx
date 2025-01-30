@@ -32,9 +32,9 @@ const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => 
     return (
       <div className="profile-edit-container">
         <form onSubmit={handleSubmit} className="profile-form">
-          <h2 className="form-title">Edit Profile</h2>
+          <h2 className="form-title">EDIT PROFILE</h2>
           <div className="form-group">
-            <label htmlFor="username-input">Username</label>
+            <label htmlFor="username-input">USERNAME</label>
             <input
               id="username-input"
               type="text"
@@ -45,7 +45,7 @@ const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => 
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email-input">Email</label>
+            <label htmlFor="email-input">EMAIL</label>
             <input
               id="email-input"
               type="email"
@@ -56,13 +56,13 @@ const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => 
             />
           </div>
           <div className="button-group">
-            <button type="submit" className="save-button-profile">Save</button>
+            <button type="submit" className="save-button-profile">SAVE</button>
             <button 
               type="button" 
               onClick={() => setIsEditing(false)} 
               className="go-back-button"
             >
-              Go back
+              GO BACK
             </button>
           </div>
         </form>

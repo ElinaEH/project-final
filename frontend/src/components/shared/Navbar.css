@@ -2,18 +2,29 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  min-height: 50px;
-  background-color: #334ED8;
+  min-height: 70px;
+  background-color: #2d531a;
   align-items: center;
   position: relative;
   z-index: 10;
-  padding: 0 12px; /* Added padding instead of individual paddings */
+  padding: 0 12px;
+}
+
+/* Remove underlining for all links in navbar */
+.navbar-wrapper a {
+  text-decoration: none;
+}
+
+.navbar-wrapper a:visited,
+.navbar-wrapper a:hover,
+.navbar-wrapper a:active {
+  text-decoration: none;
 }
 
 .navbar-title {
-  color: #D8E6FF;
+  color: #feb7e8;
   text-decoration: none;
-  padding: 16px;
+  padding: 2rem 0;
   font-size: 24px;
   font-family: "elanor";
 }
@@ -21,30 +32,37 @@
 .auth-text {
   display: flex;
   flex-direction: row;
-  color: #D8E6FF;
+  color: #feb7e8;
   font-family: "elanor";
   text-decoration: none;
   font-size: 18px;
-  padding: 16px;
+  padding: 2rem 0;
+}
+
+.auth-text:visited,
+.auth-text:hover,
+.auth-text:active {
+  text-decoration: none;
 }
 
 .user-menu {
   position: relative;
   cursor: pointer;
   padding: 16px;
-  color: #334ED8;
+  color: #2d531a;
   pointer-events: auto;
 }
 
 .username {
-  color: #D8E6FF;
+  color: #feb7e8;
   font-family: "elanor";
   font-weight: 700;
   text-decoration: none;
-  white-space: nowrap; /* Prevent username from wrapping */
+  white-space: nowrap;
+  padding: 4rem 0;
   overflow: hidden;
-  text-overflow: ellipsis; /* Show ... for long usernames */
-  max-width: 150px; /* Limit username width */
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 
 .username:hover {
@@ -55,8 +73,9 @@
   position: absolute;
   top: 100%;
   right: 16px;
-  background-color: #334ED8;
-  font-family: "elanor";
+  background-color: #2d531a;
+  font-family: "poppins";
+  font-weight: 700;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   min-width: 120px;
@@ -68,13 +87,25 @@
 .dropdown-item {
   padding: 12px 16px;
   cursor: pointer;
-  color: #D8E6FF;
+  color: #feb7e8;
   font-weight: 500;
+  text-decoration: none;
 }
 
-/* Rest of your styles remain the same */
+.dropdown-item:visited,
+.dropdown-item:hover,
+.dropdown-item:active {
+  text-decoration: none;
+}
 
-/* Updated media queries */
+/* If you're still seeing underlining, use this more aggressive approach */
+.navbar-wrapper a,
+.navbar-wrapper .dropdown-item,
+.navbar-wrapper .auth-text {
+  text-decoration: none !important;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
   .navbar-title {
     font-size: 20px;
@@ -109,7 +140,7 @@
   }
 
   .username {
-    max-width: 100px; /* Shorter username on mobile */
+    max-width: 100px;
   }
 
   .dropdown-menu {
@@ -142,6 +173,6 @@
   }
 
   .username {
-    max-width: 80px; /* Even shorter username on very small screens */
+    max-width: 80px;
   }
 }

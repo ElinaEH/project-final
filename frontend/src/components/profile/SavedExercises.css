@@ -7,16 +7,16 @@
 
 .instructions {
   text-align: center;
-  font-family: "elanor";
+  font-family: "poppins";
   font-size: 24px;
-  color: #334ED8;
+  color: #2d531a;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .no-exercises {
   text-align: center;
-  color: #6b7280;
+  color: #6f5d43;
   font-size: 0.9rem;
   padding: 1.5rem;
 }
@@ -30,16 +30,11 @@
 
 .exercise-item {
   background-color: #ffffff;
-  border-radius: 0.5rem;
+  border-radius: 20px;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.3s ease;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #faf2e8;
   width: 100%;
-}
-
-.exercise-item:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .exercise-content {
@@ -63,9 +58,13 @@
 }
 
 .prompt-section {
-  color: #6b7280;
+  color: #6f5d43;
   font-size: 0.9rem;
   line-height: 1.4;
+}
+
+.prompt-section p {
+  color: #6f5d43;
 }
 
 .saved-date {
@@ -76,8 +75,8 @@
 
 .delete-button {
   padding: 0.5rem 2rem;
-  background-color: #F26749;
-  color: white;
+  background-color: #FFE5A0;
+  color: #48812b;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -90,8 +89,7 @@
 }
 
 .delete-button:hover {
-  background-color: #c7553b;
-  transform: scale(1.05);
+  background-color: #feb7e8;
 }
 
 @media (max-width: 640px) {

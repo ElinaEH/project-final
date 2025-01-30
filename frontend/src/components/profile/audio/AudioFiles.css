@@ -27,8 +27,8 @@
 .audio-files__title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #334ED8;
-  font-family: "elanor";
+  color: #2d531a;
+  font-family: "poppins";
 }
 
 .audio-files__upload-container {
@@ -43,8 +43,8 @@
 
 .audio-files__upload-button {
   width: 100%;
-  border: 2px dashed #D8E6FF;
-  border-radius: 0.5rem;
+  border: 1.5px dashed #efdfcc;
+  border-radius: 20px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -57,23 +57,27 @@
 }
 
 .audio-files__upload-button:hover {
-  border-color: #3b82f6;
+  border-color: #48812b;
 }
 
 .audio-files__upload-icon {
   width: 3rem;
   height: 3rem;
-  color: #D8E6FF;
+  color: #48812b;
 }
 
 .audio-files__upload-text {
-  color: #4b5563;
+  color: #6f5d43;
   font-weight: 500;
+  font-family: "poppins";
+  line-height: 1.4;
 }
 
 .audio-files__upload-subtitle {
-  font-size: 0.875rem;
-  color: #6b7280;
+  font-size: 0.75rem;
+  font-family: "poppins";
+  line-height: 1.4;
+  color: #6f5d43;
 }
 
 .audio-files__input {
@@ -108,7 +112,9 @@
 .audio-files__empty {
   text-align: center;
   padding: 2rem;
-  color: #6b7280;
+  line-height: 1.4;
+  font-size: 0.8rem;
+  color: #6f5d43;
   width: 100%;
 }
 

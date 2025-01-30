@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import { Play, Pause, Trash2, Volume2, VolumeX } from "lucide-react";
+import { Trash2, Volume2, VolumeX } from "lucide-react";
 import WaveSurfer from "wavesurfer.js";
+import FlowerPlayButton from "../../shared/FlowerPlayButton.jsx";
 import "./AudioPlayer.css";
 
 const AudioPlayer = ({ audio, onDelete }) => {
@@ -16,9 +17,9 @@ const AudioPlayer = ({ audio, onDelete }) => {
     if (waveformRef.current && audio.path) {
       wavesurferRef.current = WaveSurfer.create({
         container: waveformRef.current,
-        waveColor: "#D8E6FF",
-        progressColor: "#F26749",
-        cursorColor: "#D8E6FF",
+        waveColor: "#efdfcc",
+        progressColor: "#FF8800",
+        cursorColor: "#FF8800",
         height: 50,
         barWidth: 2,
         barGap: 1,
@@ -51,20 +52,37 @@ const AudioPlayer = ({ audio, onDelete }) => {
 
     return () => {
       if (wavesurferRef.current) {
+        wavesurferRef.current.pause();
+        setIsPlaying(false);
         wavesurferRef.current.destroy();
       }
     };
   }, [audio.path]);
 
+  useEffect(() => {
+    return () => {
+      if (wavesurferRef.current && isPlaying) {
+        wavesurferRef.current.pause();
+        setIsPlaying(false);
+      }
+    };
+  }, [isPlaying]);
+
   const togglePlay = () => {
     if (!wavesurferRef.current) return;
 
-    if (isPlaying) {
-      wavesurferRef.current.pause();
-    } else {
-      wavesurferRef.current.play();
+    try {
+      if (isPlaying) {
+        wavesurferRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        wavesurferRef.current.play();
+        setIsPlaying(true);
+      }
+    } catch (error) {
+      console.error('Error toggling play state:', error);
+      setIsPlaying(false);
     }
-    setIsPlaying(!isPlaying);
   };
 
   const formatTime = (seconds) => {
@@ -103,13 +121,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
       <div className="audio-player__container">
         <div className="audio-player__top">
           <div className="audio-player__controls">
-            <button 
-              onClick={togglePlay}
-              className="audio-player__play-button"
-              aria-label={isPlaying ? "Pause" : "Play"}
-            >
-              {isPlaying ? <Pause size={24} /> : <Play size={24} className="audio-player__play-icon" />}
-            </button>
+            <FlowerPlayButton onClick={togglePlay} isPlaying={isPlaying} />
             <div className="audio-player__info">
               <span className="audio-player__filename">{filename}</span>
               <span className="audio-player__time">

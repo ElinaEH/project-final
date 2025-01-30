@@ -33,7 +33,7 @@ const SavedExercises = ({ exercises, onDelete }) => {
                   {exercise.type === "word" ? (
                     <>
                       <div className="display-area">
-                        <h3>{exercise.content.word}</h3>
+                        <h3>Word: {exercise.content.word}</h3>
                       </div>
                       <div className="prompt-section">
                         <p>Write lyrics for a verse and include this word! Set a timer for 30 minutes</p>

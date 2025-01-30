@@ -10,8 +10,9 @@
   text-align: center;
   margin-bottom: 2rem;
   padding-top: 32px;
-  color: #334ED8;
-  font-family: "elanor";
+  color: #2d531a;
+  font-family: "poppins";
+  font-weight: 500;
 }
 
 .profile-details {
@@ -24,48 +25,50 @@
   width: 100%;
 }
 
-/* New section container style */
 .section-container {
   width: 100%;
   background-color: white;
-  border-radius: 0.5rem;
+  border-radius: 20px;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.3s ease;
-  border: 1px solid #e5e7eb;
-  display: flex;           /* Added */
-  flex-direction: column;  /* Added */
-  align-items: center;     /* Added */
+  display: flex;          
+  flex-direction: row;  
+  align-items: center;     
 }
 
-.section-container:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%; /* This ensures the wrapper takes full width of its container */
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* This centers the profile fields */
   gap: 1rem;
-  width: 100%;
 }
 
 .profile-field {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center; /* This centers the label and value */
   gap: 0.6rem;
 }
 
 .profile-label {
   font-weight: bold;
-  color: black;
+  color: #6f5d43;
   font-size: 1.2rem;
 }
 
 .profile-value {
   font-size: 1.2rem;
   margin: 0;
+  color: #6f5d43;
 }
 
 /* Form styles */
@@ -103,17 +106,21 @@
 }
 
 .edit-button {
-  background-color: #334ED8;
-  color: white;
+  background-color: #FFE5A0;
+  color: #2d531a;
+}
+
+.edit-button:hover {
+  background-color: #feb7e8;
 }
 
 .delete-button {
-  background-color: #F26749;
-  color: white;
+  background-color: #feb7e8;
+  color: #2d531a;
 }
 
 .delete-button:hover {
-  background-color: #d32f2f;
+  background-color: #FFE5A0;
 }
 
 /* Exercise styles */
@@ -132,15 +139,10 @@
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  border-radius: 0.5rem;
+  border-radius: 25px;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.3s ease;
-  border: 1px solid #e5e7eb;
-}
-
-.exercise-item:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #efdfcc;
 }
 
 .exercise-content {
@@ -167,6 +169,14 @@
 @media (max-width: 640px) {
   .section-container {
     padding: 1rem;
+  }
+
+  .profile-value {
+    font-size: 1rem;
+  }
+
+  .profile-label {
+    font-size: 1rem;
   }
   
   .profile-container {
