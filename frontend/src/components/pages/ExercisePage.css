@@ -1,5 +1,5 @@
 .exercise-container {
-  padding: 4rem 1rem 1rem 1rem; /* Increased top padding */
+  padding: 4rem 1rem 1rem 1rem; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;

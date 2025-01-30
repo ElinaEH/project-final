@@ -195,12 +195,17 @@
   }
   
   .profile-container {
-    padding: 5rem 1rem 0 1rem; /* Adjusted top padding for mobile */
+    padding: 4rem 1rem 0 1rem; 
+  }
+
+  .profile-title {
+    margin-bottom: 1rem;
+    padding-top: 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
   .profile-container {
-    padding: 4.5rem 1rem 0 1rem; /* Less padding for smaller screens */
+    padding: 2rem 1rem 0 1rem; 
   }
 }

@@ -1,11 +1,3 @@
-/**
-* AuthContext provides centralized authentication management.
-* - Maintains user auth state
-* - Handles login/logout
-* - Stores/retrieves auth data in localStorage
-* - Makes auth functions available app-wide via useAuth hook
-*/
-
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import { AuthProvider } from "./components/auth/AuthContext.jsx";

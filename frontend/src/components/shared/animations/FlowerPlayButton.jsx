@@ -1,6 +1,6 @@
 // FlowerPlayButton.jsx
-import { Play, Pause } from 'lucide-react';
-import FlowerIcon1 from "../../assets/FlowerIcon1.png";
+import { Play, Pause } from "lucide-react";
+import FlowerIcon1 from "../../../assets/FlowerIcon1.png";
 import "./FlowerPlayButton.css";
 
 const FlowerPlayButton = ({ onClick, isPlaying }) => {
@@ -11,20 +11,20 @@ const FlowerPlayButton = ({ onClick, isPlaying }) => {
           src={FlowerIcon1} 
           alt="Flower play button" 
           className="flower-image"
-          width="48"  // Add specific width
-          height="48" // Add specific height
+          width="48"  
+          height="48" 
         />
         {isPlaying ? (
           <Pause 
             className="play-icon" 
-            size={30}  // Reduced size
+            size={30}  
             color="#FF8800"
             fill="#FF8800"
           />
         ) : (
           <Play 
             className="play-icon" 
-            size={30}  // Reduced size
+            size={30}  
             color="#FF8800"
             fill="#FF8800"
           />

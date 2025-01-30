@@ -10,27 +10,27 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleDropdownPosition = useCallback(() => {
-    const dropdown = document.querySelector('.dropdown-menu');
+    const dropdown = document.querySelector(".dropdown-menu");
     if (!dropdown) return;
     
     const rect = dropdown.getBoundingClientRect();
-    dropdown.classList.remove('left-overflow', 'right-overflow');
+    dropdown.classList.remove("left-overflow", "right-overflow");
     
     if (rect.right > window.innerWidth) {
-      dropdown.classList.add('right-overflow');
+      dropdown.classList.add("right-overflow");
     } else if (rect.left < 0) {
-      dropdown.classList.add('left-overflow');
+      dropdown.classList.add("left-overflow");
     }
   }, []);
 
   useEffect(() => {
     if (isDropdownOpen) {
       handleDropdownPosition();
-      window.addEventListener('resize', handleDropdownPosition);
+      window.addEventListener("resize", handleDropdownPosition);
     }
 
     return () => {
-      window.removeEventListener('resize', handleDropdownPosition);
+      window.removeEventListener("resize", handleDropdownPosition);
     };
   }, [isDropdownOpen, handleDropdownPosition]);
 
@@ -46,15 +46,15 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      const navControls = document.querySelector('.nav-controls');
+      const navControls = document.querySelector(".nav-controls");
       if (isDropdownOpen && navControls && !navControls.contains(event.target)) {
         setIsDropdownOpen(false);
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [isDropdownOpen]);
 

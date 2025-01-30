@@ -11,8 +11,8 @@
   
   .icon-container {
     position: relative;
-    width: 48px;  /* Match the image width */
-    height: 48px; /* Match the image height */
+    width: 48px;  
+    height: 48px; 
     display: flex;
     align-items: center;
     justify-content: center;

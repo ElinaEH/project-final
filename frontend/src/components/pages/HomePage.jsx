@@ -1,7 +1,7 @@
 import Navbar from "../shared/Navbar.jsx";
 import "./HomePage.css";
 import Footer from "../shared/Footer.jsx";
-import BounceIcon from "../shared/BounceIcon.jsx";
+import BounceIcon from "../shared/animations/BounceIcon.jsx";
 
 const HomePage = () => {
   const navigateToExercises = () => {

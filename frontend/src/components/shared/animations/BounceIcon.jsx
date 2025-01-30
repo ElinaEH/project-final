@@ -1,5 +1,5 @@
 import "./BounceIcon.css";
-import LightBulb from '../../assets/light-bulb.png';
+import LightBulb from "../../../assets/light-bulb.png";
 
 const BounceIcon = () => {
   return (

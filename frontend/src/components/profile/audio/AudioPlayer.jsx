@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Trash2, Volume2, VolumeX } from "lucide-react";
 import WaveSurfer from "wavesurfer.js";
-import FlowerPlayButton from "../../shared/FlowerPlayButton.jsx";
+import FlowerPlayButton from "../../shared/animations/FlowerPlayButton.jsx";
 import "./AudioPlayer.css";
 
 const AudioPlayer = ({ audio, onDelete }) => {
@@ -80,7 +80,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
         setIsPlaying(true);
       }
     } catch (error) {
-      console.error('Error toggling play state:', error);
+      console.error("Error toggling play state:", error);
       setIsPlaying(false);
     }
   };

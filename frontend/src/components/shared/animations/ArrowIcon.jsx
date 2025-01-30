@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import React from "react";
+import { ArrowDown } from "lucide-react";
 import "./ArrowIcon.css";
 
 const ArrowIcon = () => {

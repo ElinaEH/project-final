@@ -1,5 +1,5 @@
 import "./SpinningIcon.css";
-import FlowerIcon from "../../assets/FlowerIcon1.png";
+import FlowerIcon from "../../../assets/FlowerIcon1.png";
 
 const SpinningIcon = () => {
   return (

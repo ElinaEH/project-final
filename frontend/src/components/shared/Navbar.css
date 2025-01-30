@@ -104,12 +104,12 @@
   font-family: "poppins";
   font-weight: 500;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  min-width: 200px; /* Set minimum width */
-  width: auto; /* Let it size to content */
+  min-width: 200px; 
+  width: auto; 
   display: flex;
-  flex-direction: column; /* Change to column by default */
+  flex-direction: column; 
   z-index: 11;
-  border-radius: 8px; /* Add border radius */
+  border-radius: 8px; 
   border: 1px solid rgba(254, 183, 232, 0.1);
   padding: 8px 0;
   animation: fadeSlide 0.2s ease;
@@ -153,8 +153,8 @@
 }
 
 .dropdown-item:not(:last-child) {
-  border-right: none; /* Remove right border */
-  border-bottom: 1px solid rgba(254, 183, 232, 0.1); /* Add bottom border */
+  border-right: none;
+  border-bottom: 1px solid rgba(254, 183, 232, 0.1); 
 }
 
 .navbar-wrapper a,

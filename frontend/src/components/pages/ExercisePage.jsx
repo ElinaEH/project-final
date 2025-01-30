@@ -1,9 +1,8 @@
 import ExerciseList from "../exercises/ExerciseList.jsx";
 import Navbar from "../shared/Navbar.jsx";
 import Footer from "../shared/Footer.jsx";
-import ArrowIcon from "../shared/ArrowIcon.jsx";
-import SpinningIcon from "../shared/SpinningIcon.jsx";
-// import FlowerIcon1 from "../../assets/FlowerIcon1.png";
+import ArrowIcon from "../shared/animations/ArrowIcon.jsx";
+import SpinningIcon from "../shared/animations/SpinningIcon.jsx";
 import "./ExercisePage.css";
 
 const ExercisePage = () => {
@@ -19,7 +18,7 @@ const ExercisePage = () => {
               Here are some exercises to practice the flow of songwriting
             </span>
             <span className="exercise-intro">
-              Don't overthink it - just start creating!
+              Don"t overthink it - just start creating!
             </span>
              </p>
              <ArrowIcon />
