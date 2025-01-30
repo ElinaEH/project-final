@@ -84,7 +84,7 @@
   color: #feb7e8;
   font-family: "poppins";
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
   white-space: nowrap;
   transition: all 0.2s ease;
@@ -181,7 +181,7 @@
   }
 
   .username {
-    padding: 1rem 0;
+    padding: 1.2rem 0;
   }
 
   .dropdown-menu {
@@ -247,8 +247,8 @@
   }
   
   .menu-button svg {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -263,7 +263,7 @@
   }
 
   .auth-text {
-    font-size: 14px;
+    font-size: 0.6rem;
     padding: 0.5rem 0;
   }
 

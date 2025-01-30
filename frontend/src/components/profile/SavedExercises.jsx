@@ -1,6 +1,9 @@
+// Component that displays and manages saved songwriting exercises (word-based and chord-based)
+
 import "./SavedExercises.css";
 
 const SavedExercises = ({ exercises, onDelete }) => {
+  // Function to handle exercise deletion and update the parent component
   const deleteExercise = async (exerciseId) => {
     try {
       const token = localStorage.getItem("accessToken");
@@ -30,6 +33,7 @@ const SavedExercises = ({ exercises, onDelete }) => {
             {exercises.map((exercise) => (
               <div key={exercise._id} className="exercise-item">
                 <div className="exercise-content">
+                  {/* Render different content based on exercise type (word or chord) */}
                   {exercise.type === "word" ? (
                     <>
                       <div className="display-area">

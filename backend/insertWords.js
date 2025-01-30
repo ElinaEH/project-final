@@ -5,28 +5,27 @@ import dotenv from "dotenv";
 // Configure dotenv to read .env file
 dotenv.config();
 
-
 // Words array
 const words = [
   // Emotions
   { word: "love", category: "emotions" },
-  { word: "hope", category: "emotions" },
+  { word: "happy", category: "emotions" },
   { word: "fear", category: "emotions" },
-  { word: "joy", category: "emotions" },
+  { word: "anxious", category: "emotions" },
   { word: "pain", category: "emotions" },
-  { word: "peace", category: "emotions" },
+  { word: "calm", category: "emotions" },
   
   // Nature
   { word: "ocean", category: "nature" },
   { word: "sky", category: "nature" },
   { word: "sun", category: "nature" },
   { word: "moon", category: "nature" },
-  { word: "stars", category: "nature" },
-  { word: "rain", category: "nature" },
+  { word: "water", category: "nature" },
+  { word: "river", category: "nature" },
   
   // Actions
-  { word: "dance", category: "actions" },
-  { word: "sing", category: "actions" },
+  { word: "walk", category: "actions" },
+  { word: "ride", category: "actions" },
   { word: "run", category: "actions" },
   { word: "fly", category: "actions" },
   { word: "dream", category: "actions" },
@@ -36,8 +35,8 @@ const words = [
   { word: "forever", category: "time" },
   { word: "moment", category: "time" },
   { word: "night", category: "time" },
-  { word: "dawn", category: "time" },
-  { word: "dusk", category: "time" }
+  { word: "morning", category: "time" },
+  { word: "midnight", category: "time" }
 ];
 
 // Function to insert words

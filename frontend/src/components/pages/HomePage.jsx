@@ -1,3 +1,5 @@
+// Homepage redirecting navigation from exercise route that was created as homepage first, change to proper routing
+
 import Navbar from "../shared/Navbar.jsx";
 import "./HomePage.css";
 import Footer from "../shared/Footer.jsx";

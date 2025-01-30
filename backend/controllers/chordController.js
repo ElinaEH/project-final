@@ -1,4 +1,4 @@
-// chordController.js
+// Chord progression generator
 
 // Define chord progressions for different moods using Roman numerals
 // I = Tonic, IV = Subdominant, V = Dominant, vi = Relative minor, etc.
@@ -24,23 +24,32 @@ const chordProgressions = {
 };
 
 // Define actual chords for each key
-// Each array represents the diatonic chords built on scale degreesz
+// Each array represents the diatonic chords built on scale degrees (e.g., C major scale chords)
 const keys = {
-  "C": ["C", "Dm", "Em", "F", "G", "Am", "Bdim"],
-  "G": ["G", "Am", "Bm", "C", "D", "Em", "F#dim"],
-  "D": ["D", "Em", "F#m", "G", "A", "Bm", "C#dim"],
-  "A": ["A", "Bm", "C#m", "D", "E", "F#m", "G#dim"]
+  "C": ["C", "Dm", "Em", "F", "G", "Am", "Bdim"],  // C major scale chords
+  "G": ["G", "Am", "Bm", "C", "D", "Em", "F#dim"], // G major scale chords
+  "D": ["D", "Em", "F#m", "G", "A", "Bm", "C#dim"], // D major scale chords
+  "A": ["A", "Bm", "C#m", "D", "E", "F#m", "G#dim"] // A major scale chords
 };
 
-// Get a random chord progression from the specified mood category
+/**
+ * Returns a random chord progression from the specified mood category
+ * @param {string} mood - The desired mood (uplifting, emotional, or nostalgic)
+ * @returns {Array} An array of Roman numerals representing the progression
+ */
 function getRandomProgression(mood = "uplifting") {
   const progressions = chordProgressions[mood];
   return progressions[Math.floor(Math.random() * progressions.length)];
 }
 
-// Convert Roman numerals to actual chords in the specified key
+/**
+ * Converts Roman numerals to actual chord names in the specified key
+ * @param {Array} progression - Array of Roman numerals
+ * @param {string} key - The desired key (C, G, D, or A)
+ * @returns {Array} Array of actual chord names
+ */
 function translateToKey(progression, key = "C") {
-  // Map Roman numerals to array indices
+  // Map Roman numerals to array indices (0-based positions in the scale)
   const romanNumerals = {
     "I": 0, "ii": 1, "iii": 2, "IV": 3, "V": 4, "vi": 5, "viidim": 6,
     "i": 0, "III": 2, "iv": 3, "v": 4, "VI": 5, "VII": 6
@@ -52,11 +61,16 @@ function translateToKey(progression, key = "C") {
   });
 }
 
-// Controller for getting a random chord progression in any mood
+/**
+ * Controller for getting a random chord progression in any mood
+ * @param {Object} req - Express request object with optional key parameter
+ * @param {Object} res - Express response object
+ */
 export const getChordProgression = (req, res) => {
   try {
     const { key = "C" } = req.query;  // Default to C key if none specified
     const moods = Object.keys(chordProgressions);
+    // Pick a random mood from available options
     const randomMood = moods[Math.floor(Math.random() * moods.length)];
     const progression = getRandomProgression(randomMood);
     const chords = translateToKey(progression, key);
@@ -76,12 +90,16 @@ export const getChordProgression = (req, res) => {
   }
 };
 
-// Controller for getting a chord progression in a specific mood
+/**
+ * Controller for getting a chord progression in a specific mood
+ * @param {Object} req - Express request object containing mood parameter
+ * @param {Object} res - Express response object
+ */
 export const getMoodProgression = (req, res) => {
   try {
     const { mood } = req.query;
     
-    // Validate mood parameter
+    // Validate that the requested mood exists in our progressions
     if (!mood || !chordProgressions[mood]) {
       return res.status(400).json({
         success: false,

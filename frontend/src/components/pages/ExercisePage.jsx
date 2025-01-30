@@ -1,3 +1,5 @@
+// Component to display both exercises, titles and intro text
+
 import ExerciseList from "../exercises/ExerciseList.jsx";
 import Navbar from "../shared/Navbar.jsx";
 import Footer from "../shared/Footer.jsx";

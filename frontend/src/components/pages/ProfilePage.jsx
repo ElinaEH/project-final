@@ -1,3 +1,5 @@
+// Main profile page component - handles user profile data, saved exercises and audio files
+
 import { useEffect, useState } from "react";
 import { useAuth } from "../auth/AuthContext.jsx";
 import ProfileEdit from "../profile/ProfileEdit.jsx";
@@ -10,6 +12,7 @@ import "./ProfilePage.css";
 
 const ProfilePage = () => {
   const { user } = useAuth();
+  // State for user profile data and edit mode
   const [profile, setProfile] = useState({
     username: "",
     email: "",
@@ -18,6 +21,7 @@ const ProfilePage = () => {
   });
   const [isEditing, setIsEditing] = useState(false);
 
+  // Fetch user profile data from the server
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("accessToken");
@@ -41,6 +45,7 @@ const ProfilePage = () => {
     }
   };
 
+  // Fetch profile data when user is available
   useEffect(() => {
     if (user) {
       fetchProfile();
@@ -64,6 +69,7 @@ const ProfilePage = () => {
         </div>
         <div className="profile-container">
           <h1 className="profile-title">User Profile</h1>
+          {/* Toggle between edit mode and display mode */}
           {isEditing ? (
             <ProfileEdit 
               profile={profile}

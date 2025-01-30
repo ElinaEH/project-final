@@ -4,10 +4,12 @@ import { useAuth } from "../auth/AuthContext.jsx";
 import Footer from "../shared/Footer.jsx";
 import "./Signin.css";
 
+// Sign in component that handles user authentication
 const Signin = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
+  // Handle form submission and authentication
   const handleSignin = (e) => {
     e.preventDefault();
     const username = e.target.username.value;
@@ -30,7 +32,7 @@ const Signin = () => {
         console.log("Sign In Response:", data);
       
         if (data.message === "Login successful") {
-          // Make sure we"re storing the token with the exact same key consistently
+          // Store authentication data and redirect to home
           if (data.accessToken) {
             localStorage.setItem("accessToken", data.accessToken);
             console.log("Stored token in localStorage:", data.accessToken);
@@ -39,8 +41,6 @@ const Signin = () => {
           if (data.user) {
             localStorage.setItem("user", JSON.stringify(data.user));
             console.log("Stored user in localStorage:", data.user);
-      
-            // Pass the token correctly to login function
             login(data.user.username, data.accessToken);
           }
       

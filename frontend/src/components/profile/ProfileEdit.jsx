@@ -1,10 +1,14 @@
+// Component for editing user profile information (username and email)
+
 import "./ProfileEdit.css";
 
 const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => {
+    // Update profile state as user types in form fields
     const handleChange = (e) => {
       setProfile(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
   
+    // Submit updated profile data to server
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {

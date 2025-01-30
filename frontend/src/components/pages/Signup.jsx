@@ -3,7 +3,9 @@ import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer.jsx";
 import "./Signup.css";
 
+// Component for user registration handling
 const Signup = () => {
+  // Handle form submission and user creation
   const handleSignup = (e) => {
     e.preventDefault();
     const username = e.target.username.value;
@@ -27,6 +29,7 @@ const Signup = () => {
       })
       .then((data) => {
         console.log("Sign Up Response:", data);
+        // Redirect to sign in page on successful registration
         if (data.message === "User created successfully") {
           alert("User created successfully! Please sign in.");
           window.location.href = "/auth/signin";
