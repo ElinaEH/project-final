@@ -32,22 +32,13 @@ const keys = {
   "A": ["A", "Bm", "C#m", "D", "E", "F#m", "G#dim"] // A major scale chords
 };
 
-/**
- * Returns a random chord progression from the specified mood category
- * @param {string} mood - The desired mood (uplifting, emotional, or nostalgic)
- * @returns {Array} An array of Roman numerals representing the progression
- */
+// Returns a random chord progression 
 function getRandomProgression(mood = "uplifting") {
   const progressions = chordProgressions[mood];
   return progressions[Math.floor(Math.random() * progressions.length)];
 }
 
-/**
- * Converts Roman numerals to actual chord names in the specified key
- * @param {Array} progression - Array of Roman numerals
- * @param {string} key - The desired key (C, G, D, or A)
- * @returns {Array} Array of actual chord names
- */
+// Converts Roman numerals to actual chord names in specified key
 function translateToKey(progression, key = "C") {
   // Map Roman numerals to array indices (0-based positions in the scale)
   const romanNumerals = {
@@ -61,11 +52,7 @@ function translateToKey(progression, key = "C") {
   });
 }
 
-/**
- * Controller for getting a random chord progression in any mood
- * @param {Object} req - Express request object with optional key parameter
- * @param {Object} res - Express response object
- */
+// Controller for getting a random chord progression in any mood
 export const getChordProgression = (req, res) => {
   try {
     const { key = "C" } = req.query;  // Default to C key if none specified
@@ -90,11 +77,7 @@ export const getChordProgression = (req, res) => {
   }
 };
 
-/**
- * Controller for getting a chord progression in a specific mood
- * @param {Object} req - Express request object containing mood parameter
- * @param {Object} res - Express response object
- */
+// Controller for getting a chord progression in a specific mood
 export const getMoodProgression = (req, res) => {
   try {
     const { mood } = req.query;
