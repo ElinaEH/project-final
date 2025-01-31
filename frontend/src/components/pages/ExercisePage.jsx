@@ -20,7 +20,7 @@ const ExercisePage = () => {
               Here are some exercises to practice the flow of songwriting
             </span>
             <span className="exercise-intro">
-              Don"t overthink it - just start creating!
+              Don't overthink it - just start creating!
             </span>
              </p>
              <ArrowIcon />
