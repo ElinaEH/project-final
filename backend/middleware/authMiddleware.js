@@ -1,7 +1,5 @@
-/**
- * // This middleware validates the user"s token and protects routes from unauthorized access.
- * // Used on routes that require user authentication.
- */
+// Middleware validates the users token and protects routes from unathourized acess
+// Used on routes that require user authentication
 
 import User from "../models/userModel.js";
 

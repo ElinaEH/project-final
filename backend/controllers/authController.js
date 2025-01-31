@@ -5,7 +5,7 @@ import User from "../models/userModel.js";
 // Generate a random token
 const generateToken = () => crypto.randomBytes(32).toString("hex");
 
-// Validate token format (length and characters) // Look this up why it"s not being used?
+// Validate token format (length and characters)
 const validateToken = (token) => {
   return typeof token === "string" && token.length === 64;
 };

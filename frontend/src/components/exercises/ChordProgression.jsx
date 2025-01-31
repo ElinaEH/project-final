@@ -10,7 +10,7 @@ const ChordProgression = () => {
  const [isLoading, setIsLoading] = useState(false);
  const [isSaved, setIsSaved] = useState(false);
 
- // Fetch random chord progression from API
+ // Fetch random chord progression 
  const getRandomChords = async () => {
    setIsLoading(true);
    try {
@@ -89,7 +89,7 @@ const ChordProgression = () => {
  return (
    <ExerciseCardDetails
      title="Chords Exercise"
-     description="Generate a chord progression based on the mood you want to express in your song or choose random to get a random mood generated."
+     description="Pick a mood for your song, or hit random, and a matching chord progression will be generated" 
      displayContent={
        chords && (
          <div className="chord-display">
