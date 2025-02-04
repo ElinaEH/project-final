@@ -35,7 +35,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
       });
       
       // Load audio file into Wavesurfer
-      wavesurferRef.current.load(`http://localhost:5000/${audio.path}`);
+      wavesurferRef.current.load(audio.path);
 
       // Set duration time when audio is ready
       wavesurferRef.current.on("ready", () => {
