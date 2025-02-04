@@ -130,7 +130,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
   if (!audio.path) return null;
 
   // Extract the filename from audio path 
-  const filename = audio.path.split("/").pop().split("-").slice(1).join("-");
+  const filename = audio.filename;
 
   return (
     <div className="audio-player">

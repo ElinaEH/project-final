@@ -29,9 +29,6 @@ app.use(cors({
 // Parse JSON request bodies
 app.use(express.json());
 
-// Serve static files for uploaded audio
-app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
-
 // Connect to MongoDB database
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/final-project";
 mongoose
