@@ -1,85 +1,88 @@
 import { useState, useRef, useEffect } from "react";
-import { Trash2, Volume2, VolumeX } from "lucide-react"; // Icon library
-import WaveSurfer from "wavesurfer.js"; // Waveform visualisation
+import { Trash2, Volume2, VolumeX } from "lucide-react";
+import WaveSurfer from "wavesurfer.js"; 
 import FlowerPlayButton from "../../shared/animations/FlowerPlayButton.jsx";
 import "./AudioPlayer.css";
 
 const AudioPlayer = ({ audio, onDelete }) => {
-  // State for play status, progress, duration, volume and mute status
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
 
-  // References for the waveform container and Wavesurfer
   const waveformRef = useRef(null);
   const wavesurferRef = useRef(null);
+  const audioRef = useRef(null);
 
   useEffect(() => {
-    if (waveformRef.current && audio.path) {
-      // Set up Wavesurfer for waveform visualization
-      wavesurferRef.current = WaveSurfer.create({
-        container: waveformRef.current,
-        waveColor: "#efdfcc",
-        progressColor: "#FF8800",
-        cursorColor: "#FF8800",
-        height: 50,
-        barWidth: 2,
-        barGap: 1,
-        responsive: true,
-        normalize: true,
-        backend: "WebAudio",
-        hideScrollbar: true,
-        interact: true,
-      });
-      
-      // Load audio file into Wavesurfer
-      wavesurferRef.current.load(audio.path);
+    audioRef.current = new Audio(audio.path);
+    
+    wavesurferRef.current = WaveSurfer.create({
+      container: waveformRef.current,
+      waveColor: "#efdfcc",
+      progressColor: "#FF8800",
+      cursorColor: "#FF8800",
+      height: 50,
+      barWidth: 2,
+      barGap: 1,
+      responsive: true,
+      normalize: true,
+      backend: "MediaElement",
+      media: audioRef.current,
+      hideScrollbar: true,
+      interact: true,
+    });
 
-      // Set duration time when audio is ready
-      wavesurferRef.current.on("ready", () => {
-        setDuration(wavesurferRef.current.getDuration());
-      });
+    wavesurferRef.current.load(audio.path);
 
-      // Update progress as audio plays
-      wavesurferRef.current.on("audioprocess", () => {
-        setProgress(wavesurferRef.current.getCurrentTime());
-      });
+    wavesurferRef.current.on("ready", () => {
+      setDuration(wavesurferRef.current.getDuration());
+    });
 
-      // Update progress when seeking (when user moves the playhead)
-      wavesurferRef.current.on("seek", () => {
-        setProgress(wavesurferRef.current.getCurrentTime());
-      });
+    wavesurferRef.current.on("audioprocess", () => {
+      setProgress(wavesurferRef.current.getCurrentTime());
+    });
 
-      // Reset state when audio finishes playing
-      wavesurferRef.current.on("finish", () => {
-        setIsPlaying(false);
-        setProgress(0);
-      });
-    }
+    wavesurferRef.current.on("seek", () => {
+      setProgress(wavesurferRef.current.getCurrentTime());
+    });
+
+    wavesurferRef.current.on("finish", () => {
+      setIsPlaying(false);
+      setProgress(0);
+    });
 
     return () => {
-      // Cleanup Wavesurfer when component unmounts
       if (wavesurferRef.current) {
-        wavesurferRef.current.pause();
-        setIsPlaying(false);
-        wavesurferRef.current.destroy();
+        try {
+          wavesurferRef.current.pause();
+          setIsPlaying(false);
+          wavesurferRef.current.destroy();
+        } catch (error) {
+          if (error.name !== 'AbortError') {
+            console.error('Error destroying WaveSurfer:', error);
+          }
+        }
       }
     };
   }, [audio.path]);
 
   useEffect(() => {
     return () => {
-      // Pause audio if still playing when component unmounts
       if (wavesurferRef.current && isPlaying) {
-        wavesurferRef.current.pause();
-        setIsPlaying(false);
+        try {
+          wavesurferRef.current.pause();
+          setIsPlaying(false);
+        } catch (error) {
+          if (error.name !== 'AbortError') {
+            console.error('Error pausing WaveSurfer:', error);
+          }
+        }
       }
     };
   }, [isPlaying]);
 
-  // Play/Pause toggle function
   const togglePlay = () => {
     if (!wavesurferRef.current) return;
 
@@ -97,14 +100,12 @@ const AudioPlayer = ({ audio, onDelete }) => {
     }
   };
 
-  // Format time into minutes and seconds format
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
-  // Handle volume change
   const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
@@ -114,7 +115,6 @@ const AudioPlayer = ({ audio, onDelete }) => {
     }
   };
 
-  // Toggle mute on/off
   const toggleMute = () => {
     if (!wavesurferRef.current) return;
     
@@ -129,25 +129,19 @@ const AudioPlayer = ({ audio, onDelete }) => {
 
   if (!audio.path) return null;
 
-  // Extract the filename from audio path 
-  const filename = audio.filename;
-
   return (
     <div className="audio-player">
       <div className="audio-player-container">
         <div className="audio-player-top">
           <div className="audio-player-controls">
-            {/* Play/Pause button */}
             <FlowerPlayButton onClick={togglePlay} isPlaying={isPlaying} />
             <div className="audio-player-info">
-              {/* Display filename and progress */}
-              <span className="audio-player-filename">{filename}</span>
+              <span className="audio-player-filename">{audio.filename}</span>
               <span className="audio-player-time">
                 {formatTime(progress)} / {formatTime(duration || 0)}
               </span>
             </div>
           </div>
-          {/* Delete button */}
           <button 
             onClick={() => onDelete(audio._id)}
             className="audio-player-delete"
@@ -157,10 +151,8 @@ const AudioPlayer = ({ audio, onDelete }) => {
           </button>
         </div>
         
-        {/* Waveform visualization */}
         <div className="audio-player-waveform" ref={waveformRef} />
         
-        {/* Volume controls */}
         <div className="audio-player-volume">
           <button
             onClick={toggleMute}
