@@ -58,7 +58,27 @@ app.use("/chords", chordRoutes);  // Chord progression endpoints
 app.use("/audio", audioRoutes);
 
 // Landing page and welcome message
-app.get("/", (req, res) => res.send("Soundseed API and server"));
+app.get("/", (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <style>
+          body {
+            font-family: system-ui, -apple-system, sans-serif;
+            padding: 40px;
+            margin: 0;
+          }
+          h1 {
+            font-size: 1.2rem;
+          }
+        </style>
+      </head>
+      <body>
+        <h1> Soundseed Server & API</h1>
+      </body>
+    </html>
+  `)            
+});
 
 // Global error handling middleware
 app.use((err, req, res, next) => {
