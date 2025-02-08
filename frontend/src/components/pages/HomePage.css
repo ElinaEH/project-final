@@ -65,9 +65,12 @@
 }
 
 .start-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 160px;
   min-height: 50px;
-  padding: 10px 15px;
+  padding: 10px 24px;
   font-size: 1em;
   font-family: "Poppins";
   font-weight: 400;
@@ -75,6 +78,7 @@
   border-radius: 50px;
   background-color: #feb7e8;
   color: #2d531a;
+  text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s;
   z-index: 2;

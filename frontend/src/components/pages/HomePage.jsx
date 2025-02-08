@@ -1,15 +1,12 @@
 // Homepage redirecting navigation from exercise route that was created as homepage first, change to proper routing
 
 import Navbar from "../shared/Navbar.jsx";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 import Footer from "../shared/Footer.jsx";
 import BounceIcon from "../shared/animations/BounceIcon.jsx";
 
 const HomePage = () => {
-  const navigateToExercises = () => {
-    window.location.href = "/exercises";
-  };
-
   return (
     <>
     <div>
@@ -23,12 +20,10 @@ const HomePage = () => {
              <span> let your music grow</span>
           </h1>
           <div className="button-container">
-              <button
-                onClick={navigateToExercises}
-                className="start-button"
-              >
-                START CREATING
-              </button>
+            <Link to="/exercises"
+            className="start-button">
+              START CREATING
+            </Link>
             </div>
           <p className="homepage-description"> 
           <span>Boost your creativity with SOUNDSEED </span>
