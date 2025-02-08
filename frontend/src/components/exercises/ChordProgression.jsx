@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuth } from "../auth/AuthContext";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import ExerciseCardDetails from "./ExerciseCardDetails";
 import "./ChordProgression.css";
@@ -6,6 +7,7 @@ import "./ChordProgression.css";
 // Component that generates and manages chord progressions based on moods
 const ChordProgression = () => {
  // State for chord data, loading state, and saved status
+ const { user } = useAuth();
  const [chords, setChords] = useState(null);
  const [isLoading, setIsLoading] = useState(false);
  const [isSaved, setIsSaved] = useState(false);
@@ -45,6 +47,10 @@ const ChordProgression = () => {
 
  // Save exercise to user profile
  const saveExercise = async () => {
+	 if (!user) {
+		return;
+	 }
+
    try {
      const response = await fetch("http://localhost:5000/profile/save-exercise", {
        method: "POST",
@@ -101,7 +107,13 @@ const ChordProgression = () => {
            <div className="tooltip-container">
              <button onClick={saveExercise} className="save-button">
                {isSaved ? <FaStar className="star-icon" /> : <FaRegStar className="star-icon" />}
-               <div className="tooltip">Sign in to save this exercise by clicking the star</div>
+							 <div className="tooltip">
+									{user ? (
+										"Save this exercise to store it in your profile"
+									) : (
+										"Sign in to save this exercise"
+									)}
+							 </div>
              </button>
            </div>
          </div>

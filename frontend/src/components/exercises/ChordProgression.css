@@ -69,7 +69,7 @@ h3 {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  padding: 8px;
+  padding: 8px 16px;
   background-color: #faf2e8;
   color: #2d531a;
   border-radius: 50px;

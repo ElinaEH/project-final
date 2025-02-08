@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuth } from "../auth/AuthContext.jsx";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import "./RandomWord.css";
 import ExerciseCardDetails from "./ExerciseCardDetails.jsx";
@@ -6,6 +7,7 @@ import ExerciseCardDetails from "./ExerciseCardDetails.jsx";
 // Component that generates random words for lyrical exercises
 const RandomWord = () => {
   // State for word, loading status and save status
+  const { user } = useAuth();
   const [word, setWord] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
@@ -33,18 +35,16 @@ const RandomWord = () => {
 
   // Save exercise to user profile
   const saveExercise = async () => {
-    try {
-      const token = localStorage.getItem("accessToken");
-      if (!token) {
-        setError("Please sign in to save exercises");
-        return;
-      }
+    if (!user) {
+      return;
+    }
 
+    try {
       const response = await fetch("http://localhost:5000/profile/save-exercise", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
+          "Authorization": `Bearer ${localStorage.getItem("accessToken")}`
         },
         body: JSON.stringify({
           type: "word",
@@ -83,7 +83,13 @@ const RandomWord = () => {
                   disabled={isLoading}
                 >
                   {isSaved ? <FaStar className="star-icon" /> : <FaRegStar className="star-icon" />}
-                  <div className="tooltip">Sign in to save this exercise by clicking the star</div>
+                  <div className="tooltip">
+									{user ? (
+										"Save this exercise to store it in your profile"
+									) : (
+										"Sign in to save this exercise"
+									)}
+							 </div>
                 </button>
               </div>
             </div>
