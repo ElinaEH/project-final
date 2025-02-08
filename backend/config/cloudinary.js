@@ -19,8 +19,8 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
 	cloudinary,
 	params: {
-		folder: "audio_files", // Store files in this folder in Cloudinary
-		resource_type: "auto" // Automatically detect resource typ (audio)
+		folder: "audio_files", // Folder where audio files are stored in Cloudinary
+		resource_type: "auto" // Automatically detect resource type (audio)
 	}
 });
 

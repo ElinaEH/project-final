@@ -1,6 +1,6 @@
 // Chord progression generator
 
-// Define chord progressions for different moods using Roman numerals
+// Define chord progressions for different moods using Roman numerals used in music theory
 // I = Tonic, IV = Subdominant, V = Dominant, vi = Relative minor, etc.
 const chordProgressions = {
   uplifting: [
@@ -32,7 +32,13 @@ const keys = {
   "A": ["A", "Bm", "C#m", "D", "E", "F#m", "G#dim"] // A major scale chords
 };
 
-// Returns a random chord progression 
+// Function to get random key
+function getRandomKey() {
+  const availableKeys = Object.keys(keys);
+  return availableKeys[Math.floor(Math.random() * availableKeys.length)];
+}
+
+// Returns a random chord progression based on a random mood
 function getRandomProgression(mood = "uplifting") {
   const progressions = chordProgressions[mood];
   return progressions[Math.floor(Math.random() * progressions.length)];
@@ -55,16 +61,14 @@ function translateToKey(progression, key = "C") {
 // Controller for getting a random chord progression in any mood
 export const getChordProgression = (req, res) => {
   try {
-    const { key = "C" } = req.query;  // Default to C key if none specified
-    const moods = Object.keys(chordProgressions);
-    // Pick a random mood from available options
-    const randomMood = moods[Math.floor(Math.random() * moods.length)];
+    const randomMood = Object.keys(chordProgressions) [Math.floor(Math.random() * Object.keys(chordProgressions).length)];
     const progression = getRandomProgression(randomMood);
-    const chords = translateToKey(progression, key);
+    const randomKey = getRandomKey();
+    const chords = translateToKey(progression, randomKey);
     
     res.json({
       mood: randomMood,
-      key,
+      key: randomKey,
       progression,  // Roman numerals
       chords,       // Actual chord names
       success: true
@@ -91,10 +95,12 @@ export const getMoodProgression = (req, res) => {
     }
  
     const progression = getRandomProgression(mood);
-    const chords = translateToKey(progression, "C");  // Default to C key
+    const randomKey = getRandomKey();
+    const chords = translateToKey(progression, randomKey);
     
     res.json({
       mood,
+      key: randomKey,
       progression,  // Roman numerals
       chords,       // Actual chord names
       success: true

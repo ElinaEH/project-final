@@ -69,7 +69,7 @@ app.use((err, req, res, next) => {
  });
 });
 
-// Endpoint to view all available API routes (helpful for development)
+// Endpoint to view all available API routes
 app.get("/endpoints", (req, res) => {
  res.json(listEndpoints(app));
 });

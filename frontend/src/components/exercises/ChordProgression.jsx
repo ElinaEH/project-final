@@ -9,12 +9,15 @@ const ChordProgression = () => {
  const [chords, setChords] = useState(null);
  const [isLoading, setIsLoading] = useState(false);
  const [isSaved, setIsSaved] = useState(false);
+ const [selectedKey, setSelectedKey] = useState("C");
+
+ const keys = ["C", "G", "D", "A"];
 
  // Fetch random chord progression 
  const getRandomChords = async () => {
    setIsLoading(true);
    try {
-     const response = await fetch("http://localhost:5000/chords/progression");
+     const response = await fetch(`http://localhost:5000/chords/progression?key=${selectedKey}`);
      const data = await response.json();
      setChords(data);
      setIsSaved(false); // Reset saved state for new chord progressions
@@ -29,7 +32,7 @@ const ChordProgression = () => {
  const getMoodChords = async (mood) => {
    setIsLoading(true);
    try {
-     const response = await fetch(`http://localhost:5000/chords/mood-progression?mood=${mood}`);
+     const response = await fetch(`http://localhost:5000/chords/mood-progression?mood=${mood}&key=${selectedKey}`);
      const data = await response.json();
      setChords(data);
      setIsSaved(false);
