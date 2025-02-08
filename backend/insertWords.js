@@ -8,17 +8,17 @@ dotenv.config();
 // Words array
 const words = [
   // Emotions
-  { word: "love", category: "emotions" },
+  { word: "bored", category: "emotions" },
   { word: "happy", category: "emotions" },
-  { word: "fear", category: "emotions" },
+  { word: "confused", category: "emotions" },
   { word: "anxious", category: "emotions" },
-  { word: "pain", category: "emotions" },
+  { word: "numb", category: "emotions" },
   { word: "calm", category: "emotions" },
   
   // Nature
   { word: "ocean", category: "nature" },
-  { word: "sky", category: "nature" },
-  { word: "sun", category: "nature" },
+  { word: "rain", category: "nature" },
+  { word: "beach", category: "nature" },
   { word: "moon", category: "nature" },
   { word: "water", category: "nature" },
   { word: "river", category: "nature" },
@@ -27,12 +27,12 @@ const words = [
   { word: "walk", category: "actions" },
   { word: "ride", category: "actions" },
   { word: "run", category: "actions" },
-  { word: "fly", category: "actions" },
+  { word: "swim", category: "actions" },
   { word: "dream", category: "actions" },
   { word: "cry", category: "actions" },
   
   // Time
-  { word: "forever", category: "time" },
+  { word: "always", category: "time" },
   { word: "moment", category: "time" },
   { word: "night", category: "time" },
   { word: "morning", category: "time" },

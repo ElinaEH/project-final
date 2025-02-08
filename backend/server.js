@@ -3,7 +3,6 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import listEndpoints from "express-list-endpoints";
-import path from "path";
 import authRoutes from "./routes/authRoutes.js";
 import { authenticateUser } from "./middleware/authMiddleware.js"; 
 import profileRoutes from "./routes/profileRoutes.js";
@@ -58,8 +57,8 @@ app.use("/chords", chordRoutes);  // Chord progression endpoints
 // Audio route
 app.use("/audio", audioRoutes);
 
-// API welcome message
-app.get("/", (req, res) => res.send("Welcome to the Creativity Booster API"));
+// Landing page and welcome message
+app.get("/", (req, res) => res.send("Soundseed API and server"));
 
 // Global error handling middleware
 app.use((err, req, res, next) => {
