@@ -2,12 +2,14 @@
 
 import "./SavedExercises.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const SavedExercises = ({ exercises, onDelete }) => {
   // Function to handle exercise deletion and update the parent component
   const deleteExercise = async (exerciseId) => {
     try {
       const token = localStorage.getItem("accessToken");
-      const response = await fetch(`http://localhost:5000/profile/delete-exercise/${exerciseId}`, {
+      const response = await fetch(`${API_URL}/profile/delete-exercise/${exerciseId}`, {
         method: "DELETE",
         headers: {
           "Authorization": `Bearer ${token}`,

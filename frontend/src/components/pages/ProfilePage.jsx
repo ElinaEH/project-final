@@ -10,6 +10,8 @@ import LightBulbIcon from "../../assets/light-bulb.png";
 import Footer from "../shared/Footer.jsx";
 import "./ProfilePage.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ProfilePage = () => {
   const { user } = useAuth();
   // State for user profile data and edit mode
@@ -25,7 +27,7 @@ const ProfilePage = () => {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("accessToken");
-      const response = await fetch(`http://localhost:5000/profile`, {
+      const response = await fetch(`${API_URL}/profile`, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,

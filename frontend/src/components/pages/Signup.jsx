@@ -4,6 +4,8 @@ import Footer from "../shared/Footer.jsx";
 import "./Signup.css";
 
 // Component for user registration handling
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Signup = () => {
   // Handle form submission and user creation
   const handleSignup = (e) => {
@@ -14,7 +16,7 @@ const Signup = () => {
 
     console.log("Sign Up submitted:", { username });
 
-    fetch("http://localhost:5000/auth/signup", {
+    fetch(`${API_URL}/auth/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

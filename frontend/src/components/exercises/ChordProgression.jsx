@@ -4,6 +4,8 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import ExerciseCardDetails from "./ExerciseCardDetails";
 import "./ChordProgression.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 // Component that generates and manages chord progressions based on moods
 const ChordProgression = () => {
  // State for chord data, loading state, and saved status
@@ -19,7 +21,7 @@ const ChordProgression = () => {
  const getRandomChords = async () => {
    setIsLoading(true);
    try {
-     const response = await fetch(`http://localhost:5000/chords/progression?key=${selectedKey}`);
+     const response = await fetch(`${API_URL}/chords/progression?key=${selectedKey}`);
      const data = await response.json();
      setChords(data);
      setIsSaved(false); // Reset saved state for new chord progressions
@@ -34,7 +36,7 @@ const ChordProgression = () => {
  const getMoodChords = async (mood) => {
    setIsLoading(true);
    try {
-     const response = await fetch(`http://localhost:5000/chords/mood-progression?mood=${mood}&key=${selectedKey}`);
+     const response = await fetch(`${API_URL}/chords/mood-progression?mood=${mood}&key=${selectedKey}`);
      const data = await response.json();
      setChords(data);
      setIsSaved(false);
@@ -52,7 +54,7 @@ const ChordProgression = () => {
 	 }
 
    try {
-     const response = await fetch("http://localhost:5000/profile/save-exercise", {
+     const response = await fetch(`${API_URL}/profile/save-exercise`, {
        method: "POST",
        headers: {
          "Content-Type": "application/json",

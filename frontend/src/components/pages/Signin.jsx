@@ -5,6 +5,8 @@ import Footer from "../shared/Footer.jsx";
 import "./Signin.css";
 
 // Sign in component that handles user authentication
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Signin = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -17,7 +19,7 @@ const Signin = () => {
   
     console.log("Sign In submitted:", { username });
   
-    fetch("http://localhost:5000/auth/signin", {
+    fetch(`${API_URL}/auth/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

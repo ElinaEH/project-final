@@ -5,6 +5,9 @@ import "./RandomWord.css";
 import ExerciseCardDetails from "./ExerciseCardDetails.jsx";
 
 // Component that generates random words for lyrical exercises
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 const RandomWord = () => {
   // State for word, loading status and save status
   const { user } = useAuth();
@@ -18,7 +21,7 @@ const RandomWord = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch("http://localhost:5000/words/random");
+      const response = await fetch(`${API_URL}/words/random`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -40,7 +43,7 @@ const RandomWord = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/profile/save-exercise", {
+      const response = await fetch(`${API_URL}/profile/save-exercise`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -2,6 +2,8 @@
 
 import "./ProfileEdit.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => {
     // Update profile state as user types in form fields
     const handleChange = (e) => {
@@ -13,7 +15,7 @@ const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => 
       e.preventDefault();
       try {
         const token = localStorage.getItem("accessToken");
-        const response = await fetch(`http://localhost:5000/profile`, {
+        const response = await fetch(`${API_URL}/profile`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
