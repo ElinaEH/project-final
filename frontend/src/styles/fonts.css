@@ -1,21 +1,7 @@
 @font-face {
-  font-family: "liber";
-  src: url("../assets/fonts/LiberRegular.woff2") format("woff2"),
-       url("../assets/fonts/LiberRegular.woff") format("woff"),
-       url("../assets/fonts/LiberRegular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-}
-
-@font-face {
   font-family: "elanor";
   src: url("../assets/fonts/ElanorFreePersonalUse-ExBdIt.otf"),
        url("../assets/fonts/ElanorFreePersonalUse-ExtLt.otf")
-}
-
-@font-face {
-  font-family: "shrimp";
-  src: url("../assets/fonts/SHRIMP.ttf");
 }
 
 @font-face {

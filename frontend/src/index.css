@@ -20,8 +20,8 @@ html {
 #root {
     width: 100%;
     overflow-x: hidden;
-    padding-top: 70px; /* Add this to account for fixed navbar */
-    position: relative; /* Add this */
+    padding-top: 70px;
+    position: relative; 
 }
 
 .navbar-wrapper {
@@ -29,5 +29,5 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Increased z-index to ensure it's above everything */
+  z-index: 1000;
 }

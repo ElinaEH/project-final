@@ -6,11 +6,6 @@
   justify-content: center;
 }
 
-.word-content h3 {
-  font-size: 1.2rem;
-  color: #334ED8;
-}
-
 .generate-button {
   min-width: 120px;
   max-width: 300px;
@@ -24,7 +19,7 @@
   cursor: pointer;
   transition: background-color 0.3s;
   font-family: "poppins";
-  align-self: center; /* Added to center the button */
+  align-self: center; 
   margin: 0 auto;
 }
 

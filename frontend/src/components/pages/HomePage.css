@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 8rem 2rem 2rem 2rem;
   text-align: center;
   min-height: 100vh;
   position: relative;
@@ -36,8 +36,8 @@
 .homepage-title {
   font-size: 2rem;
   margin-top: 0;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
   line-height: 1.5;
   color: #2d531a;
   font-family: "poppins";
@@ -88,6 +88,7 @@
   background-color: #FFE5A0;
 }
 
+/* Media Queries */
 /* Small phones (320px - 500px) */
 @media (min-width: 320px) and (max-width: 450px) {
   .homepage-title {

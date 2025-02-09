@@ -36,11 +36,10 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center; /* Center content horizontally */
+  align-items: center; 
 }
 
 .display-area {
-  /* background-color: #D8E6FF; */
   border-radius: 24px;
   padding: 20px;
   min-height: 100px;
@@ -55,7 +54,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%; /* Ensure buttons take full width */
+  width: 100%; 
 }
 
 .button-area.multiple-buttons {
@@ -65,7 +64,6 @@
 }
 
 .prompt-section {
-  /* background-color: #D8E6FF; */
   border-radius: 24px;
   padding: 15px;
   margin-top: 20px;
@@ -89,7 +87,7 @@
   color: #FFD700;
 }
 
-/* Responsive adjustments */
+/* Media Queries */
 @media screen and (max-width: 768px) {
   .exercise-card {
     padding: 28px;

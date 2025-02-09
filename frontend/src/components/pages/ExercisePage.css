@@ -33,7 +33,6 @@
   margin-bottom: 24px; /* Add margin to all elements */
 }
 
-/* Remove the last element's bottom margin */
 .exercise-intro:last-child {
   margin-bottom: 0;
 }
@@ -44,10 +43,10 @@ span.exercise-intro {
   margin: 0;
 }
 
-/* Add media queries for responsive top padding */
+/* Media Queries */
 @media (max-width: 480px) {
   .exercise-container {
-    padding-top: 4rem; /* Slightly less padding on mobile */
+    padding-top: 4rem; 
   }
 
   .exercise-title {

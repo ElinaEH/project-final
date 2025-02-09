@@ -1,8 +1,7 @@
 .profile-container {
   max-width: 600px;
   margin: 0 auto;
-  /* padding: 2rem 2rem 0 2rem; */
-  padding: calc(70px + 2rem) 2rem 0 2rem;
+  padding: calc(70px + 1rem) 2rem 0 2rem;
   font-family: "poppins";
   width: 100%;
 }
@@ -15,7 +14,7 @@
 }
 
 .lightbulb-icon {
-  width: 3rem; 
+  width: 3.4rem; 
   height: auto;
   object-fit: contain;
   margin: 0 auto; /* Centers the icon if it's a block-level element */
@@ -25,7 +24,6 @@
 .profile-title {
   text-align: center;
   margin-bottom: 2rem;
-  padding-top: 32px;
   color: #2d531a;
   font-family: "poppins";
   font-weight: 500;
@@ -189,6 +187,7 @@
   margin: 0.3rem 0;
 }
 
+/* Media Queries */
 @media (max-width: 640px) {
   .section-container {
     padding: 1rem;
@@ -209,13 +208,13 @@
 
   .profile-title {
     margin-bottom: 1rem;
-    padding-top: 0.75rem;
+    /* padding-top: 0.75rem; */
   }
 }
 
 @media (max-width: 480px) {
   .profile-container {
     /* padding: 2rem 1rem 0 1rem;  */
-    padding: calc(70px + 2rem) 1rem 0 1rem;
+    padding: calc(64px + 0rem) 1rem 0 1rem;
   }
 }
