@@ -5,7 +5,6 @@ import "./RandomWord.css";
 import ExerciseCardDetails from "./ExerciseCardDetails.jsx";
 
 // Component that generates random words for lyrical exercises
-
 const API_URL = import.meta.env.VITE_API_URL;
 
 const RandomWord = () => {
@@ -80,19 +79,19 @@ const RandomWord = () => {
             <div className="word-content">
               <h3>{word}</h3>
               <div className="tooltip-container">
-                <button 
-                  onClick={saveExercise} 
+                <button
+                  onClick={saveExercise}
                   className="save-button"
                   disabled={isLoading}
                 >
                   {isSaved ? <FaStar className="star-icon" /> : <FaRegStar className="star-icon" />}
                   <div className="tooltip">
-									{user ? (
-										"Save this exercise to store it in your profile"
-									) : (
-										"Sign in to save this exercise"
-									)}
-							 </div>
+                    {user ? (
+                      "Save this exercise to store it in your profile"
+                    ) : (
+                      "Sign in to save this exercise"
+                    )}
+                  </div>
                 </button>
               </div>
             </div>
@@ -100,7 +99,7 @@ const RandomWord = () => {
         </>
       }
       actionButtons={
-        <button 
+        <button
           className="generate-button"
           onClick={getRandomWord}
           disabled={isLoading}

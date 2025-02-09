@@ -1,109 +1,112 @@
 /* ProfileEdit.css */
 .profile-edit-container {
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: #faf2e8;
-    padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #faf2e8;
+  padding: 2rem;
+}
+
+.profile-form {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.form-title {
+  color: #2d531a;
+  font-family: "poppins";
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  color: #6f5d43;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #2d531a;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #D8E6FF;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #334ED8;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.save-button,
+.save-button-profile,
+.go-back-button {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-family: "poppins";
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.save-button-profile {
+  background-color: #FFE5A0;
+  color: #2d531a;
+}
+
+.go-back-button {
+  background-color: #FFE5A0;
+  color: #2d531a;
+}
+
+.save-button-profile:hover {
+  background-color: #feb7e8;
+}
+
+.go-back-button:hover {
+  background-color: #feb7e8;
+}
+
+@media (max-width: 600px) {
+  .profile-edit-container {
+    padding: 0.6rem;
   }
-  
+
   .profile-form {
-    width: 100%;
-    max-width: 500px;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 20px;
+    padding: 1.5rem;
   }
-  
-  .form-title {
-    color: #2d531a;
-    font-family: "poppins";
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
-    color: #6f5d43;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    color: #2d531a;
-  }
-  
-  .form-input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 2px solid #D8E6FF;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-  }
-  
-  .form-input:focus {
-    outline: none;
-    border-color: #334ED8;
-  }
-  
+
   .button-group {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-  
-  .save-button, .save-button-profile, .go-back-button {
-    flex: 1;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-family: "poppins";
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    color: white;
+    flex-direction: column;
   }
 
-  .save-button-profile {
-    background-color: #FFE5A0;
-    color: #2d531a;
+  .save-button,
+  .cancel-button {
+    width: 100%;
   }
-  
-  .go-back-button {
-    background-color: #FFE5A0;
-    color: #2d531a;
-  }
-
-  .save-button-profile:hover {
-    background-color: #feb7e8;
-  }
-  
-  .go-back-button:hover {
-    background-color: #feb7e8;
-  }
-  
-  @media (max-width: 600px) {
-    .profile-edit-container {
-      padding: 0.6rem;
-    }
-  
-    .profile-form {
-      padding: 1.5rem;
-    }
-  
-    .button-group {
-      flex-direction: column;
-    }
-  
-    .save-button, .cancel-button {
-      width: 100%;
-    }
-  }
+}

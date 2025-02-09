@@ -7,14 +7,14 @@ export const saveExercise = async (req, res) => {
 
     const user = await User.findByIdAndUpdate(
       userId,
-      { 
-        $push: { 
+      {
+        $push: {
           savedExercises: { // Fixed field name
-            type, 
+            type,
             content,
             savedAt: new Date() // Fixed field name
-          } 
-        } 
+          }
+        }
       },
       { new: true }
     );

@@ -14,11 +14,12 @@
 }
 
 .lightbulb-icon {
-  width: 3.4rem; 
+  width: 3.4rem;
   height: auto;
   object-fit: contain;
-  margin: 0 auto; /* Centers the icon if it's a block-level element */
-  display: block; 
+  margin: 0 auto;
+  /* Centers the icon if it's a block-level element */
+  display: block;
 }
 
 .profile-title {
@@ -45,9 +46,9 @@
   border-radius: 20px;
   padding: 1.5rem;
   margin: 1rem;
-  display: flex;          
-  flex-direction: row;  
-  align-items: center;     
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .profile-wrapper {
@@ -112,7 +113,10 @@
   border: 1px solid #2d531a;
 }
 
-.edit-button, .save-button, .cancel-button, .delete-button {
+.edit-button,
+.save-button,
+.cancel-button,
+.delete-button {
   padding: 0.5rem 2rem;
   border: none;
   border-radius: 50px;
@@ -200,7 +204,7 @@
   .profile-label {
     font-size: 1rem;
   }
-  
+
   .profile-container {
     /* padding: 4rem 1rem 0 1rem;  */
     padding: calc(70px + 4rem) 1rem 0 1rem;

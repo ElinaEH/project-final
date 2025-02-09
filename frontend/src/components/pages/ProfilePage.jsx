@@ -63,17 +63,17 @@ const ProfilePage = () => {
       <div>
         <Navbar />
         <div className="lightbulb-image-container">
-            <img
+          <img
             src={LightBulbIcon}
             alt="yellow-lightbulb"
             className="lightbulb-icon"
-            />
+          />
         </div>
         <div className="profile-container">
           <h1 className="profile-title">User Profile</h1>
           {/* Toggle between edit mode and display mode */}
           {isEditing ? (
-            <ProfileEdit 
+            <ProfileEdit
               profile={profile}
               setProfile={setProfile}
               setIsEditing={setIsEditing}
@@ -98,14 +98,14 @@ const ProfilePage = () => {
                   </button>
                 </div>
               </div>
-  
+
               <div className="section-container">
-                <SavedExercises 
+                <SavedExercises
                   exercises={profile.savedExercises}
                   onDelete={fetchProfile}
                 />
               </div>
-  
+
               <div className="section-container">
                 <AudioFiles />
               </div>

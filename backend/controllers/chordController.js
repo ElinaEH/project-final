@@ -51,7 +51,7 @@ function translateToKey(progression, key = "C") {
     "I": 0, "ii": 1, "iii": 2, "IV": 3, "V": 4, "vi": 5, "viidim": 6,
     "i": 0, "III": 2, "iv": 3, "v": 4, "VI": 5, "VII": 6
   };
-  
+
   return progression.map(numeral => {
     const index = romanNumerals[numeral];
     return keys[key][index];
@@ -61,11 +61,11 @@ function translateToKey(progression, key = "C") {
 // Controller for getting a random chord progression in any mood
 export const getChordProgression = (req, res) => {
   try {
-    const randomMood = Object.keys(chordProgressions) [Math.floor(Math.random() * Object.keys(chordProgressions).length)];
+    const randomMood = Object.keys(chordProgressions)[Math.floor(Math.random() * Object.keys(chordProgressions).length)];
     const progression = getRandomProgression(randomMood);
     const randomKey = getRandomKey();
     const chords = translateToKey(progression, randomKey);
-    
+
     res.json({
       mood: randomMood,
       key: randomKey,
@@ -74,9 +74,9 @@ export const getChordProgression = (req, res) => {
       success: true
     });
   } catch (error) {
-    res.status(500).json({ 
+    res.status(500).json({
       success: false,
-      error: error.message 
+      error: error.message
     });
   }
 };
@@ -85,7 +85,7 @@ export const getChordProgression = (req, res) => {
 export const getMoodProgression = (req, res) => {
   try {
     const { mood } = req.query;
-    
+
     // Validate that the requested mood exists in our progressions
     if (!mood || !chordProgressions[mood]) {
       return res.status(400).json({
@@ -93,11 +93,11 @@ export const getMoodProgression = (req, res) => {
         message: "Please provide a valid mood (uplifting, emotional, or nostalgic)"
       });
     }
- 
+
     const progression = getRandomProgression(mood);
     const randomKey = getRandomKey();
     const chords = translateToKey(progression, randomKey);
-    
+
     res.json({
       mood,
       key: randomKey,
@@ -106,9 +106,9 @@ export const getMoodProgression = (req, res) => {
       success: true
     });
   } catch (error) {
-    res.status(500).json({ 
+    res.status(500).json({
       success: false,
-      error: error.message 
+      error: error.message
     });
   }
 };

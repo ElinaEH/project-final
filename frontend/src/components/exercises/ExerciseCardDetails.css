@@ -3,7 +3,7 @@
   border-radius: 20px;
   padding: 32px;
   width: 100%;
-  max-width: none; 
+  max-width: none;
   min-height: 400px;
   margin: 0;
   display: flex;
@@ -36,7 +36,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center; 
+  align-items: center;
 }
 
 .display-area {
@@ -54,7 +54,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%; 
+  width: 100%;
 }
 
 .button-area.multiple-buttons {
@@ -92,7 +92,7 @@
   .exercise-card {
     padding: 28px;
   }
-  
+
   .button-area.multiple-buttons {
     grid-template-columns: 1fr;
   }

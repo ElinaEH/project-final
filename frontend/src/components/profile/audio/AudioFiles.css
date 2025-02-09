@@ -1,8 +1,8 @@
 .audio-files {
-  width: 100%; 
+  width: 100%;
   margin: 0 auto;
-  padding: 0;          
-  background-color: transparent;  
+  padding: 0;
+  background-color: transparent;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -141,7 +141,7 @@
 /* Media queries */
 @media (max-width: 640px) {
   .audio-files {
-      width: 100%;
+    width: 100%;
   }
 
   .audio-player-filename {
@@ -149,10 +149,10 @@
   }
 
   .audio-files-list {
-      width: 100%;
+    width: 100%;
   }
 
   .audio-files-upload-button {
-      padding: 1.5rem;
+    padding: 1.5rem;
   }
 }

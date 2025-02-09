@@ -14,10 +14,10 @@ const Navbar = () => {
   const handleDropdownPosition = useCallback(() => {
     const dropdown = document.querySelector(".dropdown-menu");
     if (!dropdown) return;
-    
+
     const rect = dropdown.getBoundingClientRect();
     dropdown.classList.remove("left-overflow", "right-overflow");
-    
+
     if (rect.right > window.innerWidth) {
       dropdown.classList.add("right-overflow");
     } else if (rect.left < 0) {
@@ -91,7 +91,7 @@ const Navbar = () => {
             <span className="auth-text">SIGN IN / SIGN UP</span>
           </Link>
         )}
-        <button 
+        <button
           className="menu-button"
           onClick={toggleDropdown}
           aria-label={isDropdownOpen ? "Close menu" : "Open menu"}

@@ -59,7 +59,7 @@ export const signup = async (req, res) => {
     if (error.code === 11000) {
       return res.status(400).json({ message: "Username or email already taken." });
     }
-    
+
     res.status(500).json({ message: "Error creating user", error: error.message });
   }
 };
@@ -80,12 +80,12 @@ export const signin = async (req, res) => {
     const newToken = generateToken();
 
     // Update user"s access token
-    user.accessToken = newToken; 
+    user.accessToken = newToken;
     await user.save({ validateBeforeSave: false });
 
     // Include user ID and username in the response
-    res.json({ 
-      message: "Login successful", 
+    res.json({
+      message: "Login successful",
       accessToken: newToken,
       user: {
         username: user.username,

@@ -1,89 +1,89 @@
 .signin-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #faf2e8;
-  }
-  
-  .signin-box {
-    width: 350px;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border-radius: 8px;
-    color: #2d531a;
-  }
-  
-  .signin-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-family: "poppins";
-    color: #2d531a;
-  }
-  
-  .signin-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  .input-group label {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .input-group input {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #faf2e8;
+}
 
-  /* Added this for future password configuration */
-  .forgot-password {
-    font-size: 12px;
-    color: #334ED8;
-    text-decoration: none;
-    margin-top: 5px;
-    display: inline-block;
-  }
-  
-  .signin-button {
-    background-color: #FFE5A0;
-    color: #2d531a;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-family: "poppins";
-  }
-  
-  .signin-button:hover {
-    background-color: #feb7e8;
-  }
-  
-  .create-account {
-    margin-top: 20px;
-  }
-  
-  .create-account a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #ccc;
-  }
+.signin-box {
+  width: 350px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 8px;
+  color: #2d531a;
+}
 
-  .create-account p {
-    color: #ccc;
-  }
+.signin-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "poppins";
+  color: #2d531a;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
+
+/* Added this for future password configuration */
+.forgot-password {
+  font-size: 12px;
+  color: #334ED8;
+  text-decoration: none;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.signin-button {
+  background-color: #FFE5A0;
+  color: #2d531a;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-family: "poppins";
+}
+
+.signin-button:hover {
+  background-color: #feb7e8;
+}
+
+.create-account {
+  margin-top: 20px;
+}
+
+.create-account a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.create-account p {
+  color: #ccc;
+}

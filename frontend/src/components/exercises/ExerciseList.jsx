@@ -1,5 +1,3 @@
-// Both exercises 
-
 import ChordProgression from "./ChordProgression.jsx";
 import RandomWord from "./RandomWord.jsx";
 import "./ExerciseList.css";

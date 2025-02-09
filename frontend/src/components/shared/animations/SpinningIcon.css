@@ -1,21 +1,23 @@
 .spin-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.spinning-image {
+  width: 50px;
+  height: 50px;
+  animation: spin 12s linear infinite;
+  /* 8s for slow rotation */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .spinning-image {
-    width: 50px; 
-    height: 50px;
-    animation: spin 12s linear infinite; /* 8s for slow rotation, adjust as needed */
+
+  to {
+    transform: rotate(360deg);
   }
-  
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+}

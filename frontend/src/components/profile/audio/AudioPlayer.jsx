@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Trash2, Volume2, VolumeX } from "lucide-react";
-import WaveSurfer from "wavesurfer.js"; 
+import WaveSurfer from "wavesurfer.js";
 import FlowerPlayButton from "../../shared/animations/FlowerPlayButton.jsx";
 import "./AudioPlayer.css";
 
@@ -17,7 +17,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
 
   useEffect(() => {
     audioRef.current = new Audio(audio.path);
-    
+
     wavesurferRef.current = WaveSurfer.create({
       container: waveformRef.current,
       waveColor: "#efdfcc",
@@ -117,7 +117,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
 
   const toggleMute = () => {
     if (!wavesurferRef.current) return;
-    
+
     if (isMuted) {
       wavesurferRef.current.setVolume(volume);
       setIsMuted(false);
@@ -142,7 +142,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
               </span>
             </div>
           </div>
-          <button 
+          <button
             onClick={() => onDelete(audio._id)}
             className="audio-player-delete"
             aria-label="Delete audio"
@@ -150,9 +150,9 @@ const AudioPlayer = ({ audio, onDelete }) => {
             <Trash2 size={20} />
           </button>
         </div>
-        
+
         <div className="audio-player-waveform" ref={waveformRef} />
-        
+
         <div className="audio-player-volume">
           <button
             onClick={toggleMute}

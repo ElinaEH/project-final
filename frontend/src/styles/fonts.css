@@ -1,13 +1,13 @@
 @font-face {
   font-family: "elanor";
   src: url("../assets/fonts/ElanorFreePersonalUse-ExBdIt.otf"),
-       url("../assets/fonts/ElanorFreePersonalUse-ExtLt.otf")
+    url("../assets/fonts/ElanorFreePersonalUse-ExtLt.otf")
 }
 
 @font-face {
   font-family: "poppins";
   src: url("../assets/fonts/Poppins-Regular.ttf"),
-       url("../assets/fonts/Poppins-SemiBold.ttf"),
-       url("../assets/fonts/Poppins-Bold.ttf"),
-       url("../assets/fonts/Poppins-Light.ttf")
+    url("../assets/fonts/Poppins-SemiBold.ttf"),
+    url("../assets/fonts/Poppins-Bold.ttf"),
+    url("../assets/fonts/Poppins-Light.ttf")
 }

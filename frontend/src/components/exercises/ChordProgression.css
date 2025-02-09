@@ -11,7 +11,7 @@
 
 .chord-button {
   min-width: 120px;
-  width: 100%; 
+  width: 100%;
   max-width: 150px;
   padding: 10px 15px;
   font-size: 1em;
@@ -87,7 +87,7 @@
   border-color: #333 transparent transparent transparent;
 }
 
-.save-button:hover + .tooltip,
+.save-button:hover+.tooltip,
 .save-button:hover .tooltip {
   display: block;
 }
@@ -95,7 +95,8 @@
 /* Media Queries */
 @media screen and (min-width: 768px) {
   .chord-button {
-    width: calc(50% - 10px); /* 2 buttons per row on larger screens */
+    width: calc(50% - 10px);
+    /* 2 buttons per row on larger screens */
     max-width: calc(50% - 10px);
   }
 }
@@ -108,8 +109,10 @@
     transform: translate(-50%, -50%);
     padding: 12px;
     white-space: normal;
-    width: 80%; /* Adjust the width for smaller screens */
-    min-width: 150px; /* Set a maximum width for smaller screens */
+    width: 80%;
+    /* Adjust the width for smaller screens */
+    min-width: 150px;
+    /* Set a maximum width for smaller screens */
     text-align: center;
     margin: 0;
     border-radius: 10px;
@@ -119,4 +122,3 @@
     display: none;
   }
 }
-

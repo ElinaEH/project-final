@@ -91,30 +91,30 @@
   display: inline-block;
 }
 
-.username:hover {  
+.username:hover {
   transform: translateY(-1px);
 }
 
-.auth-text:hover { 
+.auth-text:hover {
   transform: translateY(-1px);
 }
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  right: 0; 
-  left: auto; 
+  right: 0;
+  left: auto;
   transform: none;
   background-color: #faf2e8;
   font-family: "poppins";
   font-weight: 500;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  min-width: 200px; 
-  width: auto; 
+  min-width: 200px;
+  width: auto;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   z-index: 11;
-  border-radius: 8px; 
+  border-radius: 8px;
   border: 1px solid rgba(254, 183, 232, 0.1);
   padding: 8px 0;
   animation: fadeSlide 0.2s ease;
@@ -125,6 +125,7 @@
     opacity: 0;
     transform: translateY(5px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -159,7 +160,7 @@
 
 .dropdown-item:not(:last-child) {
   border-right: none;
-  border-bottom: 1px solid rgba(254, 183, 232, 0.1); 
+  border-bottom: 1px solid rgba(254, 183, 232, 0.1);
 }
 
 .navbar-wrapper a,
@@ -173,7 +174,7 @@
   .navbar-wrapper {
     padding: 0 2rem;
   }
-  
+
   .navbar-title {
     font-size: 20px;
     padding: 1rem 0;
@@ -197,20 +198,20 @@
     right: 0;
     width: 100%;
     border-radius: 0;
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: space-around;
   }
 
   .dropdown-item:not(:last-child) {
-    border-bottom: none; 
+    border-bottom: none;
     border-right: 1px solid rgba(254, 183, 232, 0.1);
   }
-  
+
   .dropdown-item {
     padding: 18px 20px;
     font-size: 15px;
   }
-  
+
   .dropdown-item:hover {
     padding: 18px 20px;
   }
@@ -224,7 +225,7 @@
   .navbar-wrapper {
     padding: 0 1.5rem;
   }
-  
+
   .navbar-title {
     font-size: 18px;
     padding: 0.75rem 0;
@@ -243,7 +244,7 @@
     padding: 16px 16px;
     font-size: 14px;
   }
-  
+
   .dropdown-item:hover {
     padding: 16px 16px;
   }
@@ -251,7 +252,7 @@
   .menu-button {
     padding: 0.25rem;
   }
-  
+
   .menu-button svg {
     width: 30px;
     height: 30px;
@@ -262,7 +263,7 @@
   .navbar-wrapper {
     padding: 0 1rem;
   }
-  
+
   .navbar-title {
     font-size: 18px;
     padding: 0.5rem 0;
@@ -282,7 +283,7 @@
     padding: 10px 12px;
     font-size: 11px;
   }
-  
+
   .dropdown-item:hover {
     padding: 16px 12px;
   }

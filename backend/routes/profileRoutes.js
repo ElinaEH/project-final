@@ -30,7 +30,7 @@ router.put("/", authenticateUser, async (req, res) => {
   try {
     console.log("Received update request");
     console.log("Update data:", req.body);
-    
+
     const updates = req.body;
     const user = await User.findByIdAndUpdate(
       req.user._id,
@@ -58,7 +58,7 @@ router.delete("/delete-exercise/:exerciseId", authenticateUser, async (req, res)
   try {
     console.log("Received delete exercise request");
     console.log("Exercise ID:", req.params.exerciseId);
-    
+
     const { exerciseId } = req.params;
     const user = await User.findById(req.user._id);
 
@@ -80,9 +80,9 @@ router.delete("/delete-exercise/:exerciseId", authenticateUser, async (req, res)
     await user.save();
 
     console.log("Exercise deleted successfully");
-    res.json({ 
+    res.json({
       message: "Exercise deleted successfully",
-      updatedExercises: user.savedExercises 
+      updatedExercises: user.savedExercises
     });
   } catch (error) {
     console.error("Delete exercise error:", error);

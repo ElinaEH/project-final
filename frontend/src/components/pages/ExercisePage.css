@@ -1,5 +1,5 @@
 .exercise-container {
-  padding: 4rem 1rem 1rem 1rem; 
+  padding: 4rem 1rem 1rem 1rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,8 @@
   line-height: 2;
   font-size: 1.5rem;
   font-family: "Poppins", sans-serif;
-  margin-bottom: 24px; /* Add margin to all elements */
+  margin-bottom: 24px;
+  /* Add margin to all elements */
 }
 
 .exercise-intro:last-child {
@@ -46,7 +47,7 @@ span.exercise-intro {
 /* Media Queries */
 @media (max-width: 480px) {
   .exercise-container {
-    padding-top: 4rem; 
+    padding-top: 4rem;
   }
 
   .exercise-title {
@@ -60,7 +61,8 @@ span.exercise-intro {
 
 @media (max-width: 360px) {
   .exercise-container {
-    padding-top: 4rem; /* Even less padding on smaller screens */
+    padding-top: 4rem;
+    /* Even less padding on smaller screens */
   }
 
   .exercise-title {

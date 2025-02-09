@@ -1,12 +1,12 @@
 import "./ExerciseCardDetails.css";
 
-const ExerciseCardDetails = ({ 
-  title, 
+const ExerciseCardDetails = ({
+  title,
   description,
   displayContent,
   actionButtons,
   prompt,
-  children 
+  children
 }) => {
   return (
     <div className="exercise-card">
