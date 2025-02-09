@@ -8,7 +8,7 @@ import ExerciseCardDetails from "./ExerciseCardDetails.jsx";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const RandomWord = () => {
-  // State for word, loading status and save status
+  // State for word, loading and save status
   const { user } = useAuth();
   const [word, setWord] = useState("");
   const [isLoading, setIsLoading] = useState(false);
