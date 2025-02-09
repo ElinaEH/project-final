@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer.jsx";
 import "./Signup.css";
@@ -7,6 +7,8 @@ import "./Signup.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   // Handle form submission and user creation
   const handleSignup = (e) => {
     e.preventDefault();
@@ -14,7 +16,8 @@ const Signup = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    console.log("Sign Up submitted:", { username });
+    console.log("Attempting signup with data:", { username, email });
+    // console.log("Sign Up submitted:", { username });
 
     fetch(`${API_URL}/auth/signup`, {
       method: "POST",
@@ -34,7 +37,7 @@ const Signup = () => {
         // Redirect to sign in page on successful registration
         if (data.message === "User created successfully") {
           alert("User created successfully! Please sign in.");
-          window.location.href = "/auth/signin";
+          navigate("/auth/signin");
         } else {
           console.error("Error signing up:", data.message || "Unknown error");
           alert("Error signing up: " + (data.message || "Unknown error"));
