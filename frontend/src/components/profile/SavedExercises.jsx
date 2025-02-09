@@ -28,7 +28,7 @@ const SavedExercises = ({ exercises, onDelete }) => {
         <p className="no-exercises">You have no saved exercises yet</p>
       ) : (
         <>
-          <p className="instructions">SAVED EXERCISES</p>
+          <h2 className="instructions">SAVED EXERCISES</h2>
           <div className="exercises-list">
             {exercises.map((exercise) => (
               <div key={exercise._id} className="exercise-item">

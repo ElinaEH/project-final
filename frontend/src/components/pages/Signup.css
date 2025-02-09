@@ -47,8 +47,13 @@
     width: 100%;
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid #faf2e8;
     border-radius: 4px;
+  }
+
+  .input-group input:focus {
+    outline: none;
+    border: 0.75px solid #FFE5A0;
   }
   
   .signup-button {

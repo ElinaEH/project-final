@@ -157,6 +157,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
           <button
             onClick={toggleMute}
             className="audio-player-volume-button"
+            aria-label={isMuted ? "Unmute" : "Mute"}
           >
             {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
           </button>
@@ -168,6 +169,7 @@ const AudioPlayer = ({ audio, onDelete }) => {
             value={isMuted ? 0 : volume}
             onChange={handleVolumeChange}
             className="audio-player-volume-slider"
+            aria-label="Volume"
           />
         </div>
       </div>

@@ -12,8 +12,7 @@
 .audio-files-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   justify-content: center;
   width: 100%;
 }
@@ -27,6 +26,7 @@
 .audio-files-title {
   font-size: 1.5rem;
   font-weight: 700;
+  margin: 1rem;
   color: #2d531a;
   font-family: "poppins";
 }
@@ -110,8 +110,8 @@
 .audio-files-spinner {
   width: 2rem;
   height: 2rem;
-  border: 2px solid #e5e7eb;
-  border-top-color: #3b82f6;
+  border: 2px solid #efdfcc;
+  border-top-color: #2d531a;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }

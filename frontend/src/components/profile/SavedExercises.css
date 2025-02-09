@@ -11,7 +11,7 @@
   font-size: 24px;
   color: #2d531a;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
 .no-exercises {
@@ -98,7 +98,7 @@
   }
   
   .instructions {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .delete-button {

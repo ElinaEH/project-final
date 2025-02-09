@@ -48,7 +48,8 @@
     font-size: 14px;
     border: 1px solid #ccc;
   }
-  
+
+  /* Added this for future password configuration */
   .forgot-password {
     font-size: 12px;
     color: #334ED8;
