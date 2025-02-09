@@ -111,5 +111,4 @@ console.log("Available API Endpoints:", listEndpoints(app));
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
-  console.log(`View API endpoints at http://localhost:${port}/endpoints`);
 });

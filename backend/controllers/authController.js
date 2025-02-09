@@ -14,8 +14,6 @@ const validateToken = (token) => {
 export const signup = async (req, res) => {
   const { username, email, password } = req.body;
 
-  console.log("Received signup request with username:", username);
-
   try {
     // Basic validation for required fields
     if (!username || !email || !password) {
@@ -53,8 +51,6 @@ export const signup = async (req, res) => {
     await user.save();
     res.status(201).json({ message: "User created successfully", accessToken });
   } catch (error) {
-    console.error("Error during signup:", error);
-
     // Handle duplicate key errors from MongoDB
     if (error.code === 11000) {
       return res.status(400).json({ message: "Username or email already taken." });
@@ -94,7 +90,6 @@ export const signin = async (req, res) => {
       }
     });
   } catch (error) {
-    console.log("Signin error", error);
     res.status(500).json({ message: "Error during login", error: error.message });
   }
 };

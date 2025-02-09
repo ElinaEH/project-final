@@ -8,12 +8,7 @@ const router = express.Router();
 // Get user profile
 router.get("/", authenticateUser, async (req, res) => {
   try {
-    console.log("Received profile request");
-    console.log("User from auth middleware:", req.user);
-    console.log("User ID:", req.user._id);
-
     const user = await User.findById(req.user._id).select("-password");
-    console.log("Found user:", user);
 
     if (!user) {
       return res.status(400).json({ message: "User not found" });
@@ -28,17 +23,12 @@ router.get("/", authenticateUser, async (req, res) => {
 // Update user profile
 router.put("/", authenticateUser, async (req, res) => {
   try {
-    console.log("Received update request");
-    console.log("Update data:", req.body);
-
     const updates = req.body;
     const user = await User.findByIdAndUpdate(
       req.user._id,
       updates,
       { new: true, runValidators: true }
     ).select("-password");
-
-    console.log("Updated user:", user);
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
@@ -56,9 +46,6 @@ router.post("/save-exercise", authenticateUser, saveExercise);
 // Delete exercise - Add this new route
 router.delete("/delete-exercise/:exerciseId", authenticateUser, async (req, res) => {
   try {
-    console.log("Received delete exercise request");
-    console.log("Exercise ID:", req.params.exerciseId);
-
     const { exerciseId } = req.params;
     const user = await User.findById(req.user._id);
 
@@ -79,7 +66,6 @@ router.delete("/delete-exercise/:exerciseId", authenticateUser, async (req, res)
     user.savedExercises.splice(exerciseIndex, 1);
     await user.save();
 
-    console.log("Exercise deleted successfully");
     res.json({
       message: "Exercise deleted successfully",
       updatedExercises: user.savedExercises

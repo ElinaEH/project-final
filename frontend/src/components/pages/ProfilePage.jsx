@@ -40,7 +40,6 @@ const ProfilePage = () => {
       }
 
       const data = await response.json();
-      console.log("Server profile data:", data);
       setProfile(data);
     } catch (error) {
       console.error("Error fetching profile:", error);

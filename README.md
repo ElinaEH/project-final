@@ -1,18 +1,8 @@
 # Final Project
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Soundseed, is a fullstack application/site built with React and Node, created for songwrites to help trigger creativity and get inspired. The project includes exercises for songwriters to practice making music without any external pressure. The app includes an audio file uploader and an audio player. The user can therefor upload new musical ideas and listen back to them. The user can also save their favorite exercises and audio files in their user profile.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
-Next:
-Wavesurfer visualizer - change to something else, error when loading page but it works on site
-Develop exercise section and have more exercises
-Add more pages to the site to separate and re-structure content, espacially in user profile
-
+One thing that I haven’t figured out yet is the wavesurfer waveform visualizer. I’ve tried debugging multiple times but error occours when inspecting the page. It does work on the site but I would like to solve the error in the future. I think I’ll probably have to use another waveform visualizer. I also would like to add more pages to the site to separate and re-structure some content. If I had more time I would develop the audio player and audio file uploader and have everything related to audio on a separate page. I would also like to add more exercises which was my plan in the beginning. I focused on making everything work and that took more than than I anticipated in the planning stage. 
 
 ## View it live
 Frontend:

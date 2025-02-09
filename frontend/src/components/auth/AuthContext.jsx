@@ -13,7 +13,6 @@ export const AuthProvider = ({ children }) => {
 
   // Handle user login and token storage
   const login = (username, token) => {
-    console.log("Login called with:", { username, token });
     localStorage.setItem("authToken", token);
     setUser({ username });
   };
