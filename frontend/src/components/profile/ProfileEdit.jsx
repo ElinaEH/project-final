@@ -31,7 +31,7 @@ const ProfileEdit = ({ profile, setProfile, setIsEditing, onProfileUpdate }) => 
       setIsEditing(false);
       onProfileUpdate();
     } catch (error) {
-      console.error("Error updating profile:", error);
+      setError(true);
     }
   };
 

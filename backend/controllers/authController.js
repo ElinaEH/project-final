@@ -5,11 +5,6 @@ import User from "../models/userModel.js";
 // Generate a random token
 const generateToken = () => crypto.randomBytes(32).toString("hex");
 
-// Validate token format (length and characters)
-const validateToken = (token) => {
-  return typeof token === "string" && token.length === 64;
-};
-
 // Sign-up controller
 export const signup = async (req, res) => {
   const { username, email, password } = req.body;

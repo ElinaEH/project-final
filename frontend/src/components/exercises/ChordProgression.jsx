@@ -26,7 +26,7 @@ const ChordProgression = () => {
       setChords(data);
       setIsSaved(false); // Reset saved state for new chord progressions
     } catch (error) {
-      console.error("Error fetching chords:", error);
+      setError(true);
     } finally {
       setIsLoading(false);
     }
@@ -41,7 +41,7 @@ const ChordProgression = () => {
       setChords(data);
       setIsSaved(false);
     } catch (error) {
-      console.error("Error fetching chords:", error);
+      setError(true);
     } finally {
       setIsLoading(false);
     }
@@ -69,7 +69,7 @@ const ChordProgression = () => {
         setIsSaved(true);
       }
     } catch (error) {
-      console.error("Error saving exercise:", error);
+      setError(true);
     }
   };
 

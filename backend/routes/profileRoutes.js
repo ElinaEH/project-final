@@ -15,7 +15,6 @@ router.get("/", authenticateUser, async (req, res) => {
     }
     res.json(user);
   } catch (error) {
-    console.error("Profile fetch error:", error)
     res.status(500).json({ message: "Server error", error: error.message });
   }
 });
@@ -35,7 +34,6 @@ router.put("/", authenticateUser, async (req, res) => {
     }
     res.json(user);
   } catch (error) {
-    console.error("Update error:", error);
     res.status(500).json({ message: "Server error", error: error.message });
   }
 });
@@ -71,7 +69,6 @@ router.delete("/delete-exercise/:exerciseId", authenticateUser, async (req, res)
       updatedExercises: user.savedExercises
     });
   } catch (error) {
-    console.error("Delete exercise error:", error);
     res.status(500).json({ message: "Error deleting exercise", error: error.message });
   }
 });

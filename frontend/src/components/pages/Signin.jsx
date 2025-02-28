@@ -8,79 +8,75 @@ import "./Signin.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const Signin = () => {
-  const navigate = useNavigate();
-  const { login } = useAuth();
+	const navigate = useNavigate();
+	const { login } = useAuth();
 
-  // Handle form submission and authentication
-  const handleSignin = (e) => {
-    e.preventDefault();
-    const username = e.target.username.value;
-    const password = e.target.password.value;
+	// Handle form submission and authentication
+	const handleSignin = async (e) => {
+		e.preventDefault();
+		const username = e.target.username.value;
+		const password = e.target.password.value;
 
-    console.log("Sign In submitted:", { username });
+		try {
+			const response = await fetch(`${API_URL}/auth/signin`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ username, password }),
+			});
 
-    fetch(`${API_URL}/auth/signin`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    })
-      .then((response) => {
-        console.log("Response status:", response.status);
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Sign In Response:", data);
+			const data = await response.json();
 
-        if (data.message === "Login successful") {
-          // Store authentication data and redirect to home
-          if (data.accessToken) {
-            localStorage.setItem("accessToken", data.accessToken);
-            console.log("Stored token in localStorage:", data.accessToken);
-          }
+			if (!response.ok) {
+				alert("Signin failed: " + (data.message || "Invalid credentials"));
+				return;
+			}
 
-          if (data.user) {
-            localStorage.setItem("user", JSON.stringify(data.user));
-            console.log("Stored user in localStorage:", data.user);
-            login(data.user.username, data.accessToken);
-          }
+			if (data && data.message === "Login successful") {
+				// Store authentication data and redirect to home
+				if (data.accessToken) {
+					localStorage.setItem("accessToken", data.accessToken);
+				}
 
-          navigate("/");
-        } else {
-          console.error("Login failed:", data.message);
-        }
-      })
-      .catch((error) => {
-        console.error("Network or parsing error:", error);
-      });
-  };
+				if (data.user) {
+					localStorage.setItem("user", JSON.stringify(data.user));
+					login(data.user.username, data.accessToken);
+				}
 
-  return (
-    <>
-      <Navbar />
-      <div className="signin-container">
-        <div className="signin-box">
-          <h2 className="signin-title">SIGN IN</h2>
-          <form onSubmit={handleSignin} className="signin-form">
-            <div className="input-group">
-              <label htmlFor="username">USERNAME</label>
-              <input type="text" name="username" placeholder="Username" required />
-            </div>
-            <div className="input-group">
-              <label htmlFor="password">PASSWORD</label>
-              <input type="password" name="password" placeholder="Password" required />
-            </div>
-            <button type="submit" className="signin-button">SIGN IN</button>
-          </form>
-          <p className="create-account">
-            New user? <Link to="/auth/signup">Sign up here</Link>
-          </p>
-        </div>
-      </div>
-      <Footer />
-    </>
-  );
+				navigate("/");
+			}
+		} catch (error) {
+			//Handles unexpected errors
+			alert("An error occurred while signing in. Please try again");
+		}
+	};
+
+	return (
+		<>
+			<Navbar />
+			<div className="signin-container">
+				<div className="signin-box">
+					<h2 className="signin-title">SIGN IN</h2>
+					<form onSubmit={handleSignin} className="signin-form">
+						<div className="input-group">
+							<label htmlFor="username">USERNAME</label>
+							<input type="text" id="username" name="username" autoComplete="username" placeholder="Username" required />
+						</div>
+						<div className="input-group">
+							<label htmlFor="password">PASSWORD</label>
+							<input type="password" id="password" name="password" autoComplete="current-password" placeholder="Password" required />
+						</div>
+						<button type="submit" className="signin-button">SIGN IN</button>
+					</form>
+					<p className="create-account">
+						New user? <Link to="/auth/signup">Sign up here</Link>
+					</p>
+				</div>
+			</div>
+			<Footer />
+		</>
+	);
 };
 
 export default Signin;

@@ -42,7 +42,7 @@ const ProfilePage = () => {
       const data = await response.json();
       setProfile(data);
     } catch (error) {
-      console.error("Error fetching profile:", error);
+      setError(true);
     }
   };
 

@@ -25,7 +25,6 @@ export const uploadAudio = async (req, res) => {
       audioFile: savedAudioFile
     });
   } catch (error) {
-    console.error("Upload error:", error);
     res.status(500).json({ message: "Error uploading file" });
   }
 };

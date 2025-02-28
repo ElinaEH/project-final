@@ -20,7 +20,7 @@ const SavedExercises = ({ exercises, onDelete }) => {
       if (!response.ok) throw new Error("Failed to delete exercise");
       onDelete();
     } catch (error) {
-      console.error("Error deleting exercise:", error);
+      setError(true);
     }
   };
 

@@ -40,7 +40,6 @@ const AudioFiles = () => {
       setError(null); // Reset previous errors
     } catch (err) {
       setError(err.message);
-      console.error("Error fetching audio files:", err);
     } finally {
       setIsLoading(false); // Hide loading spinner once data is fetched
     }
@@ -74,7 +73,6 @@ const AudioFiles = () => {
         throw new Error("Upload failed");
       }
     } catch (error) {
-      console.error("Upload error:", error);
       setError("Failed to upload audio file");
     } finally {
       setIsLoading(false);
@@ -99,7 +97,6 @@ const AudioFiles = () => {
         throw new Error("Failed to delete audio file");
       }
     } catch (error) {
-      console.error("Error deleting audio:", error);
       setError("Failed to delete audio file");
     }
   };

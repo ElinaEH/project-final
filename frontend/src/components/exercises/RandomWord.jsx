@@ -28,7 +28,6 @@ const RandomWord = () => {
       setWord(data.word);
       setIsSaved(false);
     } catch (error) {
-      console.error("Error fetching random word:", error);
       setError("Failed to fetch random word. Please try again.");
     } finally {
       setIsLoading(false);
@@ -63,7 +62,6 @@ const RandomWord = () => {
 
       setIsSaved(true);
     } catch (error) {
-      console.error("Error saving exercise:", error);
       setError("Failed to save exercise. Please try again.");
     }
   };

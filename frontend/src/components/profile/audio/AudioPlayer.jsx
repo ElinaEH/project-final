@@ -60,8 +60,8 @@ const AudioPlayer = ({ audio, onDelete }) => {
           setIsPlaying(false);
           wavesurferRef.current.destroy();
         } catch (error) {
-          if (error.name !== 'AbortError') {
-            console.error('Error destroying WaveSurfer:', error);
+          if (error.name !== "AbortError") {
+            console.error("Error destroying WaveSurfer:", error);
           }
         }
       }
@@ -75,8 +75,8 @@ const AudioPlayer = ({ audio, onDelete }) => {
           wavesurferRef.current.pause();
           setIsPlaying(false);
         } catch (error) {
-          if (error.name !== 'AbortError') {
-            console.error('Error pausing WaveSurfer:', error);
+          if (error.name !== "AbortError") {
+            console.error("Error pausing WaveSurfer:", error);
           }
         }
       }
@@ -95,7 +95,6 @@ const AudioPlayer = ({ audio, onDelete }) => {
         setIsPlaying(true);
       }
     } catch (error) {
-      console.error("Error toggling play state:", error);
       setIsPlaying(false);
     }
   };

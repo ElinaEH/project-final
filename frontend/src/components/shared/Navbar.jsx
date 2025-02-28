@@ -41,22 +41,22 @@ const Navbar = () => {
   const handleLogout = () => {
     logout();
     setIsDropdownOpen(false);
-    document.documentElement.classList.remove('no-scroll');
+    document.documentElement.classList.remove("no-scroll");
     navigate("/");
   };
 
   useEffect(() => {
     return () => {
-      document.documentElement.classList.remove('no-scroll');
+      document.documentElement.classList.remove("no-scroll");
     };
   }, []);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
     if (!isDropdownOpen) {
-      document.documentElement.classList.add('no-scroll');
+      document.documentElement.classList.add("no-scroll");
     } else {
-      document.documentElement.classList.remove('no-scroll');
+      document.documentElement.classList.remove("no-scroll");
     }
   };
 
@@ -66,7 +66,7 @@ const Navbar = () => {
       const navControls = document.querySelector(".nav-controls");
       if (isDropdownOpen && navControls && !navControls.contains(event.target)) {
         setIsDropdownOpen(false);
-        document.documentElement.classList.remove('no-scroll');
+        document.documentElement.classList.remove("no-scroll");
       }
     };
 
@@ -105,7 +105,7 @@ const Navbar = () => {
               className="dropdown-item"
               onClick={() => {
                 setIsDropdownOpen(false);
-                document.documentElement.classList.remove('no-scroll');
+                document.documentElement.classList.remove("no-scroll");
               }}
             >
               HOME
@@ -115,7 +115,7 @@ const Navbar = () => {
               className="dropdown-item"
               onClick={() => {
                 setIsDropdownOpen(false);
-                document.documentElement.classList.remove('no-scroll');
+                document.documentElement.classList.remove("no-scroll");
               }}
             >
               EXERCISES
@@ -127,7 +127,7 @@ const Navbar = () => {
                   className="dropdown-item"
                   onClick={() => {
                     setIsDropdownOpen(false);
-                    document.documentElement.classList.remove('no-scroll');
+                    document.documentElement.classList.remove("no-scroll");
                   }}
                 >
                   PROFILE

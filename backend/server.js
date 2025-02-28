@@ -105,9 +105,6 @@ app.get("/endpoints", (req, res) => {
   res.json(listEndpoints(app));
 });
 
-// Log available endpoints when server starts
-console.log("Available API Endpoints:", listEndpoints(app));
-
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
